@@ -1,0 +1,884 @@
+[
+  {
+    "id": "usecases_001",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A support message has just been classified. What is the next step?",
+    "answers": [
+      "Send the draft reply to the customer",
+      "Retrain the model on the message",
+      "Fetch help articles and order details",
+      "Close the ticket without a reply"
+    ],
+    "correct": 2,
+    "fact": "After classifying, tool calls fetch the relevant help articles and the customer's order record, so the drafting model works from real facts instead of memory."
+  },
+  {
+    "id": "usecases_002",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In a support flow, where does the stronger model earn its cost?",
+    "answers": [
+      "Drafting the reply from fetched facts",
+      "Sorting messages by topic",
+      "Looking up the order record",
+      "Counting tickets for the team dashboard"
+    ],
+    "correct": 0,
+    "fact": "Routing and lookups are cheap steps. The stronger model is saved for drafting, where tone and reasoning over the retrieved sources matter most."
+  },
+  {
+    "id": "usecases_003",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A retailer's customer writes about a billing dispute and mentions a lawyer. What should the assistant do?",
+    "answers": [
+      "Send the draft reply automatically",
+      "Ask the customer to rephrase",
+      "Close it as out of scope",
+      "Pass it to a person with the draft"
+    ],
+    "correct": 3,
+    "fact": "Sensitive cases go to a person, with the draft and sources attached. The assistant saves time, but a human still makes the call."
+  },
+  {
+    "id": "usecases_004",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which set of measures best judges a support assistant?",
+    "answers": [
+      "Tokens used, reply length and uptime",
+      "Resolution, accuracy and satisfaction",
+      "Model size, speed and cost per token",
+      "Chats opened, logins and page views"
+    ],
+    "correct": 1,
+    "fact": "Track how many cases it resolves, its accuracy on a fixed set of real tickets, and customer satisfaction. Compare all three with a baseline from before launch."
+  },
+  {
+    "id": "usecases_005",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A support bot passes its tests but customers report wrong refund dates. Likeliest gap?",
+    "answers": [
+      "The eval set missed real refund cases",
+      "The classifier model is far too small",
+      "The replies are not long enough",
+      "The context window is too large"
+    ],
+    "correct": 0,
+    "fact": "An eval set must mirror real tickets, including awkward ones. Tests built from tidy examples flatter the bot and hide the failures customers actually meet."
+  },
+  {
+    "id": "usecases_006",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Staff want HR answers from policies kept in SharePoint. What is the quickest first step?",
+    "answers": [
+      "Build a vector database",
+      "Move policies into a new wiki",
+      "Fine-tune a model on the files",
+      "Connect SharePoint to ChatGPT"
+    ],
+    "correct": 3,
+    "fact": "ChatGPT Enterprise connectors link to apps like SharePoint and Drive and generally follow each user's existing access, so many internal assistants need no custom build."
+  },
+  {
+    "id": "usecases_007",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why show a source link beside each answer from an internal assistant?",
+    "answers": [
+      "It makes the reply arrive much faster",
+      "Staff can check the policy themselves",
+      "It trains the model on the link",
+      "It hides outdated pages"
+    ],
+    "correct": 1,
+    "fact": "Citations let a person open the policy and verify the answer. That builds trust and makes wrong or stale answers easy to spot and report."
+  },
+  {
+    "id": "usecases_008",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An IT help assistant quotes a retired VPN guide. Who keeps content like this fresh?",
+    "answers": [
+      "The model itself, as it keeps learning",
+      "Whoever built the first prototype",
+      "Named content owners with review dates",
+      "The security team, once a year"
+    ],
+    "correct": 2,
+    "fact": "A model does not update itself from your files. Each source needs a named owner and review date, with the index refreshed whenever a document changes."
+  },
+  {
+    "id": "usecases_009",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A logistics firm reads supplier invoices with AI. What happens right after the file is read?",
+    "answers": [
+      "Fields are extracted in a fixed format",
+      "The invoice is paid straight away",
+      "A person retypes the totals",
+      "The model is retrained on that invoice"
+    ],
+    "correct": 0,
+    "fact": "Structured outputs make the model return supplier, date and totals in a set shape, such as JSON, so later steps and systems can use them without guessing."
+  },
+  {
+    "id": "usecases_010",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Extracted invoice totals do not match the line items. Which step should catch this?",
+    "answers": [
+      "A longer prompt before extraction",
+      "The payment run itself",
+      "Rules that check the extracted fields",
+      "Monthly retraining of the whole model"
+    ],
+    "correct": 2,
+    "fact": "Plain code rules, such as totals adding up, a known supplier and no duplicate number, check the model's output. Anything that fails is held back."
+  },
+  {
+    "id": "usecases_011",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An invoice fails a validation rule. Where should it go?",
+    "answers": [
+      "Straight into the finance system",
+      "An exception queue for a person",
+      "Back to the model until it passes",
+      "Back to the supplier by email"
+    ],
+    "correct": 1,
+    "fact": "Looping until it passes can hide real errors. A person reviews the exception, and fixed cases are worth adding to the eval set."
+  },
+  {
+    "id": "usecases_012",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Extraction is 97% right overall, but most errors hit the payment amount. What next?",
+    "answers": [
+      "Accept it, since 97% is high",
+      "Switch every field to manual entry",
+      "Raise the context window size",
+      "Add stricter checks on that field"
+    ],
+    "correct": 3,
+    "fact": "Overall accuracy hides costly mistakes. Measure per field, then add rule checks or a person where an error costs money, and relax elsewhere."
+  },
+  {
+    "id": "usecases_013",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A rep wants account research before a call. Which ChatGPT feature fits?",
+    "answers": [
+      "Deep research with connectors",
+      "Fine-tuning on past emails",
+      "A realtime voice model for calls",
+      "The Batch API"
+    ],
+    "correct": 0,
+    "fact": "Deep research produces a sourced, multi-source report, and connectors can bring in the rep's own CRM, calendar and documents. A human still checks the claims."
+  },
+  {
+    "id": "usecases_014",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How would you judge a sales team's ChatGPT rollout?",
+    "answers": [
+      "Number of prompts typed per rep",
+      "Seats purchased compared with plan",
+      "Time saved and weekly active users",
+      "Pages of proposals produced a week"
+    ],
+    "correct": 2,
+    "fact": "Pick a baseline task such as proposal hours, then measure time saved and adoption. Seats bought and volume produced are weak proxies; low use predicts a weak renewal."
+  },
+  {
+    "id": "usecases_015",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A rep saves AI call summaries into the CRM. Where should a person check?",
+    "answers": [
+      "The spelling in the full transcript",
+      "Actions and commitments before saving",
+      "Nothing, since summaries are factual",
+      "The length of the summary text"
+    ],
+    "correct": 1,
+    "fact": "Summaries can drop or invent actions, dates and figures. A quick check by the rep before saving keeps the CRM, and any later email, trustworthy."
+  },
+  {
+    "id": "usecases_016",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which engineering team suits a first Codex rollout?",
+    "answers": [
+      "A team with no tests or reviews",
+      "A brand new product with no code",
+      "The whole company at once",
+      "One with a clear backlog of tasks"
+    ],
+    "correct": 3,
+    "fact": "Land Codex where a visible backlog exists, so wins are easy to see. Measure cycle time and pull requests merged, then widen to other teams."
+  },
+  {
+    "id": "usecases_017",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why do tests matter when Codex changes code?",
+    "answers": [
+      "They show if a change broke something",
+      "They make Codex write its code faster",
+      "They replace the code review",
+      "They teach Codex the house style"
+    ],
+    "correct": 0,
+    "fact": "Tests are the safety net: Codex can run them and a person reviews the change. Passing tests lower the risk but do not replace review."
+  },
+  {
+    "id": "usecases_018",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why give a text-to-SQL assistant read-only database access?",
+    "answers": [
+      "It makes the queries run faster",
+      "It stops the model guessing joins",
+      "A bad query cannot change data",
+      "It lets the model reach more tables"
+    ],
+    "correct": 2,
+    "fact": "Read-only rights mean a wrong or hostile query can at worst return a bad answer, not edit or delete records. Pair it with a governed warehouse and least privilege."
+  },
+  {
+    "id": "usecases_019",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Two teams define 'active customer' differently, so answers clash. What helps?",
+    "answers": [
+      "A larger model for the questions",
+      "A metric layer both teams use",
+      "A longer system prompt on top",
+      "Letting each user choose a meaning"
+    ],
+    "correct": 1,
+    "fact": "A metric layer holds agreed definitions, such as what counts as active, so the model uses them instead of guessing. Wrong definitions often cause wrong data answers."
+  },
+  {
+    "id": "usecases_020",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Showing the SQL behind a data answer proves the numbers are right.",
+    "answer": false,
+    "fact": "The query lets an analyst check joins and filters, which helps catch errors. It does not prove correctness; a wrong join can still look tidy."
+  },
+  {
+    "id": "usecases_021",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "In contract review against a playbook, what does the model do first?",
+    "answers": [
+      "Rewrites the whole contract",
+      "Decides whether the firm signs",
+      "Emails the other side's lawyer",
+      "Pulls out clauses to compare"
+    ],
+    "correct": 3,
+    "fact": "The model extracts key clauses, compares each with the firm's playbook of accepted positions and flags gaps. A lawyer reviews the flags and signs off."
+  },
+  {
+    "id": "usecases_022",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why should each contract flag cite the clause it came from?",
+    "answers": [
+      "The lawyer can jump to the text",
+      "It lowers the token cost",
+      "It teaches the playbook",
+      "It lets the model skip reading"
+    ],
+    "correct": 0,
+    "fact": "A citation lets the lawyer check a flag against the actual wording in seconds. Without it, review means rereading everything or trusting the tool."
+  },
+  {
+    "id": "usecases_023",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A contract lacks an expected clause and the tool reports no issues. What control helps?",
+    "answers": [
+      "A higher temperature setting",
+      "Reviewing shorter contracts first",
+      "A checklist of required clauses",
+      "A larger context window"
+    ],
+    "correct": 2,
+    "fact": "Missing clauses are easy to overlook. Give the tool an explicit list of required clauses and test it on contracts known to omit them."
+  },
+  {
+    "id": "usecases_024",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is a latency budget in a voice agent?",
+    "answers": [
+      "A monthly spending cap on all calls",
+      "Time allowed for each step of a turn",
+      "The longest call length permitted",
+      "The number of callers handled at once"
+    ],
+    "correct": 1,
+    "fact": "A voice turn chains listening, the model, any tool lookups and speech. The budget splits a target delay across them; one slow lookup can break the flow."
+  },
+  {
+    "id": "usecases_025",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A caller says 'let me speak to someone'. What should the voice agent do?",
+    "answers": [
+      "Ask three more questions first",
+      "End the call politely",
+      "Offer to read the terms aloud",
+      "Hand over with a short summary"
+    ],
+    "correct": 3,
+    "fact": "Hand off at once and pass the context, so the caller does not repeat themselves. Pushing someone to stay with the bot damages trust."
+  },
+  {
+    "id": "usecases_026",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why keep transcripts of voice agent calls?",
+    "answers": [
+      "To check quality and settle disputes",
+      "To make the voice sound much warmer",
+      "To cut down the delay in replies",
+      "To avoid asking callers for consent"
+    ],
+    "correct": 0,
+    "fact": "Transcripts support quality review, evals and audit. Storing them brings privacy duties: tell callers, limit retention and mask sensitive details."
+  },
+  {
+    "id": "usecases_027",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A telco voice agent must not quote plans it does not know. What enforces that?",
+    "answers": [
+      "Tell it in the prompt to be careful",
+      "Fetch plan data; hand off if absent",
+      "Train callers to speak clearly",
+      "Give it a warmer voice"
+    ],
+    "correct": 1,
+    "fact": "Prompts alone can slip. Keep the agent inside its script by letting it quote only plan data fetched by a tool, and hand off when nothing is found."
+  },
+  {
+    "id": "usecases_028",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An IT-ticket agent reset the wrong password. What helps you trace what happened?",
+    "answers": [
+      "A longer system prompt for it",
+      "The agent's own final summary",
+      "The chat window history shown",
+      "An audit log of each tool call"
+    ],
+    "correct": 3,
+    "fact": "An audit log records what acted, when and with which inputs. The agent's own summary is not a record, and logs let you review and reverse actions."
+  },
+  {
+    "id": "usecases_029",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A refund agent approved a payment in error. What design makes it easiest to fix?",
+    "answers": [
+      "Reversible actions plus rollback",
+      "A bigger model making each approval",
+      "Telling the agent to be careful",
+      "Faster approvals with no waiting"
+    ],
+    "correct": 0,
+    "fact": "Make actions undoable where you can, such as a held or reversible refund, and add approval for one-way steps. Rollback turns a mistake into a small fix."
+  },
+  {
+    "id": "usecases_030",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Evals show routine refunds are reliable. Which approval rule fits?",
+    "answers": [
+      "A person still approves every refund",
+      "Auto-approve if the model feels sure",
+      "Agent does small; a person okays large",
+      "Review after customers complain"
+    ],
+    "correct": 2,
+    "fact": "Use risk tiers: let the agent act alone on small, routine refunds where evals are strong, and keep a person for large or unusual ones. Review the tiers as evidence grows."
+  },
+  {
+    "id": "usecases_031",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does giving an agent its own scoped identity allow?",
+    "answers": [
+      "Letting it sign in as any employee",
+      "Making its answers more accurate",
+      "Skipping the later security review",
+      "Limiting and watching its access"
+    ],
+    "correct": 3,
+    "fact": "In Frontier, each agent gets its own identity with scoped permissions tied to the company's identity systems, plus monitoring, so its access is limited and reviewable."
+  },
+  {
+    "id": "usecases_032",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A 600-person firm wants drafting and research help for staff, with no developers. Best fit?",
+    "answers": [
+      "A custom app on the API",
+      "ChatGPT Enterprise",
+      "Codex seats",
+      "A fine-tuned model"
+    ],
+    "correct": 1,
+    "fact": "Enterprise is the sales-led plan for knowledge workers, with admin and security controls. The API suits teams building their own apps, which this firm cannot staff."
+  },
+  {
+    "id": "usecases_033",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A bank's workflow must send identifiable customer data to a model. Which route fits?",
+    "answers": [
+      "API behind a gateway with masking",
+      "Staff paste the data into ChatGPT",
+      "ChatGPT Enterprise on its own",
+      "Upload files to a shared Project"
+    ],
+    "correct": 0,
+    "fact": "Identifiable data in automated workflows usually calls for the API with a customer-side gateway that masks and re-identifies. Each route unlocks a different class of data."
+  },
+  {
+    "id": "usecases_034",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "Trying a ready-made tool before building custom code is a sensible default.",
+    "answer": true,
+    "fact": "Buy before build: a connector, Project or Skill often solves the problem in days. Build on the API when scale, many systems or a custom screen make it necessary."
+  },
+  {
+    "id": "usecases_035",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A customer wants one assistant over eight systems, with logins, for 20,000 users. Best fit?",
+    "answers": [
+      "A shared Project",
+      "A single Skill",
+      "A custom build on the API",
+      "A larger Project with more files"
+    ],
+    "correct": 2,
+    "fact": "Many systems, many users and a custom screen with permissions are the signs to build on the API. A Project or Skill suits a team, not a product."
+  },
+  {
+    "id": "usecases_036",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When is a connector enough, rather than custom RAG?",
+    "answers": [
+      "Millions of files need special ranking",
+      "Answers must appear in a customer app",
+      "Search needs exact part-code matching",
+      "Content sits in connected apps"
+    ],
+    "correct": 3,
+    "fact": "If the content is in apps like Drive or SharePoint, connectors give grounded answers with no build. Go custom for huge archives, special search or customer-facing apps."
+  },
+  {
+    "id": "usecases_037",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "At a mid-market firm, who usually builds and owns an API-based assistant?",
+    "answers": [
+      "OpenAI's account team after the sale",
+      "Their engineers and a business owner",
+      "Their finance team, as budget holder",
+      "One ChatGPT admin in the IT team"
+    ],
+    "correct": 1,
+    "fact": "The customer's engineers build and run it, a named business owner is accountable for results, and OpenAI or a partner advises. Mid-market teams often lack capacity, so ask early."
+  },
+  {
+    "id": "usecases_038",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When should a seller bring in a solutions engineer?",
+    "answers": [
+      "When security or integration is deep",
+      "After the contract has been signed off",
+      "When the customer first complains",
+      "At the final round of price talks"
+    ],
+    "correct": 0,
+    "fact": "A seller owns the plan and the relationship, but brings in a solutions engineer before promising detail on security, residency or integration. Saying so builds trust."
+  },
+  {
+    "id": "usecases_039",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When do forward deployed engineers fit best?",
+    "answers": [
+      "Each small ChatGPT seat purchase",
+      "Simple setup of a shared Project",
+      "Complex, high-value agent builds",
+      "Routine password reset requests"
+    ],
+    "correct": 2,
+    "fact": "FDEs embed with a customer to get agents into production. Mid-market firms may get limited FDE time, so ask how it is allocated and do not promise it."
+  },
+  {
+    "id": "usecases_040",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks if they need ChatGPT Enterprise or the API. Which question splits it best?",
+    "answers": [
+      "How many tokens will you use?",
+      "Which cloud provider do you use?",
+      "Is your data in a warehouse?",
+      "Staff use, or an app or automation?"
+    ],
+    "correct": 3,
+    "fact": "Enterprise serves people using ChatGPT for their work; the API serves products and automated workflows. Many customers land on one and expand to the other."
+  },
+  {
+    "id": "usecases_041",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is routing in an AI workflow?",
+    "answers": [
+      "Sending a request down the right path",
+      "Shortening requests into fewer words",
+      "Storing replies for later reuse",
+      "Encrypting messages in transit"
+    ],
+    "correct": 0,
+    "fact": "A cheap model or rule labels the request, then it goes down the right path: a small model for easy cases, a stronger one for hard ones, a person for risky ones."
+  },
+  {
+    "id": "usecases_042",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why split a long task into steps rather than one big prompt?",
+    "answers": [
+      "Steps remove the need for evals",
+      "Each step is easier to test and fix",
+      "Chained steps cost less in total",
+      "Smaller prompts avoid tool errors"
+    ],
+    "correct": 1,
+    "fact": "Steps such as classify, retrieve, draft and check can each be evaluated alone, so you can see where a failure starts. One huge prompt hides the cause."
+  },
+  {
+    "id": "usecases_043",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "In 'classify then act', what decides the next step?",
+    "answers": [
+      "The length of the message",
+      "The time of day it arrived",
+      "The label given to the request",
+      "The age of the customer account"
+    ],
+    "correct": 2,
+    "fact": "The classification label is the switch: billing goes one way, delivery another, complaints to a person. Wrong labels send cases the wrong way, so test the classifier."
+  },
+  {
+    "id": "usecases_044",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In 'extract, validate, act', which check is most dependable?",
+    "answers": [
+      "The model rating its own confidence",
+      "A second, longer prompt",
+      "A shorter limit on output length",
+      "Fixed rules written as code"
+    ],
+    "correct": 3,
+    "fact": "Code rules behave the same every time and are easy to test, such as totals adding up or dates being valid. A model's self-rated confidence is a weaker guard."
+  },
+  {
+    "id": "usecases_045",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Where should a human approval step sit in a workflow?",
+    "answers": [
+      "After the action has already been run",
+      "Just before a risky or one-way action",
+      "At the very start of every single case",
+      "On each harmless, read-only lookup step"
+    ],
+    "correct": 1,
+    "fact": "Put the gate just before the step that is hard to undo, such as paying, sending or deleting. Reading and drafting can run freely, which keeps the person's workload small."
+  },
+  {
+    "id": "usecases_046",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "The classifier cannot place a message in any known category. What then?",
+    "answers": [
+      "Send it to a person's queue",
+      "Force the closest category",
+      "Ignore the message",
+      "Ask the model to guess again"
+    ],
+    "correct": 0,
+    "fact": "Have a fallback for the unknown: unmatched or low-quality cases go to a person. The share that falls through is a useful metric and shows where to improve."
+  },
+  {
+    "id": "usecases_047",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A payment call times out and the workflow retries. What stops a double payment?",
+    "answers": [
+      "A faster timer between the retries",
+      "A bigger model handling the retry",
+      "A unique key for each action",
+      "A prompt telling it not to repeat"
+    ],
+    "correct": 2,
+    "fact": "Give each action a unique key. If a retry arrives with the same key, the system sees it already ran and does not do it twice. In plain words, retrying becomes safe."
+  },
+  {
+    "id": "usecases_048",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An auditor asks why a claim was auto-approved. What answers it?",
+    "answers": [
+      "The model's own later explanation",
+      "The latest version of the prompt",
+      "A screenshot of today's dashboard",
+      "Logged inputs, sources, decision"
+    ],
+    "correct": 3,
+    "fact": "Log the inputs, retrieved sources, model version, output and who approved. A model's explanation written afterwards is not a record of what actually happened."
+  },
+  {
+    "id": "usecases_049",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which job suits real time rather than batch?",
+    "answers": [
+      "Overnight extraction of invoices",
+      "A live chat with a waiting user",
+      "Drafting the monthly board report",
+      "Re-tagging a ten-year-old archive"
+    ],
+    "correct": 1,
+    "fact": "If nobody is waiting, batch is cheaper through discounted processing. If a person is waiting, you need real time and must watch latency."
+  },
+  {
+    "id": "usecases_050",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A pipeline classifies, retrieves, drafts and checks. Quality fell after a prompt edit. Best first move?",
+    "answers": [
+      "Run the evals on each step alone",
+      "Rerun the whole flow and hope",
+      "Swap to the oldest model",
+      "Add another step at the end"
+    ],
+    "correct": 0,
+    "fact": "Step-level evals show which stage got worse, so you fix that stage instead of guessing. Keep prompts versioned so an edit can be undone."
+  },
+  {
+    "id": "usecases_051",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "In a pilot-to-production path, what is the prototype's job?",
+    "answers": [
+      "Prove the finished system is secure",
+      "Serve all customers from launch day",
+      "Show the idea can work on real tasks",
+      "Stand in for a proper eval set"
+    ],
+    "correct": 2,
+    "fact": "A prototype is quick and cheap. Evals on real data, security review, a limited rollout with monitoring and then scale follow; skipping steps is where pilots fail."
+  },
+  {
+    "id": "usecases_052",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A telco is picking its first workflow. Which is the best choice?",
+    "answers": [
+      "Cancelling contracts from chat",
+      "Rare VIP complaint handling",
+      "Diagnosing network faults live",
+      "Triage of bill queries"
+    ],
+    "correct": 3,
+    "fact": "Pick by volume, risk and checkability: frequent bill queries give savings, are easy to check and carry low risk. Rare or one-way tasks make weak first proofs."
+  },
+  {
+    "id": "usecases_053",
+    "category": "usecases",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A pilot should record a baseline, such as minutes per ticket, before it starts.",
+    "answer": true,
+    "fact": "Without a baseline you cannot show what changed. Measure time per task, volume and error rate first, then compare after the pilot against agreed criteria."
+  },
+  {
+    "id": "usecases_054",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A security review begins after a pilot succeeds and delays launch. Lesson?",
+    "answers": [
+      "Skip it while still a pilot",
+      "Start it early, in parallel",
+      "Run it after launch day",
+      "Leave it to the vendor alone"
+    ],
+    "correct": 1,
+    "fact": "Late security review is a classic blocker. Send security documents up front and run the review alongside the business evaluation, so it does not stall launch."
+  },
+  {
+    "id": "usecases_055",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A hospital group's pilot worked well but no team will take it live. What was missing?",
+    "answers": [
+      "A business owner for the outcome",
+      "A larger context window in the model",
+      "A fine-tuned version of the model",
+      "A faster supplier of graphics chips"
+    ],
+    "correct": 0,
+    "fact": "No named owner is a common blocker. Someone in the business must own the result, the budget and the decision on what a person approves."
+  },
+  {
+    "id": "usecases_056",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What should monitoring watch in a retailer's limited rollout?",
+    "answers": [
+      "Logins, screen time and page views",
+      "Rival prices and press coverage",
+      "Quality, cost and handoff rate",
+      "Seat price, discounts and term"
+    ],
+    "correct": 2,
+    "fact": "Track answer quality on sampled cases, cost per task and how often cases go to a person. Rising handoffs or falling quality are early warnings."
+  },
+  {
+    "id": "usecases_057",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which pair of measures fits a document-processing workflow?",
+    "answers": [
+      "Resolution rate and satisfaction",
+      "Cycle time and pull requests merged",
+      "Weekly active users and seats used",
+      "Field accuracy and no-touch rate"
+    ],
+    "correct": 3,
+    "fact": "Measure each use case on its own terms. Documents: field accuracy and the share processed with no human touch. Support: resolution and satisfaction. Codex: cycle time."
+  },
+  {
+    "id": "usecases_058",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A regional bank wants KYC document review. Which shape fits?",
+    "answers": [
+      "A chatbot that opens accounts alone",
+      "Extract, validate, officer approves",
+      "Fine-tuning on past customer files",
+      "Staff pasting files into a chat"
+    ],
+    "correct": 1,
+    "fact": "KYC is extract, validate and send exceptions to an officer, who decides. Customer data may need masking and a residency check, so involve security early."
+  },
+  {
+    "id": "usecases_059",
+    "category": "usecases",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A regional insurer's customers mix Malay and English in one message. What first?",
+    "answers": [
+      "Test on real mixed-language messages",
+      "Translate everything to English first",
+      "Use one formal Malay sample",
+      "Test only the shortest messages"
+    ],
+    "correct": 0,
+    "fact": "Mixing languages in one message is common in ASEAN. Test on real chats per language, and costs may differ because token counts vary by language."
+  },
+  {
+    "id": "usecases_060",
+    "category": "usecases",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Pilot users liked the tool but weekly use fell after month two. What first?",
+    "answers": [
+      "Buy more seats to widen the reach",
+      "Swap to a newer, bigger model now",
+      "Find which workflows have stalled",
+      "End the pilot and move on early"
+    ],
+    "correct": 2,
+    "fact": "Falling use is a warning for renewal. Ask which workflows stalled, then fix with champions, role-specific training and shared prompts or Skills."
+  }
+]

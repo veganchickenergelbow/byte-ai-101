@@ -1,0 +1,545 @@
+{
+  "_comment": "Byte's home. Coordinates are native room pixels (270 x 380): floor items anchor at their bottom centre, ceiling and wall items at their top centre (wall items sit behind Byte and floor furniture). Sprites (w x h, native) are drawn at 2x. perch = where Byte sits relative to the anchor. Levels go up with total right answers. Items with \"area\": \"balcony\" live on the balcony (its own 270 x 380 scene); levels, areas and items marked \"art\" wait for that art (data/art.json).",
+  "levels": [
+    {
+      "name": "Cosy Corner",
+      "at": 0
+    },
+    {
+      "name": "Snug Room",
+      "at": 25
+    },
+    {
+      "name": "Proper Home",
+      "at": 60
+    },
+    {
+      "name": "Happy Home",
+      "at": 110
+    },
+    {
+      "name": "Cat Café",
+      "at": 170
+    },
+    {
+      "name": "Balcony Garden",
+      "at": 240,
+      "art": "balcony"
+    },
+    {
+      "name": "Garden Café",
+      "at": 320,
+      "art": "balcony"
+    },
+    {
+      "name": "Dream Home",
+      "at": 400,
+      "art": "balcony"
+    }
+  ],
+  "windows": [
+    {
+      "id": "town",
+      "name": "Hilltop town",
+      "level": 1
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset city",
+      "level": 3
+    },
+    {
+      "id": "sky",
+      "name": "Sky islands",
+      "level": 5
+    }
+  ],
+  "starter": [
+    "cushion_bed"
+  ],
+  "items": [
+    {
+      "id": "cushion_bed",
+      "name": "Cushion bed",
+      "line": "Fluffed to a standard Byte has never approved of out loud.",
+      "price": 0,
+      "level": 1,
+      "layer": "floor",
+      "w": 45,
+      "h": 30,
+      "home": {
+        "x": 214,
+        "y": 372
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -10,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "rug",
+      "name": "Paw-print rug",
+      "line": "Ties the whole room together. Mostly with grey fur.",
+      "price": 30,
+      "level": 1,
+      "layer": "rug",
+      "w": 58,
+      "h": 34,
+      "home": {
+        "x": 135,
+        "y": 352
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -14,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "yarn_basket",
+      "name": "Yarn basket",
+      "line": "Contains yarn. Contained yarn is a rumour.",
+      "price": 40,
+      "level": 1,
+      "layer": "floor",
+      "w": 42,
+      "h": 33,
+      "home": {
+        "x": 92,
+        "y": 376
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "scratch_post",
+      "name": "Scratching post",
+      "line": "Sacrificed so the sofa does not have to be.",
+      "price": 50,
+      "level": 1,
+      "layer": "floor",
+      "w": 32,
+      "h": 38,
+      "home": {
+        "x": 112,
+        "y": 290
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 6,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "monstera",
+      "name": "Monstera",
+      "line": "A very large leaf with big plans.",
+      "price": 60,
+      "level": 2,
+      "layer": "floor",
+      "w": 46,
+      "h": 48,
+      "home": {
+        "x": 26,
+        "y": 372
+      }
+    },
+    {
+      "id": "hanging_plant",
+      "name": "Hanging plant",
+      "line": "Dangles with confidence. Byte is watching its every dangle.",
+      "price": 70,
+      "level": 2,
+      "layer": "ceiling",
+      "w": 34,
+      "h": 62,
+      "home": {
+        "x": 246,
+        "y": 26
+      }
+    },
+    {
+      "id": "table_chairs",
+      "name": "Table and chairs",
+      "line": "For guests. Byte counts as a guest, and as the table.",
+      "price": 100,
+      "level": 2,
+      "layer": "floor",
+      "w": 63,
+      "h": 33,
+      "home": {
+        "x": 160,
+        "y": 300
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "fairy_lights",
+      "name": "Fairy lights",
+      "line": "Tiny stars for the ceiling. Twinkling included.",
+      "price": 90,
+      "level": 3,
+      "layer": "ceiling",
+      "w": 59,
+      "h": 25,
+      "home": {
+        "x": 135,
+        "y": 4
+      }
+    },
+    {
+      "id": "bookshelf",
+      "name": "Bookshelf",
+      "line": "Alphabetised by you. Rearranged by gravity and paws.",
+      "price": 150,
+      "level": 3,
+      "layer": "floor",
+      "w": 48,
+      "h": 47,
+      "home": {
+        "x": 50,
+        "y": 262
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -88,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "cat_tree",
+      "name": "Cat tree",
+      "line": "Three floors, no lift, one very smug penthouse.",
+      "price": 200,
+      "level": 4,
+      "layer": "floor",
+      "w": 42,
+      "h": 50,
+      "home": {
+        "x": 228,
+        "y": 262
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -70,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "coffee_counter",
+      "name": "Coffee counter",
+      "line": "Serves coffee, tea and very small cappuccinos.",
+      "price": 220,
+      "level": 4,
+      "layer": "floor",
+      "w": 49,
+      "h": 49,
+      "home": {
+        "x": 140,
+        "y": 262
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "floor_lamp",
+      "name": "Floor lamp",
+      "line": "A warm little sun for rainy evenings.",
+      "price": 80,
+      "level": 3,
+      "layer": "floor",
+      "w": 26,
+      "h": 60,
+      "home": {
+        "x": 250,
+        "y": 300
+      }
+    },
+    {
+      "id": "fig_plant",
+      "name": "Fiddle-leaf fig",
+      "line": "Big leaves, bigger opinions about sunlight.",
+      "price": 90,
+      "level": 3,
+      "layer": "floor",
+      "w": 38,
+      "h": 56,
+      "home": {
+        "x": 246,
+        "y": 374
+      }
+    },
+    {
+      "id": "tea_table",
+      "name": "Tea table",
+      "line": "Two cups, one teapot, zero cats allowed (Byte ignores this daily).",
+      "price": 110,
+      "level": 3,
+      "layer": "floor",
+      "w": 60,
+      "h": 37,
+      "home": {
+        "x": 150,
+        "y": 368
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "sofa",
+      "name": "Cosy sofa",
+      "line": "Two seats for people, the whole thing for Byte.",
+      "price": 180,
+      "level": 4,
+      "layer": "floor",
+      "w": 60,
+      "h": 35,
+      "home": {
+        "x": 110,
+        "y": 330
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -26,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "record_player",
+      "name": "Record player",
+      "line": "Plays soft jazz. Byte pretends not to dance.",
+      "price": 190,
+      "level": 4,
+      "layer": "floor",
+      "w": 52,
+      "h": 60,
+      "home": {
+        "x": 92,
+        "y": 268
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "fish_tank",
+      "name": "Fish tank",
+      "line": "The best TV in the house, according to Byte.",
+      "price": 260,
+      "level": 5,
+      "layer": "floor",
+      "w": 52,
+      "h": 60,
+      "home": {
+        "x": 196,
+        "y": 292
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "window_seat",
+      "name": "Window seat",
+      "line": "A sunny bench for watching birds, and napping instead.",
+      "price": 240,
+      "level": 5,
+      "layer": "floor",
+      "w": 60,
+      "h": 38,
+      "home": {
+        "x": 135,
+        "y": 262
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -36,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "cat_clock",
+      "name": "Cat clock",
+      "line": "Its tail swings every second. Its eyes judge every minute.",
+      "price": 150,
+      "level": 5,
+      "layer": "wall",
+      "w": 30,
+      "h": 60,
+      "home": {
+        "x": 236,
+        "y": 40
+      }
+    },
+    {
+      "id": "planter_box",
+      "name": "Planter box",
+      "line": "Herbs for cooking, catnip for \"cooking\".",
+      "price": 90,
+      "level": 6,
+      "layer": "floor",
+      "w": 60,
+      "h": 37,
+      "area": "balcony",
+      "home": {
+        "x": 72,
+        "y": 270
+      }
+    },
+    {
+      "id": "flower_pots",
+      "name": "Flower pots",
+      "line": "A little crowd of blooms, all facing the sun.",
+      "price": 100,
+      "level": 6,
+      "layer": "floor",
+      "w": 58,
+      "h": 46,
+      "area": "balcony",
+      "home": {
+        "x": 122,
+        "y": 378
+      }
+    },
+    {
+      "id": "lanterns",
+      "name": "Paper lanterns",
+      "line": "Glow softly at dusk, like a tiny night market.",
+      "price": 140,
+      "level": 6,
+      "layer": "ceiling",
+      "w": 60,
+      "h": 43,
+      "area": "balcony",
+      "home": {
+        "x": 135,
+        "y": 4
+      }
+    },
+    {
+      "id": "bird_feeder",
+      "name": "Bird feeder",
+      "line": "Feeds the birds. Entertains Byte for hours.",
+      "price": 160,
+      "level": 7,
+      "layer": "floor",
+      "w": 37,
+      "h": 60,
+      "area": "balcony",
+      "home": {
+        "x": 214,
+        "y": 270
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    },
+    {
+      "id": "garden_bench",
+      "name": "Garden bench",
+      "line": "Sun-warmed wood, perfect for a long stretch.",
+      "price": 180,
+      "level": 7,
+      "layer": "floor",
+      "w": 60,
+      "h": 37,
+      "area": "balcony",
+      "home": {
+        "x": 135,
+        "y": 320
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -30,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "wind_chime",
+      "name": "Wind chime",
+      "line": "Tinkles in the breeze. Ears swivel every time.",
+      "price": 120,
+      "level": 7,
+      "layer": "ceiling",
+      "w": 21,
+      "h": 60,
+      "area": "balcony",
+      "home": {
+        "x": 238,
+        "y": 8
+      }
+    },
+    {
+      "id": "swing_chair",
+      "name": "Swing chair",
+      "line": "A hanging egg chair that sways when someone naps in it.",
+      "price": 260,
+      "level": 8,
+      "layer": "floor",
+      "w": 42,
+      "h": 60,
+      "area": "balcony",
+      "home": {
+        "x": 44,
+        "y": 376
+      },
+      "perch": {
+        "dx": 0,
+        "dy": -48,
+        "pose": "sleep"
+      }
+    },
+    {
+      "id": "mini_fountain",
+      "name": "Little fountain",
+      "line": "Burbles all day. Byte drinks from it, then just stares.",
+      "price": 280,
+      "level": 8,
+      "layer": "floor",
+      "w": 58,
+      "h": 50,
+      "area": "balcony",
+      "home": {
+        "x": 204,
+        "y": 376
+      },
+      "perch": {
+        "dx": 0,
+        "dy": 8,
+        "pose": "idle"
+      }
+    }
+  ],
+  "areas": [
+    {
+      "id": "room",
+      "name": "Living room"
+    },
+    {
+      "id": "balcony",
+      "name": "Balcony",
+      "level": 6,
+      "art": "balcony"
+    }
+  ]
+}

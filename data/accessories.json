@@ -1,0 +1,40 @@
+{
+  "_comment": "Head accessories Byte unlocks with friendship hearts. Sprites live in assets/img/accessories/<id>.png (data/art.json accessories); the emoji is the fallback. w = width in sprite pixels; the bottom centre sits on Byte's head anchor (data/cat_anchors.json).",
+  "items": [
+    {
+      "id": "bow",
+      "name": "Red bow",
+      "hearts": 1,
+      "emoji": "🎀",
+      "w": 12
+    },
+    {
+      "id": "flower",
+      "name": "Flower crown",
+      "hearts": 2,
+      "emoji": "🌸",
+      "w": 14
+    },
+    {
+      "id": "grad_cap",
+      "name": "Graduation cap",
+      "hearts": 3,
+      "emoji": "🎓",
+      "w": 14
+    },
+    {
+      "id": "top_hat",
+      "name": "Tiny top hat",
+      "hearts": 4,
+      "emoji": "🎩",
+      "w": 12
+    },
+    {
+      "id": "crown",
+      "name": "Golden crown",
+      "hearts": 5,
+      "emoji": "👑",
+      "w": 13
+    }
+  ]
+}

@@ -1,0 +1,950 @@
+[
+  {
+    "id": "rag_001",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is the idea of RAG?",
+    "answers": [
+      "Retrain the model on each new document",
+      "Find relevant text first, then answer",
+      "Make the model's answers shorter",
+      "Replace the model with a search box"
+    ],
+    "correct": 1,
+    "fact": "Retrieval-augmented generation: find the right passages first, put them in front of the model with the question, then let it answer from them."
+  },
+  {
+    "id": "rag_002",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "In RAG, what is a chunk?",
+    "answers": [
+      "A summary of the whole library",
+      "A saved copy of the user's question",
+      "A block of code that runs the search",
+      "A small passage cut from a document"
+    ],
+    "correct": 3,
+    "fact": "Documents are split into passages so the search can return just the relevant bit, not an entire 80-page file."
+  },
+  {
+    "id": "rag_003",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is an embedding?",
+    "answers": [
+      "A list of numbers capturing meaning",
+      "A short summary of the document",
+      "A password for private documents",
+      "A label that names a document's topic"
+    ],
+    "correct": 0,
+    "fact": "Passages with similar meaning get similar numbers, so 'holiday days' lands close to 'annual leave' even though the words differ."
+  },
+  {
+    "id": "rag_004",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks: is a vector database the same as an embedding model?",
+    "answers": [
+      "Yes, both are names for the same tool",
+      "No: one makes answers, one makes vectors",
+      "No: one makes vectors, one stores them",
+      "Yes, it creates vectors as it stores"
+    ],
+    "correct": 2,
+    "fact": "The embedding model turns text into numbers. The vector database just stores them and finds the nearest matches fast."
+  },
+  {
+    "id": "rag_005",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks why documents and questions need the same embedding model. Best answer?",
+    "answers": [
+      "It halves the storage needed",
+      "The LLM rejects any mismatched questions",
+      "Vectors from mixed models don't line up",
+      "It keeps the index in date order"
+    ],
+    "correct": 2,
+    "fact": "Each model builds its own map of meaning. Comparing a vector from one map with one from another is like using a London street guide to find your way round Singapore."
+  },
+  {
+    "id": "rag_006",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A RAG answer can include a citation to the passage it used.",
+    "answer": true,
+    "fact": "Because the app knows which passage it handed to the model, it can show the source. That makes answers checkable, which customers love."
+  },
+  {
+    "id": "rag_007",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which question suits RAG best?",
+    "answers": [
+      "What is our current leave policy?",
+      "Rewrite this email politely",
+      "Translate this paragraph into Malay",
+      "Summarise the text I just pasted"
+    ],
+    "correct": 0,
+    "fact": "Use RAG when knowledge is missing: private, recent, or needing a citation. Writing, rewriting and summarising text already in the prompt need no retrieval."
+  },
+  {
+    "id": "rag_008",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does 'top-k' mean in retrieval?",
+    "answers": [
+      "The k newest chunks added to the index",
+      "A limit of k questions per user",
+      "The k largest documents stored",
+      "The k best-matching chunks returned"
+    ],
+    "correct": 3,
+    "fact": "The search hands back the closest few chunks, say five. Too few can miss the answer, too many add cost and noise, so test k on real questions."
+  },
+  {
+    "id": "rag_009",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "In setup, what comes before embedding?",
+    "answers": [
+      "Re-ranking the final set of results",
+      "Splitting documents into chunks",
+      "Building the final prompt",
+      "Writing the model's answers"
+    ],
+    "correct": 1,
+    "fact": "Setup runs once, offline: chunk the documents, embed each chunk, then store the text and its vector together with an index for fast search."
+  },
+  {
+    "id": "rag_010",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does HNSW do, at a high level?",
+    "answers": [
+      "Splits documents into passages",
+      "Finds near matches fast, via a graph",
+      "Turns each passage into lists of numbers",
+      "Checks who may read each chunk"
+    ],
+    "correct": 1,
+    "fact": "Think motorways, then main roads, then side streets: a layered graph lets the search hop close to the target fast, instead of comparing against every single vector."
+  },
+  {
+    "id": "rag_011",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer's RAG bot gives wrong answers. Where do you look first?",
+    "answers": [
+      "Whether the model needs more training",
+      "Whether the answers are too polite",
+      "Whether the vocabulary is large enough",
+      "If the right passage was retrieved"
+    ],
+    "correct": 3,
+    "fact": "Most failures are in retrieval, not the LLM: poor chunking, or the right passage not making it into the top few. If the model never saw the answer, it cannot use it."
+  },
+  {
+    "id": "rag_012",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Exact product codes keep getting missed. What helps?",
+    "answers": [
+      "Hybrid search: keyword plus vector",
+      "A larger vector dimension on its own",
+      "A longer, stricter system prompt",
+      "A higher temperature setting"
+    ],
+    "correct": 0,
+    "fact": "Embeddings capture meaning but can fumble exact codes and names, while keyword search nails those. Combining both covers meaning and exactness."
+  },
+  {
+    "id": "rag_013",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does a reranker do?",
+    "answers": [
+      "Rewrites the question before search",
+      "Splits documents into smaller chunks",
+      "Reorders found chunks by relevance",
+      "Deletes chunks that are out of date"
+    ],
+    "correct": 2,
+    "fact": "Search first fetches a generous batch, then a more careful model rescores them so the best passages end up at the top of the prompt."
+  },
+  {
+    "id": "rag_014",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An engineer can see HR salary chunks via the bot. What was missing?",
+    "answers": [
+      "A larger set of retrieved chunks",
+      "A stricter rule in the system prompt",
+      "Access checks on each retrieved chunk",
+      "More frequent re-indexing of the data"
+    ],
+    "correct": 2,
+    "fact": "Retrieval must respect who may see what, filtering results by the user's permissions before anything reaches the model. A polite prompt rule is no substitute."
+  },
+  {
+    "id": "rag_015",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How is agentic search different from classic RAG?",
+    "answers": [
+      "The model loops: search, read, refine",
+      "It searches once, then answers at once",
+      "It swaps the model for a search box",
+      "It only works on spreadsheets"
+    ],
+    "correct": 0,
+    "fact": "Classic RAG retrieves once. In agentic search the model plans, calls a tool like keyword search, reads the result and tries again, even following a 'see Appendix B'. It is slower but precise."
+  },
+  {
+    "id": "rag_016",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How do you answer 'Q3 APAC revenue' from a database table?",
+    "answers": [
+      "Embed the sheet and search chunks",
+      "Fine-tune a model on past reports",
+      "Ask for more reasoning effort",
+      "Text-to-SQL on the database"
+    ],
+    "correct": 3,
+    "fact": "Embeddings are about meaning, not exact figures in tables. Let the model write the SQL query and let the database do the sums and filters."
+  },
+  {
+    "id": "rag_017",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "The policy changed last month but the bot quotes the old one. Cause?",
+    "answers": [
+      "The embedding model forgot the update",
+      "The index was never refreshed",
+      "The chunks were cut too small",
+      "The temperature was set too high"
+    ],
+    "correct": 1,
+    "fact": "RAG is only as current as its index. Updating a document means re-indexing it, so you need a refresh process and an eval set that would catch stale answers."
+  },
+  {
+    "id": "rag_018",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why worry about a third-party embedding vendor?",
+    "answers": [
+      "Embeddings cost more than answers",
+      "Vectors are hard to encrypt at rest",
+      "It sees the whole document set",
+      "It adds minutes to question time"
+    ],
+    "correct": 2,
+    "fact": "The LLM sees only the question and a few chunks, but the embedding step sees every document. That means another security and residency review."
+  },
+  {
+    "id": "rag_019",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Must the embedding model and the LLM come from one vendor?",
+    "answers": [
+      "Yes, or the vectors will clash",
+      "Yes, for permissions to work",
+      "No, but they must share a vocabulary",
+      "No: just plain text is passed on"
+    ],
+    "correct": 3,
+    "fact": "The retrieval embeddings are only used to find text, and then plain text goes to the LLM. The LLM's own internal lookup table is separate, so any embedding model works with any LLM."
+  },
+  {
+    "id": "rag_020",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "pgvector, a Postgres add-on, includes its own embedding model.",
+    "answer": false,
+    "fact": "pgvector adds vector storage and search to Postgres. You call an embedding model separately and store what it returns."
+  },
+  {
+    "id": "rag_021",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Who builds the final prompt from the chunks and question?",
+    "answers": [
+      "The application code around the model",
+      "The vector database that stores chunks",
+      "The embedding model used for search",
+      "The user, who pastes the chunks in"
+    ],
+    "correct": 0,
+    "fact": "Your own code, or a framework, stitches instructions, retrieved text and the original question into one prompt. It adds context; it does not rewrite the question."
+  },
+  {
+    "id": "rag_022",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Approximate vector search is faster than exact search. What is the catch?",
+    "answers": [
+      "It can't handle scanned documents",
+      "It can't show citations",
+      "Now and then it misses the best match",
+      "It can't update when files change"
+    ],
+    "correct": 2,
+    "fact": "Approximate search skips some comparisons to stay fast, so it can occasionally miss the true closest passage. Customers should test recall on their own real questions."
+  },
+  {
+    "id": "rag_023",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does a RAG answer usually cost more than a plain chat answer?",
+    "answers": [
+      "Retrieved text adds input tokens",
+      "The model retrains on each query",
+      "Search results bill at output rates",
+      "Citations are charged separately"
+    ],
+    "correct": 0,
+    "fact": "The retrieved passages are pasted into the prompt, so you pay for those extra input tokens on every question. Fewer, better chunks keep the bill down."
+  },
+  {
+    "id": "rag_024",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer filters by department and gets too few results. A known cause?",
+    "answers": [
+      "Some tools filter after finding matches",
+      "Vectors can't hold department names",
+      "The model ignored the filter rule",
+      "The embeddings were too long"
+    ],
+    "correct": 0,
+    "fact": "Some vector databases pick the nearest candidates first, then filter, so a narrow filter leaves few. It varies by product, so ask the engineer which way theirs works."
+  },
+  {
+    "id": "rag_025",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A manager says 'RAG makes hallucination impossible'. Reply?",
+    "answers": [
+      "Yes, provided the index is large enough",
+      "Yes, because answers must be cited",
+      "No, only fine-tuning can do that",
+      "No, the model can still misread them"
+    ],
+    "correct": 3,
+    "fact": "Grounding lowers the risk but does not remove it: the right passage may be missed, or the model may ignore or misread it. Hence citations, grounding checks and evals."
+  },
+  {
+    "id": "rag_026",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Retrieving more chunks does not guarantee better answers.",
+    "answer": true,
+    "fact": "Extra chunks add cost and noise, and the model can get distracted by passages that are only loosely relevant. Tune how many to fetch, and test it."
+  },
+  {
+    "id": "rag_027",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Agentic search can work without any vector index at all.",
+    "answer": true,
+    "fact": "The model can drive plain tools like keyword search or SQL. There is no index to keep fresh, but it is slower and uses more tokens."
+  },
+  {
+    "id": "rag_028",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A 30-page contract fits in the window. Do you need RAG?",
+    "answers": [
+      "Yes: any long file needs RAG",
+      "Yes: only vectors can read PDFs",
+      "No: chunk it by hand first",
+      "Not necessarily: just include it"
+    ],
+    "correct": 3,
+    "fact": "Retrieve when knowledge is missing or too big to fit. When one document fits, pasting it in is simpler, though keep an eye on cost if it repeats."
+  },
+  {
+    "id": "rag_029",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What goes wrong if chunks are tiny?",
+    "answers": [
+      "They lose the context around them",
+      "They cost more to store per word",
+      "They can't be embedded properly",
+      "They match almost every question"
+    ],
+    "correct": 0,
+    "fact": "A sentence cut from its paragraph can lose who or what it refers to. Chunks need enough surrounding text to make sense on their own."
+  },
+  {
+    "id": "rag_030",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "If a document changes, the model must be retrained to know it.",
+    "answer": false,
+    "fact": "With RAG you update the document and the index. The model just reads what is retrieved, so no retraining is involved."
+  },
+  {
+    "id": "rag_031",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What goes wrong if chunks are whole chapters?",
+    "answers": [
+      "Chunks can't be cited at all",
+      "The embedding becomes shorter",
+      "Search blurs and prompts bloat",
+      "Permissions stop working"
+    ],
+    "correct": 2,
+    "fact": "One vector for a whole chapter averages many topics, so matches get vague, and each hit adds a lot of text to the prompt."
+  },
+  {
+    "id": "rag_032",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does contextual retrieval add to each chunk before embedding?",
+    "answers": [
+      "A copy of the user's question",
+      "A list of every synonym",
+      "The model's confidence score",
+      "A short note on where it fits"
+    ],
+    "correct": 3,
+    "fact": "A line such as 'from the leave policy, carry-over section' makes an isolated chunk easier to match and to understand."
+  },
+  {
+    "id": "rag_033",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer plans to swap embedding models next year. What's the cost?",
+    "answers": [
+      "Re-embedding the whole document set",
+      "Retraining the language model",
+      "Nothing, vectors are interchangeable",
+      "Rewriting every prompt by hand"
+    ],
+    "correct": 0,
+    "fact": "Vectors from different embedding models don't mix, so a switch means re-embedding everything. That is a lock-in worth pricing in early."
+  },
+  {
+    "id": "rag_034",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer says long context will replace RAG. Best reply?",
+    "answers": [
+      "Yes, retrieval is now obsolete",
+      "Mostly yes, once windows are huge",
+      "Not always: cost and permissions",
+      "Yes, since long prompts are now free"
+    ],
+    "correct": 2,
+    "fact": "Big windows help when a document set fits. Resending everything is slow and costly, and it can't respect per-user permissions the way retrieval can."
+  },
+  {
+    "id": "rag_035",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Answers should only use current policies. What helps retrieval?",
+    "answers": [
+      "Using a longer embedding vector",
+      "Raising the temperature setting",
+      "Asking the model to check dates",
+      "Filtering by date and source"
+    ],
+    "correct": 3,
+    "fact": "Metadata such as date, owner and document type lets retrieval skip outdated or off-topic chunks before the model ever sees them."
+  },
+  {
+    "id": "rag_036",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A question links suppliers shared by three top customers. Which approach?",
+    "answers": [
+      "A smaller chunk size and overlap",
+      "A knowledge graph (GraphRAG)",
+      "A lower temperature, more retries",
+      "A longer system prompt with names"
+    ],
+    "correct": 1,
+    "fact": "Questions about relationships across documents are awkward for plain similarity search. A graph of entities and links can answer them, at the cost of building and maintaining it."
+  },
+  {
+    "id": "rag_037",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A key fact sits mid-prompt and gets missed. A likely reason?",
+    "answers": [
+      "Middle tokens are billed at less",
+      "The cache deletes the middle first",
+      "Models use long input unevenly",
+      "Models read only the last line"
+    ],
+    "correct": 2,
+    "fact": "Long inputs can be used unevenly, so details buried in the middle sometimes get less weight. Retrieving a few relevant passages tends to help."
+  },
+  {
+    "id": "rag_038",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "How can a reranker cut RAG cost without losing accuracy?",
+    "answers": [
+      "Skip embedding the questions",
+      "Use a bigger chunk for every hit",
+      "Pass on only the top few",
+      "Remove citations from answers"
+    ],
+    "correct": 2,
+    "fact": "Retrieve widely, rerank, then pass only the strongest passages to the model. That means fewer input tokens and often less noise."
+  },
+  {
+    "id": "rag_039",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which analogy fits RAG best?",
+    "answers": [
+      "An open-book exam",
+      "A memorised textbook",
+      "A pub quiz team",
+      "A spell checker"
+    ],
+    "correct": 0,
+    "fact": "RAG lets the model look things up in your documents before it answers, like sitting an exam with the book open rather than relying on memory."
+  },
+  {
+    "id": "rag_040",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "The bot guesses on a policy staff know exists, but handles others well. Likely cause?",
+    "answers": [
+      "The embedding dimension was set too low",
+      "The passage is missing from the index",
+      "The reranker is set too strict",
+      "The chunks are too large"
+    ],
+    "correct": 1,
+    "fact": "If a document never reached the index, retrieval cannot find it. The model then guesses or says nothing, so check coverage before anything else."
+  },
+  {
+    "id": "rag_041",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Answers cite the right document but the wrong section. Where do you look?",
+    "answers": [
+      "The temperature setting of the model",
+      "The browser cache",
+      "Ranking and chunk boundaries",
+      "The system prompt length"
+    ],
+    "correct": 2,
+    "fact": "Right file, wrong section points to retrieval: how chunks were cut and how they were ranked. The model can only answer from what it is handed."
+  },
+  {
+    "id": "rag_042",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A prompt says \"never reveal board papers\", yet they leak. Better fix?",
+    "answers": [
+      "Make the prompt rule longer and bolder",
+      "Move the papers to a bigger index",
+      "Raise the reasoning effort",
+      "Stop retrieving them for that user"
+    ],
+    "correct": 3,
+    "fact": "Once text is in the prompt, the model may repeat it. Permission checks belong in retrieval, so restricted passages never reach the model for that user."
+  },
+  {
+    "id": "rag_043",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "The retrieved text is right but the answer contradicts it. Best next step?",
+    "answers": [
+      "Tighten the prompt and test wording",
+      "Re-embed every document",
+      "Add more chunks to top-k",
+      "Move to a much bigger vector database"
+    ],
+    "correct": 0,
+    "fact": "Correct passage plus wrong answer is a generation problem. Fix the instructions, such as \"answer only from the text\", and rerun the same test questions."
+  },
+  {
+    "id": "rag_044",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does a RAG bot struggle to add up every refund in March?",
+    "answers": [
+      "Embeddings cannot hold numbers precisely",
+      "It sees a few passages, not every row",
+      "Prompts ban numbers",
+      "Chunks drop all decimals"
+    ],
+    "correct": 1,
+    "fact": "Retrieval returns a handful of passages, so totals across many records need a database query or analytics tool, not search over text."
+  },
+  {
+    "id": "rag_045",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Policies change weekly. How should the index be refreshed?",
+    "answers": [
+      "Once a year",
+      "At each new model release",
+      "In step with document changes",
+      "Only when the model is retrained"
+    ],
+    "correct": 2,
+    "fact": "The index is a copy of your documents. Keep it synced with the source, or the bot will quote the old version with full confidence."
+  },
+  {
+    "id": "rag_046",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer wants RAG over everything they own. Where do you start?",
+    "answers": [
+      "Every file, all at once",
+      "The oldest archive first",
+      "One high-value, well-kept set",
+      "Whatever is easiest to export"
+    ],
+    "correct": 2,
+    "fact": "Start with one set people ask about often and that has a clear owner. Quality is easier to judge on a small set, and you can widen it later."
+  },
+  {
+    "id": "rag_047",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why do chunks often overlap a little at their edges?",
+    "answers": [
+      "So a split idea is not lost",
+      "To make the index smaller",
+      "To let two models vote",
+      "To avoid re-embedding later"
+    ],
+    "correct": 0,
+    "fact": "A cut can land mid-thought. A small overlap means the sentence on each side of the cut still appears whole in at least one chunk."
+  },
+  {
+    "id": "rag_048",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A pricing table in a PDF is chunked as one jumbled line. What results?",
+    "answers": [
+      "The table becomes more searchable",
+      "Rows and columns lose meaning",
+      "Nothing changes; text is text",
+      "The PDF is refused by the embedder"
+    ],
+    "correct": 1,
+    "fact": "Tables rely on layout. Flattened into a line, a price can sit next to the wrong product, so tables need careful parsing or a separate structured source."
+  },
+  {
+    "id": "rag_049",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Search over scanned PDFs finds nothing. What is missing?",
+    "answers": [
+      "A bigger embedding model",
+      "A higher top-k",
+      "OCR text extraction first",
+      "A longer context window"
+    ],
+    "correct": 2,
+    "fact": "A scan is a picture of text. Without extraction to real text there is nothing to chunk or embed, so the document is invisible to search."
+  },
+  {
+    "id": "rag_050",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Staff ask in Malay but the policies are in English. What matters most?",
+    "answers": [
+      "A bigger chat window",
+      "Translating each question by hand",
+      "A lower top-k",
+      "A multilingual embedding model"
+    ],
+    "correct": 3,
+    "fact": "Retrieval only works if a question and its passage land near each other. Multilingual embedding models are built to match meaning across languages."
+  },
+  {
+    "id": "rag_051",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "The bot finds English chunks but misses Thai ones. First step?",
+    "answers": [
+      "Test on real Thai questions",
+      "Fine-tune the chat model on Thai",
+      "Translate the index into Thai",
+      "Raise the reasoning effort"
+    ],
+    "correct": 0,
+    "fact": "Measure before changing anything. A small set of real Thai questions shows whether retrieval, the embedding model or the documents are at fault."
+  },
+  {
+    "id": "rag_052",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Six people need answers from 20 policy files this week. Start with?",
+    "answers": [
+      "A fully custom vector database build",
+      "A Project with the files uploaded",
+      "A fine-tuning run",
+      "A knowledge graph"
+    ],
+    "correct": 1,
+    "fact": "For a small group and a small file set, a Project or connector gives grounded answers with no build. Custom RAG can wait until scale or control demands it."
+  },
+  {
+    "id": "rag_053",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What pushes a team past a Project and into custom RAG?",
+    "answers": [
+      "Quick summaries of two short files",
+      "Questions on pasted text",
+      "A customer bot over vast archives",
+      "Sharing prompts with colleagues"
+    ],
+    "correct": 2,
+    "fact": "Custom RAG earns its cost at scale or when you need control, such as app-level permissions, many sources or a bot your own customers use."
+  },
+  {
+    "id": "rag_054",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Best one-line RAG explanation for a COO?",
+    "answers": [
+      "It trains a new model on your own files",
+      "It memorises your whole company",
+      "It replaces your search with chat",
+      "It looks up your files, then answers"
+    ],
+    "correct": 3,
+    "fact": "Say it as lookup then answer: the AI finds the right pages first, so answers stay current and can show their sources."
+  },
+  {
+    "id": "rag_055",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A COO asks what makes a RAG pilot succeed. Best answer?",
+    "answers": [
+      "Clean, current documents with owners",
+      "The newest model release",
+      "The biggest vector database available",
+      "A longer system prompt"
+    ],
+    "correct": 0,
+    "fact": "RAG can only be as good as its sources. Duplicated, stale or unowned documents give poor answers whatever model sits on top."
+  },
+  {
+    "id": "rag_056",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Three versions of one policy sit in the index. Likely effect?",
+    "answers": [
+      "Search gets faster",
+      "Answers mix or cite the wrong version",
+      "The model picks the newest by date",
+      "Duplicates are merged out by the index"
+    ],
+    "correct": 1,
+    "fact": "Retrieval sees similar text and returns whichever scores best. Without clean versioning or date filters, the bot may quote an old one."
+  },
+  {
+    "id": "rag_057",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Pilot results are poor and the files are messy with no owners. Invest first in?",
+    "answers": [
+      "A bigger model for generation",
+      "Switching to a new embedding vendor",
+      "Cleaning and owning the sources",
+      "Adding a reranker"
+    ],
+    "correct": 2,
+    "fact": "Fixing the foundation comes first. Tuning components on top of duplicated, outdated files raises cost without fixing the real cause."
+  },
+  {
+    "id": "rag_058",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Answers miss facts that sit in two separate files. Likely cause?",
+    "answers": [
+      "The model cannot read two files at once",
+      "The chunks were embedded twice",
+      "The index is too fresh",
+      "Top-k returned only one of them"
+    ],
+    "correct": 3,
+    "fact": "If top-k is small, one source can crowd out the other. Raising it a little, or reranking, may help, but test that extra text does not add noise."
+  },
+  {
+    "id": "rag_059",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "How can a user quickly check a RAG answer?",
+    "answers": [
+      "Open the cited passage and compare",
+      "Ask the bot if it is sure",
+      "Rerun it and compare wording",
+      "Check the model version number used"
+    ],
+    "correct": 0,
+    "fact": "Citations make checking cheap. A person reads the source passage and sees whether the answer really follows from it."
+  },
+  {
+    "id": "rag_060",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which metadata helps a bot show only current, allowed text?",
+    "answers": [
+      "File size and font",
+      "Date, source and access group",
+      "Word count only",
+      "Upload time and filename length"
+    ],
+    "correct": 1,
+    "fact": "Dates let you drop outdated text, sources let you trace answers, and access groups let retrieval filter passages by who is asking."
+  },
+  {
+    "id": "rag_061",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A RAG bot can only be as good as the documents it searches.",
+    "answer": true,
+    "fact": "Retrieval can only hand over what exists. Missing, outdated or messy documents cap answer quality, which is why data quality is the foundation."
+  },
+  {
+    "id": "rag_062",
+    "category": "rag",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Pasting a PDF into chat versus RAG: what is the key difference?",
+    "answers": [
+      "RAG reads PDFs more accurately",
+      "Pasting is always blocked for long files",
+      "RAG fetches only the relevant parts",
+      "Pasting trains the model on it"
+    ],
+    "correct": 2,
+    "fact": "Pasting puts the whole document in the prompt. RAG searches a larger collection and sends only the best passages, which scales to thousands of files."
+  },
+  {
+    "id": "rag_063",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "The bot is right on policies but wrong on price lists. Check first?",
+    "answers": [
+      "Whether it was trained on policies only",
+      "Whether prices are newer",
+      "Whether chunks are too small for prose",
+      "How the price tables were parsed"
+    ],
+    "correct": 3,
+    "fact": "Prose chunks well and tables often do not. A split in results by document type points at how that type was extracted and chunked."
+  },
+  {
+    "id": "rag_064",
+    "category": "rag",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "The right chunk is in the top 20 but not the top 5. Best fix?",
+    "answers": [
+      "Add a reranker to promote it",
+      "Retrain the chat model",
+      "Shrink the index",
+      "Use long context for everything"
+    ],
+    "correct": 0,
+    "fact": "A reranker reorders a wider candidate list so the best passages reach the top few. That beats sending all 20, which costs more and adds noise."
+  },
+  {
+    "id": "rag_065",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Because embeddings are only numbers, they need no access controls.",
+    "answer": false,
+    "fact": "Vectors come from your documents and sit beside the source text. Treat the vector store like the data it was built from, with the same permissions."
+  },
+  {
+    "id": "rag_066",
+    "category": "rag",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Chunks keep starting mid-sentence. What helps most?",
+    "answers": [
+      "A larger embedding model for chunks",
+      "Split on headings and paragraphs",
+      "A higher top-k",
+      "A lower temperature"
+    ],
+    "correct": 1,
+    "fact": "Cutting at natural boundaries keeps each idea whole, so a chunk reads like a complete passage and matches questions better."
+  }
+]

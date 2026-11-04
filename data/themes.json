@@ -1,0 +1,13 @@
+[
+  { "id": "mix", "name": "AI 101 Mix", "blurb": "A bit of everything", "emoji": "🎲", "color": "#F5B14C", "dark": "#C4811F", "art": true },
+  { "id": "llm", "name": "How LLMs work", "blurb": "Tokens, attention, next word", "emoji": "🧠", "color": "#A99BF5", "dark": "#7768CC" },
+  { "id": "limits", "name": "Limits & fit", "blurb": "Where AI helps, where it doesn't", "emoji": "🚧", "color": "#F2727F", "dark": "#BC4552" },
+  { "id": "tokens", "name": "Tokens & cost", "blurb": "What it costs and why", "emoji": "🪙", "color": "#FF9E6B", "dark": "#CC6F3E" },
+  { "id": "rag", "name": "RAG & embeddings", "blurb": "Look it up, then answer", "emoji": "📚", "color": "#74B7E8", "dark": "#4587B8" },
+  { "id": "improve", "name": "Tuning & evals", "blurb": "Making it better, proving it", "emoji": "🎯", "color": "#5ED8A5", "dark": "#2F9E73" },
+  { "id": "skills", "name": "Skills", "blurb": "Recipe cards for ChatGPT", "emoji": "🧩", "color": "#F08FB8", "dark": "#BE5C87" },
+  { "id": "agents", "name": "Agents & tools", "blurb": "Models that do things", "emoji": "🤖", "color": "#FFD56B", "dark": "#CFA233" },
+  { "id": "trust", "name": "Data & trust", "blurb": "Privacy, residency, safety", "emoji": "🔒", "color": "#5FD0D0", "dark": "#3A9E9E" },
+  { "id": "product", "name": "Products you've sold", "blurb": "Snowflake, end to end", "emoji": "❄️", "color": "#B8E069", "dark": "#86AD3C" },
+  { "id": "usecases", "name": "Use cases & workflows", "blurb": "How real projects get built", "emoji": "🛠️", "color": "#D9B3FF", "dark": "#9C6FD1" }
+]

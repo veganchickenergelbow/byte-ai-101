@@ -1,0 +1,830 @@
+[
+  {
+    "id": "improve_001",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is the 'ladder' for improving a model's results?",
+    "answers": [
+      "Fine-tune first, then prompt, then RAG",
+      "Prompt first, then RAG, then fine-tune",
+      "RAG first, then fine-tune, then prompt",
+      "Fine-tune, then RAG, then prompting"
+    ],
+    "correct": 1,
+    "fact": "Climb only as high as the problem needs. Prompting is cheapest and quickest to change, RAG adds knowledge, and fine-tuning is the heaviest step."
+  },
+  {
+    "id": "improve_002",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which job is fine-tuning best suited to?",
+    "answers": [
+      "Teaching it this week's price list",
+      "Letting staff see only their files",
+      "Adding citations to every claim",
+      "A consistent house style or format"
+    ],
+    "correct": 3,
+    "fact": "Fine-tuning shifts the weights towards a habit: a tone, a format, or a specialist classification. It is not the tool for facts that keep changing."
+  },
+  {
+    "id": "improve_003",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer wants to fine-tune on all their documents. What do they usually need?",
+    "answers": [
+      "RAG, to answer from their documents",
+      "A bigger context window alone",
+      "More GPUs for faster training",
+      "A fine-tune on a larger document set"
+    ],
+    "correct": 0,
+    "fact": "RAG gives the model knowledge, fine-tuning gives it habits. It is an open-book exam versus years of practice. Usually the goal is answering from documents, so start with RAG and a small eval set."
+  },
+  {
+    "id": "improve_004",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks, 'What is an eval?' Best answer?",
+    "answers": [
+      "A cost report for monthly usage",
+      "A summary of customer feedback",
+      "A test set that scores model answers",
+      "A safety certificate from the vendor"
+    ],
+    "correct": 2,
+    "fact": "Collect real inputs with a view of what good looks like, then score the model against them. It lets you compare models fairly and catch problems when something changes."
+  },
+  {
+    "id": "improve_005",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer wants a cheaper model for one narrow task. What does distillation do?",
+    "answers": [
+      "Compresses documents into smaller chunks",
+      "Removes private data from training sets",
+      "Trains a small model to copy a big one",
+      "Merges two models into one bigger model"
+    ],
+    "correct": 2,
+    "fact": "A big model's outputs teach a smaller, cheaper one a narrow task. Handy when you want near-big-model quality at small-model cost and speed."
+  },
+  {
+    "id": "improve_006",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks what a golden set is. Best answer?",
+    "answers": [
+      "Real questions with known good answers",
+      "The best-performing prompts found so far",
+      "A list of approved customers",
+      "The model's highest-rated replies"
+    ],
+    "correct": 0,
+    "fact": "A set of perhaps 50 to 500 real questions with known answers and sources, including tricky ones and questions that should be refused. It is the yardstick for everything else."
+  },
+  {
+    "id": "improve_007",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does 'human in the loop' mean?",
+    "answers": [
+      "A person writes every prompt by hand",
+      "A person retrains the model nightly",
+      "A person replaces the model in a crisis",
+      "A person reviews risky output first"
+    ],
+    "correct": 3,
+    "fact": "For high-stakes outputs, like financial advice or contract changes, someone checks before anything goes out. The model drafts; the person decides."
+  },
+  {
+    "id": "improve_008",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks what a guardrail is. Best answer?",
+    "answers": [
+      "A rule that makes every answer longer",
+      "A check around the model to cut harm",
+      "A faster path for all trusted users",
+      "A cheaper way to store old prompts"
+    ],
+    "correct": 1,
+    "fact": "Guardrails are checkpoints on the way in, during retrieval, on the way out and before actions. No single one is enough, so use layers."
+  },
+  {
+    "id": "improve_009",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is a system prompt?",
+    "answers": [
+      "The user's first question in a chat",
+      "Standing instructions for its role",
+      "A prompt saved for the next user",
+      "A log of every earlier prompt"
+    ],
+    "correct": 1,
+    "fact": "It is the standing brief given before the conversation: the model's role, tone and rules. It is the cheapest lever for steering behaviour."
+  },
+  {
+    "id": "improve_010",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does a groundedness check test?",
+    "answers": [
+      "The answer is short enough",
+      "The reply matches the brand tone",
+      "The answer arrives within a few seconds",
+      "Every claim is backed by the sources"
+    ],
+    "correct": 3,
+    "fact": "It asks whether each statement in the answer can be found in the retrieved passages. Unsupported claims are the telltale sign of a guess."
+  },
+  {
+    "id": "improve_011",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer quotes a leaderboard. What do you steer to?",
+    "answers": [
+      "A test on their own real data",
+      "A bigger leaderboard comparison",
+      "A vendor's marketing slide deck",
+      "A poll of what peers are using"
+    ],
+    "correct": 0,
+    "fact": "Benchmarks move monthly and rarely match a specific business task. A golden set from the customer's own tickets shows how a model does on their work."
+  },
+  {
+    "id": "improve_012",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which evaluation question does recall@k answer?",
+    "answers": [
+      "Did the answer sound polite?",
+      "Was the reply under the token cap?",
+      "Was the right chunk in the top k?",
+      "Did the user click thumbs up?"
+    ],
+    "correct": 2,
+    "fact": "It scores the retrieval step alone: out of the top five chunks, was the one holding the answer there? If not, even the best model cannot save the reply."
+  },
+  {
+    "id": "improve_013",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What should you do before trusting an LLM judge?",
+    "answers": [
+      "Let it grade its own earlier answers",
+      "Give it the cheapest model available",
+      "Compare its grades with human ones",
+      "Turn its temperature up for fairness"
+    ],
+    "correct": 2,
+    "fact": "A judge model with a clear rubric scales well, but test it against people first. Cheap code checks come first, then a judge, then human review on a sample."
+  },
+  {
+    "id": "improve_014",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When should offline evals be rerun?",
+    "answers": [
+      "After any change to prompt or model",
+      "Once, before the first launch",
+      "When a customer happens to complain",
+      "Once a year, at the contract renewal"
+    ],
+    "correct": 0,
+    "fact": "Treat it like a test suite: rerun on every change to the prompt, model, chunking or embeddings, and block the release if scores drop."
+  },
+  {
+    "id": "improve_015",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What makes a pilot more than a science project?",
+    "answers": [
+      "A very large number of test users",
+      "The newest model on every task",
+      "A launch event for the whole firm",
+      "Success criteria agreed up front"
+    ],
+    "correct": 3,
+    "fact": "Define what good looks like before anyone writes a prompt: an owner, a measure, a baseline, a time box, and what happens if it succeeds."
+  },
+  {
+    "id": "improve_016",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Narrow fine-tuning can do what to the model?",
+    "answers": [
+      "Wipe its general knowledge",
+      "Make it worse at other tasks",
+      "Raise its context window limit",
+      "Make its answers much longer"
+    ],
+    "correct": 1,
+    "fact": "Training hard on a narrow set can erode other skills, and bad examples teach bad habits quickly. Compare against the base model with a good prompt before deploying."
+  },
+  {
+    "id": "improve_017",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What matters most in fine-tuning data?",
+    "answers": [
+      "Sheer volume of any text",
+      "Good, consistent example pairs",
+      "Facts that change every week",
+      "Whole documents, unlabelled"
+    ],
+    "correct": 1,
+    "fact": "Examples are inputs paired with ideal outputs. A smaller set of consistent, good ones usually beats a big messy one. Hold some back to test the result."
+  },
+  {
+    "id": "improve_018",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which guardrail belongs at the output stage?",
+    "answers": [
+      "A redaction step on the user's prompt",
+      "A permission filter on search results",
+      "Approval before the refund is issued",
+      "A grounding check on the answer"
+    ],
+    "correct": 3,
+    "fact": "Before an answer goes out you can run moderation, a personal-data leak check, a grounding check and format validation. Each layer catches what the others miss."
+  },
+  {
+    "id": "improve_019",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer says 'make it more accurate'. First step?",
+    "answers": [
+      "Agree what 'good' means and test it",
+      "Switch to the largest model available",
+      "Fine-tune on all their documents",
+      "Add more guardrails everywhere"
+    ],
+    "correct": 0,
+    "fact": "You cannot improve what you have not measured. A small eval set built from real tickets turns 'make it better' into a number you can track."
+  },
+  {
+    "id": "improve_020",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How does a team reduce human review over time?",
+    "answers": [
+      "Remove it once the launch is complete",
+      "Keep it constant for every output",
+      "Ease off as evals show reliability",
+      "Replace it with a longer prompt"
+    ],
+    "correct": 2,
+    "fact": "Start with more review, then reduce it where measured results prove the system reliable. Keep it for the cases where an error is costly."
+  },
+  {
+    "id": "improve_021",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A better base model is released. What about your fine-tune?",
+    "answers": [
+      "Keep it, as tuned models never go stale",
+      "Fine-tune again on the same data",
+      "Re-test, as the tune may not be needed",
+      "Delete the eval set to save time"
+    ],
+    "correct": 2,
+    "fact": "A stronger base model can erase the gain from a fine-tune. Rebaseline against the new model plus a good prompt, and keep the tune only if it still wins."
+  },
+  {
+    "id": "improve_022",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Staff pick the better of two replies each time. Which tuning fits?",
+    "answers": [
+      "Preference fine-tuning",
+      "Retrieval over past replies",
+      "Distilling a smaller model",
+      "A longer system prompt"
+    ],
+    "correct": 0,
+    "fact": "Preference tuning learns from better-versus-worse pairs, which suits 'like this, not that' tone choices. Still try prompting first and compare against it."
+  },
+  {
+    "id": "improve_023",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why keep questions that should be refused in a golden set?",
+    "answers": [
+      "They make the set look bigger",
+      "They test how fast the model replies",
+      "They lower the cost of each run",
+      "Good systems know when to decline"
+    ],
+    "correct": 3,
+    "fact": "A set holding only answerable questions cannot catch a bot that confidently answers things it should refuse. Include tricky and out-of-scope questions too."
+  },
+  {
+    "id": "improve_024",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "What do online evals add to offline tests?",
+    "answers": [
+      "A way to skip the golden set entirely",
+      "Real-use signals, such as thumbs",
+      "A cheaper way to train the model",
+      "Automatic fixes of wrong answers"
+    ],
+    "correct": 1,
+    "fact": "Offline tests protect each release; online signals show what real users do afterwards: thumbs up or down, sampled reviews, A/B tests and drift monitoring."
+  },
+  {
+    "id": "improve_025",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which task suits reinforcement fine-tuning?",
+    "answers": [
+      "Open questions with no right answer",
+      "Tasks with a score you can check",
+      "Tasks that need up-to-date facts",
+      "Writing in a friendlier tone"
+    ],
+    "correct": 1,
+    "fact": "It needs a grader that scores each output, so it fits tasks you can check automatically, such as code that passes tests, maths or classification."
+  },
+  {
+    "id": "improve_026",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is an A/B test for two prompts?",
+    "answers": [
+      "Ask the model which one it prefers",
+      "Score both for spelling and tone",
+      "Compare two versions in real use",
+      "Run both on a single test question"
+    ],
+    "correct": 2,
+    "fact": "Split real traffic between version A and B and compare a chosen measure, such as resolution rate. It shows what works in real use, not just in the lab."
+  },
+  {
+    "id": "improve_027",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is 'drift' in a live AI system?",
+    "answers": [
+      "The model moving to a new data centre",
+      "Answers getting steadily shorter",
+      "Quality slipping as inputs change",
+      "Prompts drifting into other languages"
+    ],
+    "correct": 2,
+    "fact": "Customers, products and policies change, so yesterday's test set can stop matching today's questions. Monitor and refresh the evals."
+  },
+  {
+    "id": "improve_028",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does a moderation layer do?",
+    "answers": [
+      "Picks the cheapest model per task",
+      "Compresses long prompts to save cost",
+      "Screens inputs and outputs",
+      "Rewrites replies to be shorter"
+    ],
+    "correct": 2,
+    "fact": "A moderation layer is a separate check on what goes in and what comes out. It is one of several guardrails, not the only one."
+  },
+  {
+    "id": "improve_029",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why add a moderation layer if the model has safety training?",
+    "answers": [
+      "Safety training fades after launch",
+      "It makes answers more creative",
+      "No single check catches everything",
+      "It replaces the system prompt"
+    ],
+    "correct": 2,
+    "fact": "No single check is perfect. Input checks, safe retrieval, output checks and human approval each catch different problems."
+  },
+  {
+    "id": "improve_030",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How do you keep a golden set useful over time?",
+    "answers": [
+      "Delete questions the model passes",
+      "Add new real failures as they appear",
+      "Replace it with synthetic questions",
+      "Shuffle the answer keys monthly"
+    ],
+    "correct": 1,
+    "fact": "Each real failure is a free test case. Adding them keeps the set matched to how people actually use the system."
+  },
+  {
+    "id": "improve_031",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Prompt A scores 8 of 10 and B scores 7 of 10. What's fair to say?",
+    "answers": [
+      "A wins, so adopt it now",
+      "B wins if it is run again",
+      "Ten cases are too few to tell",
+      "Both are guaranteed identical"
+    ],
+    "correct": 2,
+    "fact": "Small test sets are noisy. Use enough real cases, and look at where the two differ, before declaring a winner."
+  },
+  {
+    "id": "improve_032",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is 'shadow mode' for a new AI assistant?",
+    "answers": [
+      "It hides answers from every user",
+      "It runs outside office hours",
+      "It drafts answers nobody acts on",
+      "It copies a rival's best prompts"
+    ],
+    "correct": 2,
+    "fact": "The assistant produces answers in the background and people compare them with what they actually did. You gain evidence before anyone depends on it."
+  },
+  {
+    "id": "improve_033",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot fails 20% of test cases. What is the best next step?",
+    "answers": [
+      "Switch to the biggest model",
+      "Add more rules to the prompt",
+      "Group failures into patterns",
+      "Retrain on the whole test set"
+    ],
+    "correct": 2,
+    "fact": "Reading the failures usually shows two or three causes, such as missing documents or unclear instructions. Fix the biggest cause first and retest."
+  },
+  {
+    "id": "improve_034",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An LLM judge keeps preferring longer answers. What is this?",
+    "answers": [
+      "A sign the longer answers are better",
+      "A bias to check against people",
+      "A fault in the search index",
+      "A temperature setting error"
+    ],
+    "correct": 1,
+    "fact": "Judges can favour length or style. Compare their grades with human ones on a sample, and adjust the rubric before relying on them."
+  },
+  {
+    "id": "improve_035",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why keep prompts under version control?",
+    "answers": [
+      "So they cost less to run each time",
+      "So the model remembers them for good",
+      "So any user can edit them live",
+      "So changes can be tested or undone"
+    ],
+    "correct": 3,
+    "fact": "A prompt is part of the product. Versioning shows what changed when results moved and lets you roll back safely."
+  },
+  {
+    "id": "improve_036",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Offline scores are high but live thumbs-down is rising. Likely cause?",
+    "answers": [
+      "The thumbs buttons are misreporting",
+      "The model became more creative",
+      "Embeddings have run out of space",
+      "Real questions have moved on"
+    ],
+    "correct": 3,
+    "fact": "A fixed test set only covers what you thought of. Online signals show new kinds of question, which you then add to the offline set."
+  },
+  {
+    "id": "improve_037",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which eval check is cheapest and most reliable where it applies?",
+    "answers": [
+      "An LLM judge on every answer",
+      "A code check, such as a format test",
+      "A panel of senior staff",
+      "A public leaderboard score"
+    ],
+    "correct": 1,
+    "fact": "If a rule can be tested by code, such as valid format or a required field, do that first. Save judges and humans for what code cannot check."
+  },
+  {
+    "id": "improve_038",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Replies are accurate but too casual for a bank. Next rung?",
+    "answers": [
+      "Fine-tune straight away",
+      "Tighten the prompt with examples",
+      "Add a vector database",
+      "Switch to a bigger reasoning model"
+    ],
+    "correct": 1,
+    "fact": "Tone is a behaviour problem, and the ladder starts with prompting. Examples of the desired voice are cheap to try and easy to change."
+  },
+  {
+    "id": "improve_039",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Answers lack facts that live only in private files. Next rung?",
+    "answers": [
+      "Write a longer prompt",
+      "Fine-tune the model on those files",
+      "Add retrieval over those files",
+      "Raise the temperature"
+    ],
+    "correct": 2,
+    "fact": "Missing knowledge is what RAG is for. Fine-tuning changes habits, not facts, and goes stale as the files change."
+  },
+  {
+    "id": "improve_040",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Prompts and RAG work, but 10,000 daily outputs must match a strict style. Next?",
+    "answers": [
+      "Add many more documents to the index",
+      "Ask staff to edit each output",
+      "Increase top-k",
+      "Consider fine-tuning on examples"
+    ],
+    "correct": 3,
+    "fact": "A consistent style at scale is where fine-tuning earns its place, once cheaper rungs have been tried and measured against a baseline."
+  },
+  {
+    "id": "improve_041",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Best starting material for a support eval?",
+    "answers": [
+      "Real past tickets with good replies",
+      "Questions the vendor wrote",
+      "Public benchmark questions",
+      "Easy questions made up for the demo run"
+    ],
+    "correct": 0,
+    "fact": "Real tickets show how customers actually write. A test set from your own work tells you more than any generic benchmark."
+  },
+  {
+    "id": "improve_042",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Building an eval from 100 tickets. What should you add on purpose?",
+    "answers": [
+      "The most common ticket types",
+      "Hard and out-of-scope cases",
+      "Tickets that closed smoothly",
+      "The shortest, tidiest tickets"
+    ],
+    "correct": 1,
+    "fact": "Easy cases flatter every model. Tricky and refusal cases show where it breaks, and the cost of those failures is what the customer cares about."
+  },
+  {
+    "id": "improve_043",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Who should write the \"good answer\" for each ticket in an eval?",
+    "answers": [
+      "The vendor sales team",
+      "The model being tested",
+      "The experts who handle tickets",
+      "Whoever happens to be free that day"
+    ],
+    "correct": 2,
+    "fact": "The reference answer should reflect real standards. If the model writes its own, the test just marks its own homework."
+  },
+  {
+    "id": "improve_044",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does comparing two models fairly require?",
+    "answers": [
+      "Each vendor picks the questions",
+      "One run and a gut feel",
+      "Comparing price lists only",
+      "Same prompts, data and grading"
+    ],
+    "correct": 3,
+    "fact": "Change one thing at a time. Identical test cases and scoring let the difference come from the model, not from the setup."
+  },
+  {
+    "id": "improve_045",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Model B scores higher but needs a very different prompt. What is fair?",
+    "answers": [
+      "Tune a prompt for each model",
+      "Reuse model A prompt for both",
+      "Pick the cheaper model unseen",
+      "Trust the higher public score"
+    ],
+    "correct": 0,
+    "fact": "A prompt written for one model can undersell another. Give each a fair effort at tuning, then compare on the same test set."
+  },
+  {
+    "id": "improve_046",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A provider updates a model and answers shift. What catches it?",
+    "answers": [
+      "Reading the release notes alone",
+      "Rerun your eval on the new version",
+      "Waiting for users to report oddities",
+      "Checking the invoice totals"
+    ],
+    "correct": 1,
+    "fact": "Model updates can change behaviour on your tasks. A saved eval set turns \"it feels different\" into a score you can compare before and after."
+  },
+  {
+    "id": "improve_047",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In an API build, how do you guard against surprise model changes?",
+    "answers": [
+      "Use the newest one automatically",
+      "Pin a version, then test upgrades",
+      "Freeze prompts and skip upgrades",
+      "Skip tests when scores were high"
+    ],
+    "correct": 1,
+    "fact": "Pinning keeps behaviour steady while you test a newer version on your eval. Upgrade when the scores say it is safe."
+  },
+  {
+    "id": "improve_048",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which belongs in a pilot success criterion?",
+    "answers": [
+      "A list of favourite features",
+      "A promise of full rollout this year",
+      "The vendor roadmap",
+      "A measure, baseline and target"
+    ],
+    "correct": 3,
+    "fact": "\"Cut handling time from 10 minutes to 6\" can be checked. Vague hopes cannot, and they make the pilot hard to turn into a decision."
+  },
+  {
+    "id": "improve_049",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A pilot saved time but quality dipped. Is it a success?",
+    "answers": [
+      "Check against the agreed criteria",
+      "Yes, speed is what matters",
+      "No, any dip means failure",
+      "Extend it until the numbers look better"
+    ],
+    "correct": 0,
+    "fact": "Success was defined before the pilot. If the criteria set a quality floor, judge against it; if not, agree the trade-off with the owner."
+  },
+  {
+    "id": "improve_050",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Evals show 98% on routine refunds and 70% on complaints. Best next step?",
+    "answers": [
+      "Ease review on all tickets",
+      "Ease review on refunds only",
+      "Keep full review everywhere forever",
+      "Ease review on complaints first"
+    ],
+    "correct": 1,
+    "fact": "Reduce human review where evidence supports it and keep it where errors are costly or results are weaker, then keep watching."
+  },
+  {
+    "id": "improve_051",
+    "category": "improve",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What should still go to a person even when evals look strong?",
+    "answers": [
+      "Spelling and grammar clean-up work",
+      "Table formatting",
+      "High-stakes or one-way decisions",
+      "Routine greetings"
+    ],
+    "correct": 2,
+    "fact": "Strong scores lower risk but do not remove it. Where a mistake is costly or cannot be undone, a human check stays in place."
+  },
+  {
+    "id": "improve_052",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Scoring retrieval and answers separately shows where the fault lies.",
+    "answer": true,
+    "fact": "A wrong answer can come from missing passages or from how the model used them. Separate scores point you to the right fix."
+  },
+  {
+    "id": "improve_053",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Limiting which tools an agent may call is a kind of guardrail.",
+    "answer": true,
+    "fact": "Guardrails sit at input, retrieval, output and action stages. Least-privilege tools and human approval for irreversible actions are the action-stage ones."
+  },
+  {
+    "id": "improve_054",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A prompt tweak fixed one complaint but the eval score fell. Lesson?",
+    "answers": [
+      "Revert whenever one case fails",
+      "Ignore the score; the fix is visible",
+      "Evals only suit new models",
+      "Fixes can break other cases"
+    ],
+    "correct": 3,
+    "fact": "An eval covers many cases at once, so it shows side effects that one fix hides. Keep the tweak only if the whole set improves."
+  },
+  {
+    "id": "improve_055",
+    "category": "improve",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer wants \"95% accurate\". What must you ask?",
+    "answers": [
+      "Accurate on what, graded by whom?",
+      "Which model is biggest?",
+      "How many users sign in?",
+      "What is the monthly budget for it?"
+    ],
+    "correct": 0,
+    "fact": "A percentage means nothing until you know the test set and the grader. Turning it into a defined eval is what makes the target real."
+  },
+  {
+    "id": "improve_056",
+    "category": "improve",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "An eval has 20 cases and all passed. Safe to drop human review?",
+    "answers": [
+      "Yes, a perfect score settles the matter",
+      "No: too few cases to show reliability",
+      "Yes, if the model is the newest",
+      "No, review can never be removed"
+    ],
+    "correct": 1,
+    "fact": "Twenty cases cannot cover real variety. Build a larger, more varied set and watch live results before easing review."
+  }
+]

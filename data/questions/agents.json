@@ -1,0 +1,773 @@
+[
+  {
+    "id": "agents_001",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "In tool calling, the model itself runs the database query.",
+    "answer": false,
+    "fact": "The model does not touch your database or send emails itself. It outputs a structured request like 'look up order 1234', your code runs it and returns the result, so you stay in control."
+  },
+  {
+    "id": "agents_002",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What makes something an agent, not just a chat?",
+    "answers": [
+      "It answers faster than a chatbot",
+      "It loops: act, read, decide again",
+      "It uses a larger context window",
+      "It never needs a human for anything"
+    ],
+    "correct": 1,
+    "fact": "Chat answers questions; agents complete tasks. An agent looks at the goal, picks a step, calls a tool, reads the result and decides again."
+  },
+  {
+    "id": "agents_003",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is MCP?",
+    "answers": [
+      "A model that compresses long prompts",
+      "A pricing plan for heavy API usage",
+      "A test set for scoring model quality",
+      "An open standard linking AI to tools"
+    ],
+    "correct": 3,
+    "fact": "Model Context Protocol is an open standard for connecting AI models to tools and data sources. It is how many apps and systems plug in to assistants such as ChatGPT."
+  },
+  {
+    "id": "agents_004",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is Codex?",
+    "answers": [
+      "OpenAI's agent for coding tasks",
+      "OpenAI's tool for scanning contracts",
+      "A catalogue of approved model prompts",
+      "OpenAI's open-weight embedding model"
+    ],
+    "correct": 0,
+    "fact": "Codex goes beyond suggesting lines: it takes a task, works through a codebase, runs tests and proposes changes."
+  },
+  {
+    "id": "agents_005",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks who forward deployed engineers are. Best answer?",
+    "answers": [
+      "Support staff on a call centre line",
+      "Sales engineers who run demos",
+      "Auditors who review model safety",
+      "Engineers embedded with a customer"
+    ],
+    "correct": 3,
+    "fact": "FDEs work inside customer teams to get agents into production. Mid-market firms may get limited FDE time, so ask how it is allocated rather than promising it."
+  },
+  {
+    "id": "agents_006",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which is a sign a company is ready for agents?",
+    "answers": [
+      "A large budget for new AI software",
+      "A wish to replace the whole support team",
+      "A repeatable workflow with set steps",
+      "A single executive who loves new AI"
+    ],
+    "correct": 2,
+    "fact": "Four signs: a repeatable workflow, accessible data and systems, a business owner for the outcome, and a clear view of what a human must approve."
+  },
+  {
+    "id": "agents_007",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which agent action should a person approve?",
+    "answers": [
+      "Hard-to-undo steps like refunds",
+      "Reading a public help article",
+      "Drafting a reply for review",
+      "Looking up the status of an order"
+    ],
+    "correct": 0,
+    "fact": "Reads are low risk. Anything hard to undo, like money moving or a message sent, needs approval until evidence shows the agent is reliable."
+  },
+  {
+    "id": "agents_008",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks what least privilege means for an agent. Best answer?",
+    "answers": [
+      "Give admin rights so it never stalls",
+      "Share one login across all agents",
+      "Let it ask for rights as it goes",
+      "Give only the access the task needs"
+    ],
+    "correct": 3,
+    "fact": "An agent gets its own identity with scoped permissions. If it only needs to read orders, it should not be able to delete them."
+  },
+  {
+    "id": "agents_009",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is Frontier for?",
+    "answers": [
+      "Fine-tuning small open models",
+      "Building and governing agents",
+      "Hosting a customer's data warehouse",
+      "Selling seats to small teams"
+    ],
+    "correct": 1,
+    "fact": "Frontier is OpenAI's enterprise platform for building, deploying and managing agents across business systems, usually with FDE support."
+  },
+  {
+    "id": "agents_010",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "An MCP server lets one system be used by many compatible AIs.",
+    "answer": true,
+    "fact": "Instead of a custom integration for every pairing of model and system, a company exposes a system once and any compatible AI can use it."
+  },
+  {
+    "id": "agents_011",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A firm has no clear process or owner for support. Next step?",
+    "answers": [
+      "Build a Frontier agent straight away",
+      "Land with ChatGPT Enterprise first",
+      "Fine-tune a model on all tickets",
+      "Hire forward deployed engineers first"
+    ],
+    "correct": 1,
+    "fact": "If the workflow, access, owner and approvals are missing, land with a simpler product and build towards agents. Agents need a clear process to automate."
+  },
+  {
+    "id": "agents_012",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which is one of Frontier's three parts?",
+    "answers": [
+      "A vector database for storing embeddings",
+      "A discount programme for seats",
+      "A hosted spreadsheet editor",
+      "Scoped identities and monitoring"
+    ],
+    "correct": 3,
+    "fact": "Remember three: shared business context, an execution environment where agents use files, code and tools, and governance with identities, scoped permissions and monitoring."
+  },
+  {
+    "id": "agents_013",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In a support design, what should a small model handle?",
+    "answers": [
+      "Classifying each message's intent",
+      "Writing every final reply alone",
+      "Approving refunds without review",
+      "Storing the customer's order history"
+    ],
+    "correct": 0,
+    "fact": "Route by difficulty: a small, fast model sorts the intent, tools fetch articles and order details, a stronger model drafts a grounded reply, and sensitive cases go to a person."
+  },
+  {
+    "id": "agents_014",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When does an agent stop looping?",
+    "answers": [
+      "After it makes exactly three tool calls",
+      "When the context window is empty",
+      "When it's done or needs a person",
+      "When the user stops typing"
+    ],
+    "correct": 2,
+    "fact": "There is no magic number: it keeps going until the goal is met or it meets something a human should decide. Teams add limits and approvals for safety."
+  },
+  {
+    "id": "agents_015",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How should you show Codex's value to an engineering lead?",
+    "answers": [
+      "Number of prompts typed by staff per day",
+      "Lines of code deleted per week",
+      "Cycle time and pull requests merged",
+      "Hours the tool is left open"
+    ],
+    "correct": 2,
+    "fact": "Land it with a team that has a visible backlog and measure outcomes. Prompt counts show activity, not value."
+  },
+  {
+    "id": "agents_016",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which door suits developers building AI into their own product?",
+    "answers": [
+      "The API, billed per token",
+      "ChatGPT for knowledge workers",
+      "Codex for engineering teams",
+      "Frontier for managed agents"
+    ],
+    "correct": 0,
+    "fact": "Four doors into an account: ChatGPT for knowledge workers, Codex for engineers, the API for building products, and Frontier for agents across the business."
+  },
+  {
+    "id": "agents_017",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How does a model know which tools it may call?",
+    "answers": [
+      "It guesses from the prompt's own wording",
+      "It scans the customer's network",
+      "It learned every customer's tools",
+      "It reads their names and descriptions"
+    ],
+    "correct": 3,
+    "fact": "The app lists each tool with a short description and its inputs, and the model picks one. Clear descriptions matter, just like with Skills."
+  },
+  {
+    "id": "agents_018",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is a typical mid-market land-expand path?",
+    "answers": [
+      "Frontier first, then seats for everyone",
+      "A few teams, then API, then agents",
+      "API first, then drop seats entirely",
+      "Company-wide rollout on day one"
+    ],
+    "correct": 1,
+    "fact": "Land with ChatGPT or Codex for one or two teams, prove adoption with usage data, expand seats, then add the API for customer-facing use and agents for workflow automation."
+  },
+  {
+    "id": "agents_019",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "An agent reads support emails and has a refund tool. How limit damage?",
+    "answers": [
+      "Tell it firmly to ignore bad emails",
+      "Narrow tool rights and human approval",
+      "Switch to a larger context window",
+      "Tell the agent to trust known senders"
+    ],
+    "correct": 1,
+    "fact": "Treat email text as data, give the agent only the rights it needs, and require approval where money moves. Instructions in a prompt alone can be talked around."
+  },
+  {
+    "id": "agents_020",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "What must you still check when connecting a system via MCP?",
+    "answers": [
+      "Which model the server runs on",
+      "Whether the server has a graphics card",
+      "Which language the server speaks",
+      "What data and actions the AI can reach"
+    ],
+    "correct": 3,
+    "fact": "MCP makes connecting easy, which is exactly why you decide what each connection can read or do. Easy access with broad rights is a risk."
+  },
+  {
+    "id": "agents_021",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "An agent keeps repeating tool calls and costs climb. What control?",
+    "answers": [
+      "Limits on steps, spend and run time",
+      "A higher temperature for agent steps",
+      "A much bigger context window",
+      "More examples in the system prompt"
+    ],
+    "correct": 0,
+    "fact": "An agent loop can spin. Cap the steps and the spend, and log what it does, so a stuck run is stopped early and reviewed."
+  },
+  {
+    "id": "agents_022",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "What follows evals on real data in a path to production?",
+    "answers": [
+      "An immediate company-wide launch",
+      "A fresh round of fine-tuning runs",
+      "Security review, then limited rollout",
+      "Removal of every human approval step now"
+    ],
+    "correct": 2,
+    "fact": "A typical path: prototype, evals on real data, security review, limited rollout with monitoring, then scale. Common blockers are messy data, unclear ownership and late security reviews."
+  },
+  {
+    "id": "agents_023",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What do a connector and an MCP server have in common?",
+    "answers": [
+      "Both remove the need for access rules",
+      "Both run the model in the customer cloud",
+      "Both let an AI app reach another system",
+      "Both are limited to image and voice use"
+    ],
+    "correct": 2,
+    "fact": "A connector is a ready-made link to an app such as a shared drive; MCP is an open standard for building such links. Either way, someone must decide what the AI can reach."
+  },
+  {
+    "id": "agents_024",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A fixed series of steps that never varies is best called what?",
+    "answers": [
+      "An agent loop",
+      "A fine-tune",
+      "A guardrail",
+      "A workflow"
+    ],
+    "correct": 3,
+    "fact": "A workflow follows steps you set. An agent chooses its next step from what it finds. If the path never varies, a plain workflow is simpler and safer."
+  },
+  {
+    "id": "agents_025",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "An agent can only take actions through the tools it has been given.",
+    "answer": true,
+    "fact": "No tool, no action. That is why choosing tools, and their permissions, is the main control a customer has."
+  },
+  {
+    "id": "agents_026",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why keep a log of what an agent does?",
+    "answers": [
+      "So the agent can edit its own past",
+      "So people can review and audit it",
+      "So tokens are cheaper next time",
+      "So it never needs a human"
+    ],
+    "correct": 1,
+    "fact": "Logs show which tools ran, with what inputs and outputs. They help with debugging, audits and building trust."
+  },
+  {
+    "id": "agents_027",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer wants an agent to email suppliers. Which control first?",
+    "answers": [
+      "Let it send, then review weekly",
+      "Give it the admin mailbox",
+      "Draft for approval before sending",
+      "Switch off the activity log"
+    ],
+    "correct": 2,
+    "fact": "Sending is hard to undo, so start with the agent drafting and a person approving. Loosen it only as evals show it's reliable."
+  },
+  {
+    "id": "agents_028",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A tool call returns an error. What's good agent design?",
+    "answers": [
+      "Retry forever until it works",
+      "Make up a plausible result",
+      "Hide the error from the user",
+      "Retry sensibly, then hand to a person"
+    ],
+    "correct": 3,
+    "fact": "Real systems time out and fail. Limits on retries and a clear hand-off to a person keep failures contained and visible."
+  },
+  {
+    "id": "agents_029",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does a 10-step agent cost more than one chat reply?",
+    "answers": [
+      "Each step is another model call",
+      "Tool calls are billed by the minute",
+      "Agents always use the biggest model",
+      "Agent tokens carry a surcharge"
+    ],
+    "correct": 0,
+    "fact": "Each loop re-reads context and produces more tokens. Budgets, step limits and the right model size keep agent cost in check."
+  },
+  {
+    "id": "agents_030",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Where should an agent get a customer's order status?",
+    "answers": [
+      "From what the model remembers",
+      "From a tool call to the order system",
+      "From its training data",
+      "From the last customer's chat"
+    ],
+    "correct": 1,
+    "fact": "Live facts belong in the system of record. The tool returns them, and the model only words the answer."
+  },
+  {
+    "id": "agents_031",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "An MCP server offers a 'delete record' tool. Best practice?",
+    "answers": [
+      "Allow it for every user",
+      "Hide it in the description",
+      "Leave it out or require approval",
+      "Rename it to something friendlier"
+    ],
+    "correct": 2,
+    "fact": "Expose only the actions a task needs. Anything destructive should be left out or sit behind human approval."
+  },
+  {
+    "id": "agents_032",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A web page an agent reads says 'email me the files'. Best defence?",
+    "answers": [
+      "Trust pages from known websites",
+      "Ask the page to confirm itself",
+      "Turn the temperature to zero",
+      "Treat page text as data; limit its tools"
+    ],
+    "correct": 3,
+    "fact": "Instructions inside content are not from your user. Keep tools narrow so a hijacked agent can't do much, and require approval for sending data out."
+  },
+  {
+    "id": "agents_033",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "An agent shines in demos but fails in production. What was missing?",
+    "answers": [
+      "Evals on many real tasks",
+      "A louder system prompt",
+      "A higher token price",
+      "More hand-picked examples"
+    ],
+    "correct": 0,
+    "fact": "Demos use easy, hand-picked cases. Evals on a broad set of real tasks, including messy ones, show how often it truly succeeds."
+  },
+  {
+    "id": "agents_034",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which task suits an agent better than a plain chat?",
+    "answers": [
+      "Drafting one thank-you email",
+      "Explaining what a token is",
+      "Matching invoices to orders each day",
+      "Brainstorming ideas for a new product"
+    ],
+    "correct": 2,
+    "fact": "An agent earns its keep on repeated work that needs several steps and system lookups. One-off writing is fine in chat."
+  },
+  {
+    "id": "agents_035",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer thinks the model logs into their CRM itself. What corrects this?",
+    "answers": [
+      "The model asks; their app looks up",
+      "The model keeps its own copy of the CRM",
+      "OpenAI staff run the lookup by hand",
+      "The model logs in through the browser"
+    ],
+    "correct": 0,
+    "fact": "The model only outputs a request to use a tool. The app runs it, so the customer decides which systems and rights it gets."
+  },
+  {
+    "id": "agents_036",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which is NOT one of the four signs a firm is ready for agents?",
+    "answers": [
+      "A repeatable workflow",
+      "Systems the agent can reach",
+      "A named business owner",
+      "A large in-house AI team"
+    ],
+    "correct": 3,
+    "fact": "The four signs: a repeatable workflow, accessible systems, a business owner and agreed human approvals. A big team or budget does not make a firm ready."
+  },
+  {
+    "id": "agents_037",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How should a support-triage agent pilot be judged?",
+    "answers": [
+      "Number of tool calls made per day",
+      "Accuracy and time saved vs today",
+      "How much staff say they like it",
+      "Hours the agent is switched on"
+    ],
+    "correct": 1,
+    "fact": "Compare against the current process: correct outcomes, time saved and escalations. Agree the measure and baseline before the pilot starts, not after."
+  },
+  {
+    "id": "agents_038",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A firm has five AI apps and eight systems. Why consider MCP?",
+    "answers": [
+      "It makes the model more accurate",
+      "It removes the need for access controls",
+      "A connector per system, not per pair",
+      "It runs the tools inside the model"
+    ],
+    "correct": 2,
+    "fact": "Without a standard, each app needs its own link to each system. MCP lets a system expose one server that many apps can use."
+  },
+  {
+    "id": "agents_039",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "When is a custom integration still the better choice over MCP?",
+    "answers": [
+      "Many AI apps need the same system",
+      "One narrow link needing tight control",
+      "The vendor already offers a server",
+      "The team wants to skip engineering work"
+    ],
+    "correct": 1,
+    "fact": "A single, sensitive connection can be simpler and safer to build by hand. MCP pays off when many apps share many systems."
+  },
+  {
+    "id": "agents_040",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does giving an agent more tools raise prompt injection risk?",
+    "answers": [
+      "Tools retrain the model on page text",
+      "Tools switch off the safety rules",
+      "Tools make the model ignore tool results",
+      "A hijacked agent can act, not just talk"
+    ],
+    "correct": 3,
+    "fact": "Injected text can only do harm through what the agent can reach. More tools means more reach, so limit tools and watch actions."
+  },
+  {
+    "id": "agents_041",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An agent only needs to read invoices. Which access fits?",
+    "answers": [
+      "Read-only access to invoices",
+      "Full access to the finance drive",
+      "Admin rights so nothing blocks it",
+      "A shared login used by the whole team"
+    ],
+    "correct": 0,
+    "fact": "Least privilege means the narrowest access that does the job. If the agent is tricked or wrong, the damage stays small."
+  },
+  {
+    "id": "agents_042",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which is the safest first agent project for a cautious firm?",
+    "answers": [
+      "Approving loans on its own",
+      "Changing prices in the live online shop",
+      "Drafting replies for human review",
+      "Closing accounts by itself"
+    ],
+    "correct": 2,
+    "fact": "A first project should be reversible, with a person checking the output. Trust and evidence build before autonomy grows."
+  },
+  {
+    "id": "agents_043",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which trait makes a workflow a good first agent project?",
+    "answers": [
+      "Rare, high stakes, hard to check",
+      "High volume, low risk, easy to check",
+      "Needs fresh judgement each time",
+      "Touches many systems at once"
+    ],
+    "correct": 1,
+    "fact": "Volume gives a clear payback, low risk limits harm, and easy checking lets the team measure quality before widening scope."
+  },
+  {
+    "id": "agents_044",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which task is a weak fit for Codex?",
+    "answers": [
+      "Writing unit tests",
+      "Reviewing a teammate's pull request",
+      "Fixing a small bug",
+      "Drafting a sales pitch deck"
+    ],
+    "correct": 3,
+    "fact": "Codex is built for software work such as code changes, tests and reviews. Business writing is a better fit for ChatGPT."
+  },
+  {
+    "id": "agents_045",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A pilot agent needs write access to a core system. Next step?",
+    "answers": [
+      "Involve their engineers and security",
+      "Give it the admin login for the pilot",
+      "Wait until after launch to ask",
+      "Ask the model to check itself"
+    ],
+    "correct": 0,
+    "fact": "Write access to a core system is where an engineering and security review belongs, before the pilot, not after an incident."
+  },
+  {
+    "id": "agents_046",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer wants one agent that does everything. Best response?",
+    "answers": [
+      "Build it all in one go",
+      "Keep adding tools until it works",
+      "Pick one workflow and prove it",
+      "Start with the hardest case"
+    ],
+    "correct": 2,
+    "fact": "A narrow, measurable first workflow gets results and trust quickly. Broad agents are harder to test, secure and explain."
+  },
+  {
+    "id": "agents_047",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A user pastes a document and asks for a summary. Do they need an agent?",
+    "answers": [
+      "Yes: every summary needs a loop",
+      "No: one chat reply is enough",
+      "Yes: summaries require tools",
+      "No: models cannot summarise"
+    ],
+    "correct": 1,
+    "fact": "A single model call can summarise text it is given. Agents add loops and tools only when the task needs actions or lookups."
+  },
+  {
+    "id": "agents_048",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Each lookup result decides the next step. What fits best?",
+    "answers": [
+      "A fixed workflow",
+      "A single chat reply",
+      "A fine-tuned model",
+      "An agent"
+    ],
+    "correct": 3,
+    "fact": "When the path depends on what the tools return, the model must decide each step. A fixed workflow suits steps that never vary."
+  },
+  {
+    "id": "agents_049",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why enforce an approval step in the app, not only in the prompt?",
+    "answers": [
+      "The app enforces it; prompts can slip",
+      "Prompt rules are always reliably obeyed",
+      "Prompts cannot mention approvals",
+      "Code is cheaper than prompts"
+    ],
+    "correct": 0,
+    "fact": "A prompt rule is guidance the model can miss or be talked out of. A step built into the tool cannot be skipped by the model."
+  },
+  {
+    "id": "agents_050",
+    "category": "agents",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A customer wants to add a third-party MCP server. What to check first?",
+    "answers": [
+      "How many tools it lists",
+      "Who runs it and what it can do",
+      "Whether it is free or paid to use",
+      "Which model it prefers"
+    ],
+    "correct": 1,
+    "fact": "An MCP server is code that can read data and act. Know its owner, its rights and what data flows through before connecting."
+  },
+  {
+    "id": "agents_051",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An agent keeps choosing the wrong tool. A likely fix?",
+    "answers": [
+      "More tools to choose from",
+      "A longer prompt telling it to be quick",
+      "Clearer tool names and descriptions",
+      "Turning off the logs"
+    ],
+    "correct": 2,
+    "fact": "The model picks tools by reading their names and descriptions. Vague or overlapping ones cause mistakes, so tidy them first."
+  },
+  {
+    "id": "agents_052",
+    "category": "agents",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Read-only access means an agent cannot cause any harm.",
+    "answer": false,
+    "fact": "Read-only agents can still expose data to the wrong person or pass it on through another tool. Scope, logs and review still matter."
+  },
+  {
+    "id": "agents_053",
+    "category": "agents",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Who should own an agent's results inside the customer?",
+    "answers": [
+      "The IT help desk that runs the servers",
+      "The vendor's support team",
+      "Nobody until it fails",
+      "A named person on the business team"
+    ],
+    "correct": 3,
+    "fact": "Someone must own the workflow, review exceptions and decide when to widen it. Without an owner, problems linger unseen."
+  }
+]

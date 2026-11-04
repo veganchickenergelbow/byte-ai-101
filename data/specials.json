@@ -1,0 +1,16 @@
+{
+  "_comment": "Generated question types for Byte's AI 101. timeline: dated AI milestones for 'Which came first?' (all category llm, one per year). compare: groups of measured things for 'Higher or lower' (empty here, as this game has no such data).",
+  "timeline": [
+    { "name": "word2vec is published", "year": 2013, "category": "llm" },
+    { "name": "The HNSW paper appears", "year": 2016, "category": "llm" },
+    { "name": "The Transformer paper is published", "year": 2017, "category": "llm" },
+    { "name": "BERT is published", "year": 2018, "category": "llm" },
+    { "name": "Sentence-BERT is published", "year": 2019, "category": "llm" },
+    { "name": "GPT-3 is introduced", "year": 2020, "category": "llm" },
+    { "name": "LoRA fine-tuning is introduced", "year": 2021, "category": "llm" },
+    { "name": "ChatGPT launches", "year": 2022, "category": "llm" },
+    { "name": "GPT-4 is released", "year": 2023, "category": "llm" },
+    { "name": "Model Context Protocol is introduced", "year": 2024, "category": "llm" }
+  ],
+  "compare": []
+}

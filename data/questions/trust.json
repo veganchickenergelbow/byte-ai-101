@@ -1,0 +1,815 @@
+[
+  {
+    "id": "trust_001",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "By default, is business data used to train OpenAI's models?",
+    "answers": [
+      "Yes, chats help improve the models",
+      "Not by default, for business or API",
+      "Yes, unless the admin deletes the chats",
+      "Yes for the API, no for ChatGPT"
+    ],
+    "correct": 1,
+    "fact": "Business products and the API do not train on customer data by default. A customer can choose to share data, so say \"by default\". It is the first objection to clear."
+  },
+  {
+    "id": "trust_002",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does SSO give a customer's IT team?",
+    "answers": [
+      "A faster model for admin users",
+      "Automatic encryption of stored files",
+      "Permission to train on their chats",
+      "Login via their own identity provider"
+    ],
+    "correct": 3,
+    "fact": "Single sign-on lets staff log in with the company's existing login, so IT keeps one place to control access."
+  },
+  {
+    "id": "trust_003",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer's IT team asks what SCIM does. Best answer?",
+    "answers": [
+      "Adds and removes users automatically",
+      "Scans prompts for personal data",
+      "Chooses which model answers a user",
+      "Encrypts the files held by the vendor"
+    ],
+    "correct": 0,
+    "fact": "It syncs with the company directory, so new joiners get access and leavers lose it automatically. IT teams love that."
+  },
+  {
+    "id": "trust_004",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "Data residency describes where the model runs its calculations.",
+    "answer": false,
+    "fact": "Data residency is about where customer content is stored at rest. Where the model actually runs is a separate question, called inference residency."
+  },
+  {
+    "id": "trust_005",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A security team asks what zero data retention (ZDR) aims to do. Best answer?",
+    "answers": [
+      "Delete a user's account on exit",
+      "Mask personal data inside prompts",
+      "Avoid keeping prompts and outputs",
+      "Block unsafe content from the model"
+    ],
+    "correct": 2,
+    "fact": "For eligible API endpoints, ZDR means prompts and outputs are not kept after processing. It needs approval and has exclusions, so get the scope in writing."
+  },
+  {
+    "id": "trust_006",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Who should mask personal data before an API call?",
+    "answers": [
+      "OpenAI, after the call arrives",
+      "The end user, by retyping details",
+      "The customer, before data leaves",
+      "The embedding vendor, when indexing"
+    ],
+    "correct": 2,
+    "fact": "If the vendor masked it, the raw data would already have left. The customer controls what leaves the building; the provider controls what happens to it after."
+  },
+  {
+    "id": "trust_007",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Where do you point customers for certifications like SOC 2?",
+    "answers": [
+      "The vendor's trust portal and docs",
+      "A summary that you recite from memory",
+      "The customer's own audit report",
+      "A social media post from staff"
+    ],
+    "correct": 0,
+    "fact": "Certifications are documented on the trust portal. Point customers there rather than reciting from memory, since details change."
+  },
+  {
+    "id": "trust_008",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A security team asks what a data processing agreement (DPA) is for. Best answer?",
+    "answers": [
+      "How much the vendor charges per token",
+      "Which models the vendor will launch",
+      "Who owns the customer's brand",
+      "How the vendor may handle their data"
+    ],
+    "correct": 3,
+    "fact": "A DPA is the contract that says how the vendor may use and protect the customer's personal data. Security teams usually ask for it early."
+  },
+  {
+    "id": "trust_009",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A Singapore customer asks where data lives and where it runs. Best answer?",
+    "answers": [
+      "Stored and run entirely in Singapore",
+      "Stored in Singapore, model runs abroad",
+      "Stored abroad, model runs in Singapore",
+      "Neither is documented or controllable"
+    ],
+    "correct": 1,
+    "fact": "For ChatGPT Enterprise, storage can be in Singapore but inference runs elsewhere. Check OpenAI's current docs before quoting, as options change."
+  },
+  {
+    "id": "trust_010",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bank asks about retention controls in detail. What do you do?",
+    "answers": [
+      "Reassure them it is all standard",
+      "Bring in a security specialist early",
+      "Wait until the deal is signed",
+      "Quote what you remember from a blog post"
+    ],
+    "correct": 1,
+    "fact": "Say what you know, how you would check, and bring our specialist in early, in parallel with the business evaluation. A confident wrong compliance answer loses deals."
+  },
+  {
+    "id": "trust_011",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks if a staff paste is a breach. What do you say?",
+    "answers": [
+      "Yes, any paste is always a breach",
+      "No, vendor contracts cover everything",
+      "It depends on the model's size",
+      "That's for their own legal team"
+    ],
+    "correct": 3,
+    "fact": "Whether an event counts as a breach is a legal judgement, so we don't offer one. We can explain what is stored where, what isn't trained on, and how to delete data."
+  },
+  {
+    "id": "trust_012",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer says residency must be in Singapore. First move?",
+    "answers": [
+      "Find out if it's law, policy or unease",
+      "Promise Singapore inference by year end",
+      "Offer a discount on the contract",
+      "Move on to the next objection"
+    ],
+    "correct": 0,
+    "fact": "Ask whether it is a legal clause, an internal policy or general discomfort. Discomfort is a trust problem, not a residency problem."
+  },
+  {
+    "id": "trust_013",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which controls often matter more than geography?",
+    "answers": [
+      "Prompt length limits and the temperature",
+      "Embedding size and chunking rules",
+      "No training by default, ZDR, encryption",
+      "Seat counts and renewal dates"
+    ],
+    "correct": 2,
+    "fact": "Be precise, not reassuring: state what is stored where, then the controls security teams weigh heavily, such as no training by default, ZDR, encryption and a DPA."
+  },
+  {
+    "id": "trust_014",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Some data can't leave Singapore. How could a pilot still start?",
+    "answers": [
+      "Wait until every case is fully approved",
+      "Use the data anyway, then ask",
+      "Start with the non-sensitive cases",
+      "Drop the customer for now"
+    ],
+    "correct": 2,
+    "fact": "Split the use cases: land the non-sensitive ones now, and log the residency need as demand for the product team. Progress beats waiting."
+  },
+  {
+    "id": "trust_015",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "If a hard rule needs in-country compute and we can't meet it, what then?",
+    "answers": [
+      "Say so plainly and stay close",
+      "Argue that the rule is outdated",
+      "Promise to match it next quarter",
+      "Suggest they ignore the clause"
+    ],
+    "correct": 0,
+    "fact": "Staying in touch beats a promise you can't keep. The customer remembers who was straight with them when the product catches up."
+  },
+  {
+    "id": "trust_016",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A support bot has no source for a question. Best behaviour?",
+    "answers": [
+      "Give the most plausible answer",
+      "Answer from general training anyway",
+      "Repeat the last answer it gave",
+      "Say it doesn't know and hand over"
+    ],
+    "correct": 3,
+    "fact": "Admitting 'I don't know' builds trust; a smooth guess breaks it. Good designs decline when sources are missing and route to a person."
+  },
+  {
+    "id": "trust_017",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks, 'When will inference be in Singapore?' Best reply?",
+    "answers": [
+      "By the end of the year, I'm fairly sure",
+      "I'll log the demand; no date promised",
+      "Never; Singapore can't support it",
+      "Probably soon, a rep told me so"
+    ],
+    "correct": 1,
+    "fact": "Say 'not yet supported' and pass the demand to the product team, rather than guess a date. Don't blame Singapore's infrastructure either: that reason isn't documented."
+  },
+  {
+    "id": "trust_018",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which is a typical enterprise admin control?",
+    "answers": [
+      "Rewriting the vendor's privacy terms",
+      "Retention settings and audit logs",
+      "Changing the model's internal layers",
+      "Moving the vendor's servers on request"
+    ],
+    "correct": 1,
+    "fact": "Enterprise plans give admins control over retention, plus audit logs and compliance tooling. Get the current specifics from the trust pages."
+  },
+  {
+    "id": "trust_019",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How can a company reduce staff pasting sensitive data?",
+    "answers": [
+      "One ban notice sent to staff",
+      "Turn off chat memory for everyone",
+      "Trust staff, since leaks are rare",
+      "Layers: account limits, DLP, policy"
+    ],
+    "correct": 3,
+    "fact": "Prevention is layered and never complete: block personal accounts, use admin settings, add data-loss-prevention tooling, review logs, and keep a clear acceptable-use policy."
+  },
+  {
+    "id": "trust_020",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Seats versus an API with a gateway: which principle holds?",
+    "answers": [
+      "They differ mainly in cost",
+      "The API route is safer than seats",
+      "Each route suits different kinds of data",
+      "The API route needs fewer controls"
+    ],
+    "correct": 2,
+    "fact": "Seats suit productivity work without customer data; an API behind a gateway can handle identifiable data once it is tokenised and restored. A different class of data, not just more governance."
+  },
+  {
+    "id": "trust_021",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Design onboarding so the likeliest mistake becomes what?",
+    "answers": [
+      "A silent error that nobody can trace",
+      "A fine paid by the vendor",
+      "A contained incident, not an open leak",
+      "An outage during the onboarding process"
+    ],
+    "correct": 2,
+    "fact": "Assume someone will paste something they shouldn't. The right contract protections and logs make that slip an incident you can contain, not a disclosure to an unvetted party."
+  },
+  {
+    "id": "trust_022",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "What is a hard part of masking personal data first?",
+    "answers": [
+      "Masked data can't be sent over HTTPS",
+      "Models refuse any masked text",
+      "Detection is never 100% accurate",
+      "Masking needs a bigger context window"
+    ],
+    "correct": 2,
+    "fact": "Personal-data detection misses things, especially varied names and nicknames, and masking can break tasks that need the real values. Treat it as one layer, with logging and review behind it."
+  },
+  {
+    "id": "trust_023",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "How is a residency objection best reframed?",
+    "answers": [
+      "Can the risk be shown to be managed?",
+      "Is the vendor's data centre big enough?",
+      "Which country has the cheapest compute?",
+      "Who wrote the cloud contract?"
+    ],
+    "correct": 0,
+    "fact": "The useful question is rarely 'is it allowed?' but 'can we evidence the risk is managed?' That moves the talk to controls, logs and review."
+  },
+  {
+    "id": "trust_024",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does a data-loss-prevention (DLP) tool do?",
+    "answers": [
+      "Chooses which model handles a request",
+      "Compresses long documents for storage",
+      "Rewrites prompts into plainer words",
+      "Flags sensitive data before it leaves"
+    ],
+    "correct": 3,
+    "fact": "DLP tools watch for things like account numbers or personal details leaving, and can warn or block. It is one layer alongside policy and admin settings."
+  },
+  {
+    "id": "trust_025",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Asked something you can't answer, what builds most trust?",
+    "answers": [
+      "Give your best guess, said confidently",
+      "Be honest, then say how you'll check",
+      "Change the subject, then circle back",
+      "Promise a full answer by next month"
+    ],
+    "correct": 1,
+    "fact": "Honest limits plus a plan beat a bluff. \"Here is what I know, and I'll bring in a specialist for the rest\" keeps the customer's confidence."
+  },
+  {
+    "id": "trust_026",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why think aloud when a customer asks something tricky?",
+    "answers": [
+      "It lets them follow and correct you",
+      "It gives you time to find a script",
+      "It avoids needing to know the facts",
+      "It keeps the answer short and neat"
+    ],
+    "correct": 0,
+    "fact": "Reasoning in plain steps lets the customer follow along and spot a wrong turn early. It also shows where you would need a specialist."
+  },
+  {
+    "id": "trust_027",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is an audit log for?",
+    "answers": [
+      "A list of the model's training files",
+      "A cache of repeated answers",
+      "A record of who did what, to review",
+      "A backup of the prompt library"
+    ],
+    "correct": 2,
+    "fact": "Admins and compliance teams use logs to see activity, investigate incidents and show controls working."
+  },
+  {
+    "id": "trust_028",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Staff use personal AI accounts for work. What's the main risk?",
+    "answers": [
+      "Personal accounts cost more per token",
+      "Answers get less accurate",
+      "The model refuses work topics",
+      "Work data escapes company controls"
+    ],
+    "correct": 3,
+    "fact": "There is no SSO, retention setting or admin visibility. A managed workspace with sensible policy usually beats banning tools that staff already like."
+  },
+  {
+    "id": "trust_029",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A security questionnaire has gaps. What's the right approach?",
+    "answers": [
+      "Answer accurately and flag the gaps",
+      "Mark each line 'yes' to move fast",
+      "Leave gaps for the lawyers silently",
+      "Skip it and offer a call instead"
+    ],
+    "correct": 0,
+    "fact": "Over-claiming costs trust and can cause problems later. Honest answers with a plan or workaround keep the review moving."
+  },
+  {
+    "id": "trust_030",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is data minimisation?",
+    "answers": [
+      "Compressing files before upload",
+      "Sending just what the task needs",
+      "Deleting chats after a year",
+      "Using the smallest model"
+    ],
+    "correct": 1,
+    "fact": "The less sensitive data leaves the building, the smaller the risk. Mask or drop fields the model doesn't need before the call."
+  },
+  {
+    "id": "trust_031",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why involve the customer's security team early in a pilot?",
+    "answers": [
+      "They approve the model's prompts",
+      "A late review can stall the deal",
+      "They pick which staff get seats",
+      "They negotiate the seat price"
+    ],
+    "correct": 1,
+    "fact": "Reviews take time and have their own queue. Starting in parallel with the business evaluation keeps the deal moving instead of stopping at the end."
+  },
+  {
+    "id": "trust_032",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When a specialist joins the deal, what do you keep?",
+    "answers": [
+      "The plan, people and timeline",
+      "Sign-off on the security answers",
+      "Drafting the legal wording",
+      "Choosing the detailed settings"
+    ],
+    "correct": 0,
+    "fact": "Specialists answer the deep questions, and you stay accountable for the plan, the stakeholders and keeping momentum."
+  },
+  {
+    "id": "trust_033",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Is 'never reveal customer data' in a system prompt a security boundary?",
+    "answers": [
+      "Yes, models reliably obey it",
+      "Yes, if written in capitals",
+      "No, models can be talked round",
+      "Yes, at zero temperature"
+    ],
+    "correct": 2,
+    "fact": "Prompt rules guide behaviour but aren't enforcement. Real boundaries are permissions, access controls and architecture."
+  },
+  {
+    "id": "trust_034",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Does inference residency in a region need storage there too?",
+    "answers": [
+      "No, the two settings are independent",
+      "Yes, storage there is needed first",
+      "No, inference needs no extra setup",
+      "Only for images and audio files"
+    ],
+    "correct": 1,
+    "fact": "OpenAI's help centre says in-region inference needs data residency enabled in that region first. Options change, so check the live list for the customer's country."
+  },
+  {
+    "id": "trust_035",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why avoid saying 'our AI is PDPA compliant'?",
+    "answers": [
+      "The law only covers paper records",
+      "Compliance is checked by the model",
+      "Compliance depends on how it's used",
+      "It sounds too cautious"
+    ],
+    "correct": 2,
+    "fact": "A product can support compliance, but the customer's configuration, data and purpose decide it. Say what controls exist and leave legal conclusions to their counsel."
+  },
+  {
+    "id": "trust_036",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A buyer lists three security worries. What do you do first?",
+    "answers": [
+      "Answer the quickest one",
+      "Ask which one matters most to them",
+      "Promise to fix all of them",
+      "Send a link to the whole trust portal"
+    ],
+    "correct": 1,
+    "fact": "Asking shows you listen and focuses the call on what blocks the decision. Then answer each worry precisely, one at a time."
+  },
+  {
+    "id": "trust_037",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why acknowledge an objection before answering it?",
+    "answers": [
+      "People listen once they feel heard",
+      "It buys time to find a slide",
+      "It proves the objection is plainly wrong",
+      "It lets you skip the answer"
+    ],
+    "correct": 0,
+    "fact": "A short acknowledgement lowers defences. Then your precise answer is heard as help, not a sales push."
+  },
+  {
+    "id": "trust_038",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A pilot stalls at week six in security review. Likely cause?",
+    "answers": [
+      "The model was too slow for the users",
+      "The pilot was too small",
+      "Security joined the pilot too late",
+      "The users were too keen"
+    ],
+    "correct": 2,
+    "fact": "Reviews take time and have their own queue. Bring the customer's security team in at scoping so it does not become a late surprise."
+  },
+  {
+    "id": "trust_039",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which one is Singapore's personal data law?",
+    "answers": [
+      "MAS TRM",
+      "AI Verify",
+      "SCIM",
+      "PDPA"
+    ],
+    "correct": 3,
+    "fact": "The Personal Data Protection Act governs how organisations collect, use and disclose personal data. The others are different things."
+  },
+  {
+    "id": "trust_040",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "At recognition level, what is MAS TRM?",
+    "answers": [
+      "Tech risk rules for financial firms",
+      "Personal data rules for all companies",
+      "A testing toolkit for AI models",
+      "A login standard for staff"
+    ],
+    "correct": 0,
+    "fact": "MAS Technology Risk Management Guidelines set expectations for financial institutions. A bank's own teams map vendors to them."
+  },
+  {
+    "id": "trust_041",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "At recognition level, what is AI Verify?",
+    "answers": [
+      "A data residency certificate",
+      "A toolkit to test AI governance",
+      "A bank licence for AI vendors",
+      "A public leaderboard of model scores"
+    ],
+    "correct": 1,
+    "fact": "AI Verify is Singapore's AI governance testing framework and toolkit. You can name it, but leave the detail to the specialists."
+  },
+  {
+    "id": "trust_042",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is IMDA's Model AI Governance Framework?",
+    "answers": [
+      "A law fining unsafe AI",
+      "A cloud security certification scheme",
+      "Voluntary guidance for using AI well",
+      "A MAS rule for banks only"
+    ],
+    "correct": 2,
+    "fact": "It is voluntary guidance on responsible AI use. Customers often reference it in their own policies, so recognise it by name."
+  },
+  {
+    "id": "trust_043",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A bank asks, \"Are you MAS TRM compliant?\" Best reply?",
+    "answers": [
+      "Yes, fully compliant",
+      "It does not apply to AI",
+      "That is a matter for their lawyers only",
+      "Share evidence; they map it to TRM"
+    ],
+    "correct": 3,
+    "fact": "The regulated firm owns its compliance. Offer evidence and specialists, and never claim compliance on its behalf."
+  },
+  {
+    "id": "trust_044",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "You promised to follow up on a security point. What makes it credible?",
+    "answers": [
+      "Naming who, what and by when",
+      "Following up when you remember",
+      "Sending a generic FAQ",
+      "Asking them to chase you"
+    ],
+    "correct": 0,
+    "fact": "A named owner, a clear deliverable and a date turn \"I don't know\" into a plan. Then keep the date."
+  },
+  {
+    "id": "trust_045",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Asked if customer-managed keys are supported, you are unsure. What now?",
+    "answers": [
+      "Say yes, since most platforms offer it",
+      "Say no, to stay safe",
+      "Check with a specialist, then confirm",
+      "Quote last year's slide"
+    ],
+    "correct": 2,
+    "fact": "Never improvise a compliance answer. A wrong yes or no can end up in a contract or an audit file."
+  },
+  {
+    "id": "trust_046",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which set is a layered guardrail design for a customer chatbot?",
+    "answers": [
+      "One strong system prompt for all cases",
+      "Input checks, output checks, logging",
+      "A bigger context window",
+      "A larger model"
+    ],
+    "correct": 1,
+    "fact": "Each layer catches different failures: bad inputs, bad outputs and anything that slips through, which logs let people review."
+  },
+  {
+    "id": "trust_047",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why use layered guardrails instead of one strong filter?",
+    "answers": [
+      "One filter is always enough",
+      "Layers make the model faster",
+      "Regulators ban the use of single filters",
+      "Each layer catches what others miss"
+    ],
+    "correct": 3,
+    "fact": "Every control has gaps. Stacking checks, human review and logs means one miss does not become an incident."
+  },
+  {
+    "id": "trust_048",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A contractor left in March but still has a login in July. Likely gap?",
+    "answers": [
+      "No automatic removal of leavers",
+      "No training opt-out",
+      "Weak encryption on files at rest",
+      "A short retention window"
+    ],
+    "correct": 0,
+    "fact": "SCIM syncs accounts with the company directory so leavers lose access quickly. Manual removal gets forgotten."
+  },
+  {
+    "id": "trust_049",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A buyer asks if their data is encrypted. Best reply?",
+    "answers": [
+      "Just in transit, not at rest",
+      "Just at rest, not in transit",
+      "Yes, in transit and at rest",
+      "Ask them to check the contract"
+    ],
+    "correct": 2,
+    "fact": "Data is encrypted in transit and at rest. Point to the vendor trust portal for the certifications and detail, rather than reciting them from memory."
+  },
+  {
+    "id": "trust_050",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why is \"we have Singapore residency\" an incomplete answer?",
+    "answers": [
+      "It covers backups, not live chats",
+      "It may cover storage, not inference",
+      "It lapses after the first year",
+      "It applies to small files, not large"
+    ],
+    "correct": 1,
+    "fact": "Storage and model processing are separate questions. Say plainly what is stored where, and check current availability."
+  },
+  {
+    "id": "trust_051",
+    "category": "trust",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A bank hears \"zero data retention\". What should it ask?",
+    "answers": [
+      "Which model is cheapest",
+      "Whether prompts get shorter or longer",
+      "What it covers and what it excludes",
+      "How fast replies arrive"
+    ],
+    "correct": 2,
+    "fact": "Scope depends on the product and endpoint. Ask for the written terms instead of assuming it covers everything."
+  },
+  {
+    "id": "trust_052",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "PDPA bans sending personal data out of Singapore.",
+    "answer": false,
+    "fact": "Transfers are generally allowed if the recipient gives comparable protection. Some sectors have stricter rules, so check the sector."
+  },
+  {
+    "id": "trust_053",
+    "category": "trust",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Who decides if a use is allowed under their regulator?",
+    "answers": [
+      "The seller",
+      "The model",
+      "The vendor's own sales and legal team",
+      "Their own compliance and legal team"
+    ],
+    "correct": 3,
+    "fact": "Sellers explain what the product does. Regulatory judgement belongs to the customer's own experts, who bear the accountability."
+  },
+  {
+    "id": "trust_054",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What order handles a data objection best?",
+    "answers": [
+      "Reassure first, details later",
+      "Listen, diagnose, answer, confirm",
+      "Answer fast, then diagnose it later",
+      "Send documents, then wait"
+    ],
+    "correct": 1,
+    "fact": "Find out whether it is law, policy or unease, answer precisely, then check it landed. Precision builds more trust than reassurance."
+  },
+  {
+    "id": "trust_055",
+    "category": "trust",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which control is the customer's own responsibility?",
+    "answers": [
+      "Classifying their data and who sees it",
+      "OpenAI's SOC 2 audit",
+      "Encryption inside OpenAI's data centres",
+      "OpenAI's no-training default"
+    ],
+    "correct": 0,
+    "fact": "The customer controls what it sends and who can see it; the vendor controls what happens after. Classification and access rules sit with the customer."
+  }
+]

@@ -1,0 +1,81 @@
+{
+ "music": {
+  "home": {
+   "file": "music/home.mp3",
+   "seconds": 73.846156,
+   "loopStart": 1.0,
+   "loopEnd": 74.846156
+  },
+  "quiz": {
+   "file": "music/quiz.mp3",
+   "seconds": 65.454531,
+   "loopStart": 1.0,
+   "loopEnd": 66.454531
+  },
+  "home_jazz": {
+   "file": "music/home_jazz.mp3",
+   "seconds": 68.571438,
+   "loopStart": 1.0,
+   "loopEnd": 69.571438
+  },
+  "quiz_jazz": {
+   "file": "music/quiz_jazz.mp3",
+   "seconds": 60.0,
+   "loopStart": 1.0,
+   "loopEnd": 61.0
+  }
+ },
+ "sfx": {
+  "tap": {
+   "file": "sfx/tap.wav",
+   "bus": "ui",
+   "seconds": 1.31
+  },
+  "select": {
+   "file": "sfx/select.wav",
+   "bus": "ui",
+   "seconds": 1.24
+  },
+  "right": {
+   "file": "sfx/right.wav",
+   "bus": "ui",
+   "seconds": 1.57
+  },
+  "wrong": {
+   "file": "sfx/wrong.wav",
+   "bus": "ui",
+   "seconds": 1.56
+  },
+  "coin": {
+   "file": "sfx/coin.wav",
+   "bus": "ui",
+   "seconds": 1.5
+  },
+  "feed": {
+   "file": "sfx/feed.wav",
+   "bus": "ui",
+   "seconds": 1.56
+  },
+  "play": {
+   "file": "sfx/play.wav",
+   "bus": "ui",
+   "seconds": 1.52
+  },
+  "boop": {
+   "file": "sfx/boop.wav",
+   "bus": "ui",
+   "seconds": 1.41
+  },
+  "done": {
+   "file": "sfx/done.mp3",
+   "bus": "sfx",
+   "seconds": 3.15,
+   "class": "jingle"
+  },
+  "purr": {
+   "file": "sfx/purr.wav",
+   "bus": "ui",
+   "seconds": 0.7
+  }
+ }
+}

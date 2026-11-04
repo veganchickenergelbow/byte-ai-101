@@ -1,0 +1,752 @@
+[
+  {
+    "id": "limits_001",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why can an LLM state something wrong with confidence?",
+    "answers": [
+      "It invents facts to please the user",
+      "It writes the likeliest next word",
+      "It copies mistakes from earlier chats",
+      "It cannot read long sentences"
+    ],
+    "correct": 1,
+    "fact": "It always writes the most plausible next word, and plausible is not the same as true. Without the facts in front of it, a smooth guess is the likeliest result."
+  },
+  {
+    "id": "limits_002",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which first use case suits an LLM best?",
+    "answers": [
+      "Quoting regulated prices from memory",
+      "Adding up invoice totals unaided",
+      "Reporting on last night's sales",
+      "Summarising a pasted ticket thread"
+    ],
+    "correct": 3,
+    "fact": "Summarising text you hand over plays to its strengths. The facts are in the prompt, a person can check the result, and the time saving is clear."
+  },
+  {
+    "id": "limits_003",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A model only knows its training data plus what is in the prompt.",
+    "answer": true,
+    "fact": "That is the whole picture. Your own documents, your customers and your numbers are not in there unless you put them in front of it."
+  },
+  {
+    "id": "limits_004",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "An LLM calculates exact sums by running a calculator inside itself.",
+    "answer": false,
+    "fact": "It is guessing what text comes next, not running a calculator. Small sums often come out right, but long or exact ones can slip."
+  },
+  {
+    "id": "limits_005",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer notices the same question got different wording today. Best answer?",
+    "answers": [
+      "Word choice includes some randomness",
+      "The model retrains itself every night",
+      "It remembers who asked before",
+      "Answers are cached, then refreshed"
+    ],
+    "correct": 0,
+    "fact": "The model picks each next word from a set of likely ones, with a little randomness. Same meaning, different wording: fine for drafts, awkward for strict processes."
+  },
+  {
+    "id": "limits_006",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks what prompt injection is. Best answer?",
+    "answers": [
+      "Adding examples to a prompt to help it",
+      "Sending too many prompts at once",
+      "Text that tricks a model past rules",
+      "Training a model on a user's prompts"
+    ],
+    "correct": 2,
+    "fact": "A model follows instructions it finds in text, so a hidden line like 'ignore your rules' in an email or web page can steer it. Treat what it reads as data, not orders."
+  },
+  {
+    "id": "limits_007",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which job fits the model's varied wording best?",
+    "answers": [
+      "Producing identical legal clauses daily",
+      "Calculating exact commission payouts",
+      "Brainstorming ideas for a campaign",
+      "Reporting stock counts to auditors"
+    ],
+    "correct": 2,
+    "fact": "Variety is a feature when you want ideas or first drafts. It becomes a problem only where identical, checkable output is needed every time."
+  },
+  {
+    "id": "limits_008",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "Hallucination is a solved problem in the newest models.",
+    "answer": false,
+    "fact": "Never tell a customer it is solved. Say it is managed: ground answers in their documents, ask for citations, and keep a person in the loop where mistakes are costly."
+  },
+  {
+    "id": "limits_009",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why might a model miss a rule changed last month?",
+    "answers": [
+      "Its training ended before the change",
+      "It skips rules for safety reasons",
+      "It only reads updates on request",
+      "It ignores anything less than a year old"
+    ],
+    "correct": 0,
+    "fact": "Models learn from text up to a cut-off date. New products, prices or rules may be missing unless you supply them in the prompt."
+  },
+  {
+    "id": "limits_010",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A manager asks the model for 'our fault rate in Punggol'. Likely result?",
+    "answers": [
+      "A correct figure from its training",
+      "A polite refusal every time",
+      "The figure from your latest report",
+      "A plausible but invented figure"
+    ],
+    "correct": 3,
+    "fact": "With no access to the company's data it will often produce something that sounds right. Put the real data in front of it first and it can answer from facts."
+  },
+  {
+    "id": "limits_011",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Where can an LLM help safely with maths?",
+    "answers": [
+      "Producing a final bill to the cent",
+      "Explaining a sum, writing the formula",
+      "Counting rows across a million records",
+      "Tracking running totals unaided"
+    ],
+    "correct": 1,
+    "fact": "It is strong with words, so it can explain how a calculation works or write the formula. Leave the final figure to a tool built for exact arithmetic."
+  },
+  {
+    "id": "limits_012",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An AI summary reads well but leaves out a key clause. What is the lesson?",
+    "answers": [
+      "Nothing false was said, so it is fine",
+      "It proves the contract was unreadable",
+      "Check for omissions, not only errors",
+      "Raise the temperature to add detail"
+    ],
+    "correct": 2,
+    "fact": "Models can drop details as well as invent them, and a smooth summary hides the gap. Spot-check summaries against the source, especially clauses, dates and numbers."
+  },
+  {
+    "id": "limits_013",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer wants the model to read 20 years of files each time. Better plan?",
+    "answers": [
+      "Paste everything into the largest window",
+      "Retrain the model on the files nightly",
+      "Ask staff to summarise them first",
+      "Fetch only the passages that matter"
+    ],
+    "correct": 3,
+    "fact": "Long prompts cost more, run slower and can bury the point. Sending only the relevant passages each time is cheaper, quicker and usually more accurate."
+  },
+  {
+    "id": "limits_014",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "Sending a model's unchecked figures to a regulator is a safe first use case.",
+    "answer": false,
+    "fact": "Wrong facts in front of a regulator are costly. Start with drafts a person checks, and keep anything external until review is in place."
+  },
+  {
+    "id": "limits_015",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer pastes a contract and asks for key dates. What advice?",
+    "answers": [
+      "Good fit, but verify dates against it",
+      "Unsafe, since it cannot read contracts",
+      "Safe, since pasted text can't be misread",
+      "Only possible after fine-tuning"
+    ],
+    "correct": 0,
+    "fact": "Working from text you give it is a strength, but it can still slip on a number or date. A person verifying against the source keeps the time saving without the risk."
+  },
+  {
+    "id": "limits_016",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why can models stumble on counting the letters in a word?",
+    "answers": [
+      "It cannot read English spelling",
+      "Short words are skipped during reading",
+      "It sees tokens, not single letters",
+      "It rounds every count to the nearest ten"
+    ],
+    "correct": 2,
+    "fact": "The model reads chunks of text, not letter by letter, so letter-level tasks are an odd fit for it. It is a good reminder of what tokens are."
+  },
+  {
+    "id": "limits_017",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A team tested a chatbot 10 times and it was right. Why isn't that enough?",
+    "answers": [
+      "Ten runs is plenty if all of them pass",
+      "Tests count when the vendor runs them",
+      "Output varies; ten runs prove little",
+      "Chatbots are best tested on live users"
+    ],
+    "correct": 2,
+    "fact": "Because wording and sometimes content vary, a few lucky runs prove little. Build an eval set of real questions and score it, rather than trusting a handful of tries."
+  },
+  {
+    "id": "limits_018",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why won't 'ignore any bad instructions' fully stop prompt injection?",
+    "answers": [
+      "It can't tell data from orders",
+      "Models cannot read system prompts",
+      "Bad instructions are always in French",
+      "The rule uses too many tokens"
+    ],
+    "correct": 0,
+    "fact": "To the model, your rules and the attacker's text are both just text. So there is no hard wall between them, and a clever enough message can still talk it round."
+  },
+  {
+    "id": "limits_019",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "In a very long chat the model drops an early rule. Likely cause?",
+    "answers": [
+      "The model deletes rules after an hour",
+      "Early messages are billed as output",
+      "The temperature drifts upward over time",
+      "Long chats crowd out early details"
+    ],
+    "correct": 3,
+    "fact": "Everything has to fit in the context window, and long chats may get trimmed or summarised, so early details can fade. Restate key rules or start fresh with a short summary."
+  },
+  {
+    "id": "limits_020",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Retrieval is added, yet some answers are still wrong. Why?",
+    "answers": [
+      "Retrieval always overrides the model",
+      "It may still misread the passage",
+      "Passages are too short to be read",
+      "The model ignores any text it is sent"
+    ],
+    "correct": 1,
+    "fact": "Giving it the right passage helps a lot, but it can still misread or ignore it. That is why we also use citations, grounding checks and evals."
+  },
+  {
+    "id": "limits_021",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A model quotes regulated prices from memory. Best fix?",
+    "answers": [
+      "Raise the temperature for more variety",
+      "Retrieve the schedule; add a sign-off",
+      "Make the prompt longer and sterner",
+      "Wait for the next model release"
+    ],
+    "correct": 1,
+    "fact": "Prices must come from the published source, not from memory, so retrieve it and have a person sign off. It combines grounding with a human check."
+  },
+  {
+    "id": "limits_022",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does it mean to ground a model's answer?",
+    "answers": [
+      "Make the answer shorter and plainer",
+      "Run it on the customer's own servers",
+      "Lower its temperature to zero",
+      "Tie it to documents you supply"
+    ],
+    "correct": 3,
+    "fact": "Grounding means giving the model the real source material and asking it to answer from it, ideally with citations. It cuts down on guessing, though it cannot remove it."
+  },
+  {
+    "id": "limits_023",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A team's app needs every answer in a set JSON shape. Which feature enforces it?",
+    "answers": [
+      "Structured outputs",
+      "Lowering the temperature",
+      "A longer saved chat history",
+      "A much bigger context window"
+    ],
+    "correct": 0,
+    "fact": "Structured outputs make the model fill a set format such as JSON, so other systems can rely on it. They fix the shape of an answer, not whether the content is right."
+  },
+  {
+    "id": "limits_024",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A longer, more confident answer is more likely to be correct.",
+    "answer": false,
+    "fact": "Length and confidence are style, not evidence. Check claims against a source, especially numbers, names and dates."
+  },
+  {
+    "id": "limits_025",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks if the model can read their intranet by itself. Best answer?",
+    "answers": [
+      "Only if it's connected through a tool",
+      "Yes, it learns the intranet in a day",
+      "Yes, if the prompt is polite enough",
+      "No, models can never read files"
+    ],
+    "correct": 0,
+    "fact": "A model sees only its prompt plus whatever tools and connectors it has been given. Access is something you set up and govern, not something it picks up."
+  },
+  {
+    "id": "limits_026",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which input carries the biggest prompt injection risk?",
+    "answers": [
+      "Your own fixed system prompt",
+      "Untrusted text such as web pages",
+      "A short numeric field",
+      "A menu choice from a list"
+    ],
+    "correct": 1,
+    "fact": "Anything written by someone else can hide instructions. Treat web pages, emails and uploaded files as data, and limit what the model can do after reading them."
+  },
+  {
+    "id": "limits_027",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A 300-page bundle is pasted in and answers get vaguer. Why?",
+    "answers": [
+      "The weights shrink as prompts grow",
+      "The model tires after long inputs",
+      "Extra text can bury key details",
+      "Long prompts reset the temperature"
+    ],
+    "correct": 2,
+    "fact": "A bigger window lets more fit, but more text means more to sift. Sending only the relevant passages is often cheaper and sharper."
+  },
+  {
+    "id": "limits_028",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A hiring tool screens CVs with an LLM. Which risk do you raise?",
+    "answers": [
+      "It may pass CVs on to other firms",
+      "It can repeat biases it learned",
+      "It will tire and rate later CVs lower",
+      "It cannot read non-English names"
+    ],
+    "correct": 1,
+    "fact": "Models learn patterns from human writing, including unfair ones. Test across groups, keep a person making the decision, and be open about what the tool does."
+  },
+  {
+    "id": "limits_029",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A user pushes back on a correct answer and the model gives in. What's this?",
+    "answers": [
+      "Sycophancy: it leans to agree",
+      "Overfitting to the latest chat",
+      "Prompt injection by the user",
+      "A context window running out"
+    ],
+    "correct": 0,
+    "fact": "Models can lean towards what the user seems to want. Include pushback cases in your tests and ask the model to cite evidence."
+  },
+  {
+    "id": "limits_030",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer wants contract advice with no lawyer involved. Best answer?",
+    "answers": [
+      "Fine, models are legally qualified",
+      "Use it to draft; a lawyer decides",
+      "Fine if the prompt says 'be accurate'",
+      "Only for contracts under ten pages"
+    ],
+    "correct": 1,
+    "fact": "A model is a strong first-draft and summary tool. Decisions with legal weight still need a qualified person's review."
+  },
+  {
+    "id": "limits_031",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A customer wants a 'temperature 0' guarantee of identical answers. Best reply?",
+    "answers": [
+      "Yes, it makes output identical forever",
+      "No, temperature has no effect at all",
+      "It narrows variety but won't guarantee",
+      "Yes, if the prompt is long enough"
+    ],
+    "correct": 2,
+    "fact": "Lower temperature makes the likeliest word win more often, but model updates and other factors can still change output. Use fixed formats and tests for repeatability."
+  },
+  {
+    "id": "limits_032",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "The model cites a court case that doesn't exist. Which safeguard fits best?",
+    "answers": [
+      "Ask it to double-check itself",
+      "Shorten the prompt to save tokens",
+      "Lower the temperature to zero",
+      "Check each citation at source"
+    ],
+    "correct": 3,
+    "fact": "Invented citations look real because plausibility is what the model produces. Retrieval with real sources plus a verification step catches them before they go out."
+  },
+  {
+    "id": "limits_033",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which is the best first AI pilot for a hospital?",
+    "answers": [
+      "A symptom checker patients use alone",
+      "Auto-filling patient records from notes",
+      "Plain-language leaflet drafts for review",
+      "Summarising lab results for patients"
+    ],
+    "correct": 2,
+    "fact": "Draft leaflets are easy to review and carry low harm. The other jobs put unchecked output into care or records, where a slip can hurt a patient."
+  },
+  {
+    "id": "limits_034",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A retailer wants a quick win. Which AI use case should come first?",
+    "answers": [
+      "Setting live prices from demand",
+      "Replying to refund claims unseen",
+      "Forecasting stock from sales figures",
+      "Drafting product copy for review"
+    ],
+    "correct": 3,
+    "fact": "Drafts a person reviews are forgiving. Live prices, refunds and stock forecasts need exact data, rules or classic forecasting, and mistakes cost money straight away."
+  },
+  {
+    "id": "limits_035",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which is a good first use case for a law firm?",
+    "answers": [
+      "Summarising contracts for lawyer review",
+      "Finding case law from memory",
+      "Sending client letters after a skim",
+      "Ranking cases by chance of winning"
+    ],
+    "correct": 0,
+    "fact": "Summaries save lawyer time and can be checked against the contract. Case law from memory risks invented cases, and letters or rankings need a lawyer's judgement."
+  },
+  {
+    "id": "limits_036",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which is a good first use case at a logistics firm?",
+    "answers": [
+      "Choosing delivery routes live",
+      "Drafting delay emails for review",
+      "Quoting customs duty to clients",
+      "Predicting delays from GPS data"
+    ],
+    "correct": 1,
+    "fact": "Delay emails are low risk and a person can review them. Routing and delay prediction suit optimisation or ML tools, and duty quotes need exact rules."
+  },
+  {
+    "id": "limits_037",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Two staff reword one question and get different answers. Best lesson?",
+    "answers": [
+      "Ban staff from rewording questions",
+      "The model has two knowledge stores",
+      "Test many phrasings of each question",
+      "The earlier answer is the right one"
+    ],
+    "correct": 2,
+    "fact": "Models react to wording, so one test phrasing proves little. Put several ways of asking into the eval set, and give users example prompts that work."
+  },
+  {
+    "id": "limits_038",
+    "category": "limits",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which job is a poor fit for an LLM alone?",
+    "answers": [
+      "Sorting a spreadsheet by date",
+      "Replying to a complaint",
+      "Summarising a long email",
+      "Explaining a clause in plain words"
+    ],
+    "correct": 0,
+    "fact": "Sorting is exact and rule-based, so plain software does it faster, cheaper and without errors. Use an LLM for language work."
+  },
+  {
+    "id": "limits_039",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bank wants an LLM to approve loans. What makes it workable?",
+    "answers": [
+      "A higher temperature setting",
+      "A longer, more detailed system prompt",
+      "A bigger context window",
+      "Human sign-off and an audit trail"
+    ],
+    "correct": 3,
+    "fact": "Lending decisions need accountability and explanation. The model can prepare summaries, while a person decides and the steps are logged."
+  },
+  {
+    "id": "limits_040",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An insurer wants instant claim payouts from chat. What makes it workable?",
+    "answers": [
+      "A friendlier chat tone",
+      "A model with a larger window",
+      "Rules, plus a person for big claims",
+      "Letting the model decide every payout"
+    ],
+    "correct": 2,
+    "fact": "Rules handle clear small claims; people handle large or odd ones. The model gathers facts and drafts rather than deciding money."
+  },
+  {
+    "id": "limits_041",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot gives stiff Thai replies and misses nuance. Which limitation is likely?",
+    "answers": [
+      "Thai text cannot be tokenised",
+      "Less Thai in its training data",
+      "The temperature is too low",
+      "Its knowledge cutoff is too old"
+    ],
+    "correct": 1,
+    "fact": "Models are usually strongest in the most widely written languages. Test each language and, where it matters, use native-speaker review."
+  },
+  {
+    "id": "limits_042",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot quotes a policy accurately, but the policy file is out of date. What is the issue?",
+    "answers": [
+      "The model is hallucinating",
+      "Data quality: the source is stale",
+      "The context window is too small",
+      "The temperature is set too high"
+    ],
+    "correct": 1,
+    "fact": "The model quoted faithfully, so this is not hallucination. The source was out of date, which is why a refresh process and good data matter as much as the model."
+  },
+  {
+    "id": "limits_043",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A hospital wants clinical notes summarised. What makes it workable?",
+    "answers": [
+      "A hotter temperature setting",
+      "Switching off the whole system prompt",
+      "Using shorter notes only",
+      "A clinician checks each summary"
+    ],
+    "correct": 3,
+    "fact": "Summaries can drop or distort a detail. A clinician check keeps the speed gain while a person stays responsible for the record."
+  },
+  {
+    "id": "limits_044",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A factory wants machine failures predicted from sensor numbers. Fit for an LLM?",
+    "answers": [
+      "Strong: LLMs excel at sensor data",
+      "Strong: it learns from raw streams",
+      "Weak: classic ML suits numbers",
+      "Weak: LLMs cannot read tables at all"
+    ],
+    "correct": 2,
+    "fact": "Forecasting from numeric sensor streams is a job for statistical or machine learning models. An LLM can explain alerts in words."
+  },
+  {
+    "id": "limits_045",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A call centre wants calls summarised. Which add-on cuts risk most?",
+    "answers": [
+      "Raising the temperature",
+      "Spot-checking against recordings",
+      "Longer summaries",
+      "Removing the system prompt entirely"
+    ],
+    "correct": 1,
+    "fact": "Spot checks reveal how often summaries miss or twist something. The results show whether more review or better prompts are needed."
+  },
+  {
+    "id": "limits_046",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot never says 'I don't know'. Which limitation explains it?",
+    "answers": [
+      "It is built to give an answer",
+      "Its context window is too small",
+      "Its cutoff is too old",
+      "The temperature is too low"
+    ],
+    "correct": 0,
+    "fact": "A model continues text rather than checking whether it knows. Instructions and grounding can encourage declining, but test for it."
+  },
+  {
+    "id": "limits_047",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A government agency wants answers drawn from policy PDFs. What makes it workable?",
+    "answers": [
+      "A larger model alone",
+      "Higher temperature for variety",
+      "Removing the PDFs after training",
+      "Retrieval, citations and review"
+    ],
+    "correct": 3,
+    "fact": "Retrieving the relevant passages and showing citations lets staff check each answer against the source."
+  },
+  {
+    "id": "limits_048",
+    "category": "limits",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot follows instructions hidden in an uploaded CV. Which limitation is this?",
+    "answers": [
+      "Outdated knowledge cutoff",
+      "Sycophancy",
+      "Prompt injection",
+      "Token limits"
+    ],
+    "correct": 2,
+    "fact": "Models cannot reliably tell data from commands. Treat uploaded text as untrusted and limit what the bot can do with it."
+  },
+  {
+    "id": "limits_049",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Which first use case is hardest to make safe for an insurer?",
+    "answers": [
+      "Summarising claim notes",
+      "Auto-denying claims from chat",
+      "Drafting claim letters for review",
+      "Tagging claim types"
+    ],
+    "correct": 1,
+    "fact": "Denying claims is a consequential decision about a customer. The others are drafting or sorting steps with a person in the loop."
+  },
+  {
+    "id": "limits_050",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "One bot must answer in Thai, Khmer and Burmese. Best rollout?",
+    "answers": [
+      "Pilot each with native speakers",
+      "Launch all three at once",
+      "Launch Thai and assume the rest work",
+      "Use English only"
+    ],
+    "correct": 0,
+    "fact": "Quality can differ a lot between languages. Staged pilots with native speakers reveal where it is good enough to release."
+  },
+  {
+    "id": "limits_051",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A model scored 95% in testing. Why can real-world risk still be high?",
+    "answers": [
+      "95% is always safe enough",
+      "Tests only measure speed",
+      "Errors are always obvious",
+      "The 5% may be the costly cases"
+    ],
+    "correct": 3,
+    "fact": "Averages hide where failures land. One wrong answer on a refund or a medical point can matter more than many right ones."
+  },
+  {
+    "id": "limits_052",
+    "category": "limits",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A fintech wants an LLM to catch fraud in transactions. Best role?",
+    "answers": [
+      "Detect fraud on its own, unaided",
+      "Block payments with no human check",
+      "Explain and triage tool alerts",
+      "Replace the rules engine entirely"
+    ],
+    "correct": 2,
+    "fact": "Fraud detection is best done by purpose-built models and rules. An LLM can summarise alerts and help analysts decide faster."
+  }
+]

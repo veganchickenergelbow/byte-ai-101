@@ -1,0 +1,797 @@
+[
+  {
+    "id": "skills_001",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is a Skill in ChatGPT?",
+    "answers": [
+      "A plugin that adds new data sources",
+      "A reusable workflow taught once",
+      "A model trained for one job",
+      "A shared chat history for a team"
+    ],
+    "correct": 1,
+    "fact": "Teach a task once instead of re-explaining it every time: a small package with a name and description, step-by-step instructions and any supporting files."
+  },
+  {
+    "id": "skills_002",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which analogy fits a Skill best?",
+    "answers": [
+      "A new chef joining the kitchen team",
+      "A locked pantry of ingredients",
+      "A phone line to the supplier",
+      "A recipe card in a kitchen binder"
+    ],
+    "correct": 3,
+    "fact": "The chef doesn't memorise every recipe. They scan the index of titles, and when an order matches, they pull the card and follow it exactly."
+  },
+  {
+    "id": "skills_003",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which file usually holds a Skill's step-by-step instructions?",
+    "answers": [
+      "A file named INSTRUCTIONS.json",
+      "A file named WORKFLOW.yaml",
+      "A file named SKILL.md",
+      "A file named PROMPT.txt"
+    ],
+    "correct": 2,
+    "fact": "SKILL.md is a plain-text Markdown file with the purpose, inputs, numbered steps, output format and final checks: the method on the card."
+  },
+  {
+    "id": "skills_004",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A Skill's name and description help the assistant decide when to use it.",
+    "answer": true,
+    "fact": "They are the title in the binder's index. The assistant reads them to decide whether a request matches."
+  },
+  {
+    "id": "skills_005",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "How can you call a Skill explicitly?",
+    "answers": [
+      "By @-mentioning it in the chat",
+      "By turning on a model setting",
+      "By re-uploading it each time",
+      "By asking an admin to run it"
+    ],
+    "correct": 0,
+    "fact": "Besides automatic matching, you can pick one yourself by @-mentioning it when you know exactly which workflow you want."
+  },
+  {
+    "id": "skills_006",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A Skill gives ChatGPT access to apps and data it could not reach before.",
+    "answer": false,
+    "fact": "A Skill only instructs the assistant how to use the tools and apps it already has. It grants no new data access, which is a handy answer to a security question."
+  },
+  {
+    "id": "skills_007",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A team asks which task is the best candidate for a Skill. Best answer?",
+    "answers": [
+      "A one-off question about a news story",
+      "A single idea for a team off-site",
+      "A monthly pack with fixed steps",
+      "A quick translation of one email"
+    ],
+    "correct": 2,
+    "fact": "Create a Skill for tasks you repeat, with several steps, strict formatting or policies, where consistency matters. For a one-off, a plain prompt will do."
+  },
+  {
+    "id": "skills_008",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which belongs in a Skill's supporting resources?",
+    "answers": [
+      "Templates, examples and scripts",
+      "The user's past chat messages",
+      "The model's training dataset",
+      "The billing records for the team"
+    ],
+    "correct": 0,
+    "fact": "Beside SKILL.md a Skill can carry templates, examples, brand guidelines, schemas or scripts: the photo of the finished dish and the special utensils."
+  },
+  {
+    "id": "skills_009",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A Skill's description just says 'Helps with work'. What is likely?",
+    "answers": [
+      "It will fire on every request",
+      "It will run correctly but quite slowly",
+      "It will be blocked by the admin",
+      "It rarely gets matched to requests"
+    ],
+    "correct": 3,
+    "fact": "The description is how the assistant recognises when to use the Skill. A vague one is the most common reason a Skill never fires, so say what it does and when."
+  },
+  {
+    "id": "skills_010",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In the open Agent Skills format, what is always loaded?",
+    "answers": [
+      "The full instructions of each Skill",
+      "Just the short name and description",
+      "Every supporting file and script",
+      "The last output from each Skill"
+    ],
+    "correct": 1,
+    "fact": "That is progressive disclosure as the open Agent Skills format works: full instructions load only on a match. OpenAI confirms the description's role but not the loading detail."
+  },
+  {
+    "id": "skills_011",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A team working toward one goal wants shared files and chats. What fits?",
+    "answers": [
+      "A Skill with fixed numbered steps",
+      "A Project with shared files and chats",
+      "Fine-tuning on the team's chats",
+      "A longer system prompt for each person"
+    ],
+    "correct": 1,
+    "fact": "A Project holds shared context, files and chats for an outcome. A Skill packages a repeatable procedure. Project for the goal, Skill for the routine."
+  },
+  {
+    "id": "skills_012",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which tool changes what the model knows from your documents?",
+    "answers": [
+      "A Skill, which stores your documents",
+      "A prompt, which retrains the model",
+      "A Project, which edits the weights",
+      "RAG, retrieving from your documents"
+    ],
+    "correct": 3,
+    "fact": "RAG changes what the model can look up; a Skill changes which procedure it follows. They combine well: the Skill sets out the monthly pack, retrieval supplies the figures."
+  },
+  {
+    "id": "skills_013",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Same steps and format every time, by next week. Best fit?",
+    "answers": [
+      "A Skill with steps and a template",
+      "A fine-tune on thousands of examples",
+      "A bigger model with higher reasoning",
+      "A vector index of past reports"
+    ],
+    "correct": 0,
+    "fact": "Fine-tuning changes the weights and needs lots of examples. A Skill writes the procedure down in plain files you can edit today, so try it first."
+  },
+  {
+    "id": "skills_014",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How should a team shape its Skills?",
+    "answers": [
+      "One huge Skill that covers everything",
+      "One per person, without sharing",
+      "Small, combinable ones for each task",
+      "Only Skills that run on a schedule"
+    ],
+    "correct": 2,
+    "fact": "Small Skills are easier to describe, test and combine. One giant workflow gets hard to match and hard to fix."
+  },
+  {
+    "id": "skills_015",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks who controls who can create, share and install Skills. Best answer?",
+    "answers": [
+      "Whoever wrote each Skill",
+      "Each team member, privately",
+      "The workspace admins or owners",
+      "OpenAI sets it for everyone"
+    ],
+    "correct": 2,
+    "fact": "Workspace owners and admins decide who can create, use, share and install Skills, depending on plan and settings. Check the current admin options before quoting them."
+  },
+  {
+    "id": "skills_016",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks, 'Is a Skill just a saved prompt?' Best reply?",
+    "answers": [
+      "More: steps, templates and scripts",
+      "Yes, exactly that and nothing more",
+      "No, it is a separately trained model",
+      "No, it is a database of past answers"
+    ],
+    "correct": 0,
+    "fact": "A saved prompt is text. A Skill can bundle instructions with templates, examples, brand guidelines or scripts, and the assistant picks it when the request fits."
+  },
+  {
+    "id": "skills_017",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In a monthly pack Skill, which step is the best final check?",
+    "answers": [
+      "Rewrite the title in a bolder style",
+      "Add a longer introduction at the start",
+      "Email it to the whole company",
+      "Check each number traces to a source"
+    ],
+    "correct": 3,
+    "fact": "Good Skills end with checks. Here every figure traces back to the source file, so whoever runs the pack gets the same trustworthy result."
+  },
+  {
+    "id": "skills_018",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is the difference between a Skill and a connector?",
+    "answers": [
+      "Skills add access; connectors add steps",
+      "Skills add steps; connectors add access",
+      "Both add the same knowledge differently",
+      "Connectors are admin-only, Skills aren't"
+    ],
+    "correct": 1,
+    "fact": "A connector links the assistant to an app like Drive. A Skill tells it what to do with what it can reach. Access versus procedure."
+  },
+  {
+    "id": "skills_019",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which of these is a way to create a Skill in ChatGPT?",
+    "answers": [
+      "Filing a request with OpenAI",
+      "Fine-tuning on past outputs",
+      "Describing it in a chat",
+      "Renaming a saved conversation"
+    ],
+    "correct": 2,
+    "fact": "There are three ways: with chat, in the editor, or by uploading one. Uploads are scanned and may be marked Needs Review or Blocked."
+  },
+  {
+    "id": "skills_020",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does it matter that SKILL.md is plain text in an open format?",
+    "answers": [
+      "It cannot be edited by staff",
+      "It can be shared and versioned",
+      "It runs faster than other files",
+      "It is locked to one product"
+    ],
+    "correct": 1,
+    "fact": "Because a Skill is plain text in the open Agent Skills format, it can be reviewed, versioned and shared, and reused in tools that support the format."
+  },
+  {
+    "id": "skills_021",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A Skill works when @-mentioned but never fires on its own. First fix?",
+    "answers": [
+      "Sharpen its description",
+      "Add more supporting files",
+      "Raise the reasoning effort",
+      "Fine-tune on its outputs"
+    ],
+    "correct": 0,
+    "fact": "The steps clearly work, so the matching is the problem. Say what the Skill does and when to use it, in the words people actually use when they ask."
+  },
+  {
+    "id": "skills_022",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How would you show a customer a Skill is worth keeping?",
+    "answers": [
+      "Count how often it gets installed",
+      "Ask the model to rate its own output",
+      "Check the instructions are detailed",
+      "Measure time saved against a baseline"
+    ],
+    "correct": 3,
+    "fact": "Same as any pilot: agree a measure and baseline first, then compare time saved and rework on real runs. Install counts alone can mislead."
+  },
+  {
+    "id": "skills_023",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A Skill can include a template so every output follows the same layout.",
+    "answer": true,
+    "fact": "Templates, examples and checklists sit in the Skill's supporting resources, so the output comes out in the house style whoever runs it."
+  },
+  {
+    "id": "skills_024",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which Skill name will be easiest for an assistant to match?",
+    "answers": [
+      "General reporting assistant",
+      "Team workflow helper",
+      "Everyday office tasks",
+      "Monthly ops review pack"
+    ],
+    "correct": 3,
+    "fact": "The name and description are what the assistant uses to recognise a Skill. Clear, specific words that match how people ask make it easier to find."
+  },
+  {
+    "id": "skills_025",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A Skill fires on requests it was never meant for. First fix?",
+    "answers": [
+      "Delete the supporting files",
+      "Raise the reasoning effort",
+      "Add more example outputs",
+      "Tighten its description"
+    ],
+    "correct": 3,
+    "fact": "A description that is too broad matches too much. Say what the Skill does, and what it does not, in the words people use."
+  },
+  {
+    "id": "skills_026",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Several Skills are installed. How does an agent choose one?",
+    "answers": [
+      "It times each Skill on the request",
+      "It matches names and descriptions",
+      "It uses the most recently added one",
+      "It reads every file in every Skill"
+    ],
+    "correct": 1,
+    "fact": "The name and description are how the assistant recognises when a Skill applies. How it loads the rest varies by tool, so do not promise internals to a customer."
+  },
+  {
+    "id": "skills_027",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Where should long reference material for a Skill live?",
+    "answers": [
+      "Packed into the description line",
+      "Repeated in every chat message",
+      "In the supporting files",
+      "Squeezed into the Skill's name"
+    ],
+    "correct": 2,
+    "fact": "Keep the description short, since it is how the Skill is recognised, and put detail in supporting files such as templates, examples and references."
+  },
+  {
+    "id": "skills_028",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why are uploaded Skills scanned before use?",
+    "answers": [
+      "To translate them into other languages",
+      "To convert them into fine-tunes",
+      "To count how many steps they have",
+      "To catch unsafe or unwanted content"
+    ],
+    "correct": 3,
+    "fact": "A Skill can carry scripts and instructions, so uploads are checked and may be marked for review or blocked. Admins also control who can create, share and install."
+  },
+  {
+    "id": "skills_029",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A Skill's output keeps missing the format. What helps most?",
+    "answers": [
+      "Make the description much longer",
+      "Add an example and a final check",
+      "Remove the template to cut clutter",
+      "Rename the Skill to something punchy"
+    ],
+    "correct": 1,
+    "fact": "A worked example shows the target, and a closing check step catches drift from it before the answer goes out."
+  },
+  {
+    "id": "skills_030",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Two Skills have near-identical descriptions. What may happen?",
+    "answers": [
+      "Both run at the same time forever",
+      "The agent may pick the wrong one",
+      "The older one is deleted",
+      "Neither can be @-mentioned"
+    ],
+    "correct": 1,
+    "fact": "Matching rests on descriptions, so overlap causes mix-ups. Give each Skill a distinct job and say when not to use it."
+  },
+  {
+    "id": "skills_031",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A policy changed but the Skill's steps did not. What's the risk?",
+    "answers": [
+      "The Skill stops working altogether",
+      "Everyone keeps following old steps",
+      "It updates its steps by itself",
+      "Users are warned automatically"
+    ],
+    "correct": 1,
+    "fact": "Consistency cuts both ways. Give each Skill an owner and a review date so the recipe card stays current."
+  },
+  {
+    "id": "skills_032",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Staff need answers from 400 policy PDFs. Best tool?",
+    "answers": [
+      "RAG over the policies",
+      "A Skill per policy",
+      "Fine-tuning on the PDFs",
+      "A longer prompt"
+    ],
+    "correct": 0,
+    "fact": "This is a knowledge problem: the model needs the right passages. A Skill adds steps, not knowledge, so retrieval is the better fit."
+  },
+  {
+    "id": "skills_033",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which job is a Skill poor at?",
+    "answers": [
+      "Repeating a review checklist",
+      "Making the model know new facts",
+      "Producing a standard report layout",
+      "Following steps in a set order"
+    ],
+    "correct": 1,
+    "fact": "A Skill packages how to do a task. Facts come from files, retrieval or connectors, so pair a Skill with those when you need both."
+  },
+  {
+    "id": "skills_034",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which Skill is mainly about conventions and standards?",
+    "answers": [
+      "One that applies the house report style",
+      "One that fetches today's share price",
+      "One that stores last year's reports",
+      "One that trains on staff chats"
+    ],
+    "correct": 0,
+    "fact": "OpenAI's page groups Skills into reusable processes, tool-based workflows, and conventions such as a house style or structure. This one enforces a convention."
+  },
+  {
+    "id": "skills_035",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A task changes shape every time, with no fixed steps. Skill?",
+    "answers": [
+      "Yes, Skills adapt to any kind of task",
+      "Yes, after fine-tuning",
+      "Only if it uses RAG",
+      "Probably not: nothing repeats"
+    ],
+    "correct": 3,
+    "fact": "A Skill captures a repeatable way of working. If each run differs, there is little to write down, and a good prompt each time will do."
+  },
+  {
+    "id": "skills_036",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What should a good Skill description say?",
+    "answers": [
+      "What it does and when to use it",
+      "Who built it and when",
+      "Every step set out in full detail",
+      "Its file size and format"
+    ],
+    "correct": 0,
+    "fact": "The description helps the assistant decide when the Skill fits, so it should say the job and the situation. The detailed steps belong in the Skill itself."
+  },
+  {
+    "id": "skills_037",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What helps most when asking ChatGPT to draft a Skill?",
+    "answers": [
+      "The topic and a friendly tone",
+      "A link to the team's intranet",
+      "Task, inputs, steps and format",
+      "Last year's reports, unlabelled"
+    ],
+    "correct": 2,
+    "fact": "OpenAI suggests describing the job, inputs, numbered steps, output format with examples, and quality checks, then reviewing and refining the draft before installing."
+  },
+  {
+    "id": "skills_038",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What should a Skill say about inputs?",
+    "answers": [
+      "Nothing; the model simply guesses it",
+      "Only the file name",
+      "What the user must supply first",
+      "Which model wrote it"
+    ],
+    "correct": 2,
+    "fact": "Naming the needed inputs, such as a data export or a period, stops the Skill starting work with gaps and inventing the rest."
+  },
+  {
+    "id": "skills_039",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A Skill starts writing before it has the data. Fix?",
+    "answers": [
+      "Make the description much shorter",
+      "Rename the Skill",
+      "Add more templates",
+      "Add an input-check step first"
+    ],
+    "correct": 3,
+    "fact": "An early step asks for anything missing before drafting. That is cheaper than correcting a polished report built on guesses."
+  },
+  {
+    "id": "skills_040",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What makes an output format instruction clear?",
+    "answers": [
+      "Named sections in a fixed order",
+      "A warning to be extra careful here",
+      "The word \"professional\"",
+      "A request to stay brief"
+    ],
+    "correct": 0,
+    "fact": "Concrete structure beats adjectives. Naming each section and its order leaves little room for the layout to drift between runs."
+  },
+  {
+    "id": "skills_041",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A good final check for a customer-email Skill?",
+    "answers": [
+      "Check it is long enough for the topic",
+      "Check facts and dates match sources",
+      "Check it sounds warm and enthusiastic",
+      "Check it opens with a name"
+    ],
+    "correct": 1,
+    "fact": "A last step that verifies facts catches the errors that matter. Style checks are fine, but accuracy against the source is the one customers notice."
+  },
+  {
+    "id": "skills_042",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Will a Skill make every output identical?",
+    "answers": [
+      "Yes, the steps fix every word",
+      "Yes, if the description is clear",
+      "No: more consistent, not identical",
+      "Only at the highest reasoning effort"
+    ],
+    "correct": 2,
+    "fact": "Following the same steps and template makes results far more alike, but wording can still vary between runs. Add a final check and review samples."
+  },
+  {
+    "id": "skills_043",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Security asks: does adding a Skill widen what staff can reach?",
+    "answers": [
+      "Yes, it opens all workspace files",
+      "Yes, but only for admins",
+      "Only with a long description",
+      "No: data access is set elsewhere"
+    ],
+    "correct": 3,
+    "fact": "A Skill adds steps and format, not new data access. What people can reach comes from their permissions and connectors, which admins control."
+  },
+  {
+    "id": "skills_044",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Before a team-written Skill is shared widely, what should happen?",
+    "answers": [
+      "Review it and test real examples",
+      "Nothing; Skills are harmless text",
+      "Wait for a new model release",
+      "Rename it after the team"
+    ],
+    "correct": 0,
+    "fact": "Shared Skills shape work for many people, and some can include scripts. A review and a test on real cases catches mistakes and unsafe content."
+  },
+  {
+    "id": "skills_045",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A shared Skill holds a process that changes yearly. Who should look after it?",
+    "answers": [
+      "Whoever happened to use it last week",
+      "A named owner with a review date",
+      "The model itself",
+      "No one; it fixes itself"
+    ],
+    "correct": 1,
+    "fact": "Skills go stale quietly. An owner and a review date keep the steps in line with the process people actually follow."
+  },
+  {
+    "id": "skills_046",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Best first Skill for a sales team?",
+    "answers": [
+      "A rule for every possible deal type",
+      "One that rewrites the CRM",
+      "A call-notes summary, set format",
+      "A one-off research brief"
+    ],
+    "correct": 2,
+    "fact": "Frequent, structured and easy to check: the team sees value fast and can judge the output against a known layout."
+  },
+  {
+    "id": "skills_047",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What makes a good first Skill candidate?",
+    "answers": [
+      "Rare, creative and very hard to judge",
+      "Urgent and different each time",
+      "Sensitive and needing no review",
+      "Frequent, rule-based, easy to check"
+    ],
+    "correct": 3,
+    "fact": "Start where steps repeat and results are easy to verify. A small, visible win builds trust before riskier workflows."
+  },
+  {
+    "id": "skills_048",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A colleague built a great Skill. How does the team get it?",
+    "answers": [
+      "Paste its text into every chat",
+      "Wait for OpenAI to roll it out",
+      "Share it, if settings allow",
+      "Each person rebuilds it themselves"
+    ],
+    "correct": 2,
+    "fact": "Skills can be shared with a workspace or installed on others' behalf if workspace settings allow it. Owners control who can create, use, share and install."
+  },
+  {
+    "id": "skills_049",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "The team pastes the same 200-word prompt every day. Better?",
+    "answers": [
+      "Fine-tune a model on that prompt",
+      "Make it a Skill with a template",
+      "Build a RAG pipeline",
+      "Shorten it to one line"
+    ],
+    "correct": 1,
+    "fact": "Repeated pasting is the signal. A Skill holds the steps and layout once, so everyone starts from the same version."
+  },
+  {
+    "id": "skills_050",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A bot must use changing documents and a fixed format. Combine?",
+    "answers": [
+      "Fine-tuning for both",
+      "A Skill with all the documents inside",
+      "RAG for facts, a Skill for format",
+      "A longer system prompt only"
+    ],
+    "correct": 2,
+    "fact": "Match each tool to its job: retrieval brings current knowledge, and a Skill supplies the repeatable steps and layout."
+  },
+  {
+    "id": "skills_051",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A firm wants a cheaper model for one narrow task. Is a Skill the tool?",
+    "answers": [
+      "Yes, Skills shrink models",
+      "Yes, Skills cut token prices a lot",
+      "Only with RAG added",
+      "No: fine-tuning or distillation"
+    ],
+    "correct": 3,
+    "fact": "A Skill changes the instructions, not the model. Making a smaller model do a narrow job well is the work of fine-tuning or distillation."
+  },
+  {
+    "id": "skills_052",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How should a team test a new Skill?",
+    "answers": [
+      "Run it on real past examples",
+      "Read its description aloud",
+      "Run it once on an easy sample",
+      "Ask the model if it works"
+    ],
+    "correct": 0,
+    "fact": "Real examples reveal gaps in steps and format. Compare outputs with known good ones, and try near-miss requests to check it does not misfire."
+  },
+  {
+    "id": "skills_053",
+    "category": "skills",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "The steps rarely change but the numbers do. Where do numbers go?",
+    "answers": [
+      "Into the Skill description",
+      "Supplied each run, not fixed",
+      "Into the model by fine-tuning",
+      "Left out; the model recalls them"
+    ],
+    "correct": 1,
+    "fact": "Keep the Skill about the method and pass current data in each time. Hard-coded figures go stale while everyone trusts the tidy output."
+  },
+  {
+    "id": "skills_054",
+    "category": "skills",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A Skill with clear steps can help a junior follow the usual team process.",
+    "answer": true,
+    "fact": "A Skill writes the team method down once, so newer staff get the same steps and layout as experienced colleagues."
+  },
+  {
+    "id": "skills_055",
+    "category": "skills",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "The more steps a Skill has, the better it works.",
+    "answer": false,
+    "fact": "Extra steps add places to go wrong. Keep only the steps that matter, and split a long process into smaller Skills."
+  }
+]

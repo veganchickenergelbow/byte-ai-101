@@ -1,0 +1,8 @@
+{
+  "_comment": "Which art is integrated. logo is false: the header uses styled text. Theme icons are emoji unless a theme has \"art\": true in data/themes.json.",
+  "room": false,
+  "icons": true,
+  "logo": false,
+  "accessories": true,
+  "balcony": true
+}

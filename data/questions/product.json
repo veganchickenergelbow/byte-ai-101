@@ -1,0 +1,671 @@
+[
+  {
+    "id": "product_001",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which are Snowflake's three layers?",
+    "answers": [
+      "Databases, schemas and tables",
+      "Ingest, transform and report",
+      "Storage, compute and cloud services",
+      "Network, memory and security"
+    ],
+    "correct": 2,
+    "fact": "Storage holds the data, virtual warehouses (compute) run the queries, and cloud services is the brain for logins, planning and metadata. Think shelves, work teams and a manager."
+  },
+  {
+    "id": "product_002",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does separating storage from compute let you do?",
+    "answers": [
+      "Share one big server between teams",
+      "Scale each side on its own",
+      "Run queries without any storage",
+      "Keep the data on the user's laptop"
+    ],
+    "correct": 1,
+    "fact": "Add a warehouse for finance without slowing operations, or store more data without buying more compute. You pay for each separately."
+  },
+  {
+    "id": "product_003",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is a virtual warehouse?",
+    "answers": [
+      "A store where all the data is kept",
+      "A compute cluster that runs queries",
+      "A catalogue of users and passwords",
+      "A dashboard layer for finance teams"
+    ],
+    "correct": 1,
+    "fact": "It's a team of workers: start, stop and resize it as needed, and many warehouses can read the same data without competing."
+  },
+  {
+    "id": "product_004",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Where does the data itself sit?",
+    "answers": [
+      "In cloud object storage",
+      "On the analyst's own laptop",
+      "Inside each virtual warehouse",
+      "In the BI tool's memory"
+    ],
+    "correct": 0,
+    "fact": "Compressed files sit in the cloud provider's object storage, such as S3, Azure Blob or Google Cloud Storage. You pay for what is stored, and warehouses read it as needed."
+  },
+  {
+    "id": "product_005",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which layer checks logins and plans each query?",
+    "answers": [
+      "Cloud services",
+      "Virtual warehouses",
+      "Object storage",
+      "The BI tool"
+    ],
+    "correct": 0,
+    "fact": "Cloud services is the manager with the index and the access list: permissions, the optimiser, metadata about where data sits, and transactions."
+  },
+  {
+    "id": "product_006",
+    "category": "product",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A virtual warehouse is billed only while it is running.",
+    "answer": true,
+    "fact": "Compute is charged for running time, so suspending an idle warehouse stops that charge. Storage is billed separately."
+  },
+  {
+    "id": "product_007",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer asks how data from their apps gets into Snowflake. One answer?",
+    "answers": [
+      "Printing and re-typing it",
+      "Through the BI dashboards",
+      "ELT tools such as Fivetran",
+      "Only by a nightly manual upload"
+    ],
+    "correct": 2,
+    "fact": "ELT and connector tools extract from source systems and load into Snowflake, where the data is transformed. Snowpipe and Kafka cover continuous loads."
+  },
+  {
+    "id": "product_008",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "How does a Tableau or Power BI dashboard get its numbers?",
+    "answers": [
+      "It copies the whole database",
+      "It asks the LLM to guess",
+      "It reads the vendor's emails",
+      "It sends SQL to Snowflake"
+    ],
+    "correct": 3,
+    "fact": "The BI tool sends a query, Snowflake checks permissions, finds the data and returns a result. Nothing needs to be copied out first."
+  },
+  {
+    "id": "product_009",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is 'pruning' in a Snowflake query?",
+    "answers": [
+      "Skipping chunks that cannot match",
+      "Deleting old rows from storage",
+      "Shrinking the result file to send",
+      "Removing idle users from roles"
+    ],
+    "correct": 0,
+    "fact": "Metadata records what each chunk holds, so the optimiser reads only chunks that could contain this week's data and skips the rest. Less scanned means less compute."
+  },
+  {
+    "id": "product_010",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A dashboard query reruns and nothing has changed. What may happen?",
+    "answers": [
+      "The warehouse always reruns it fully",
+      "Storage charges double for repeats",
+      "Permissions are skipped for repeats",
+      "A saved result returns, no compute"
+    ],
+    "correct": 3,
+    "fact": "If the exact query repeats within 24 hours and the data is unchanged, Snowflake can return a saved result with no warehouse work. Access is still checked."
+  },
+  {
+    "id": "product_011",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why set auto-suspend on a warehouse?",
+    "answers": [
+      "Billing stops when idle",
+      "Queries run twice as fast",
+      "Data is deleted after a day",
+      "It adds extra login security"
+    ],
+    "correct": 0,
+    "fact": "A warehouse that idles quietly keeps costing money. Auto-suspend stops it after a few idle minutes and it resumes when the next query arrives."
+  },
+  {
+    "id": "product_012",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer's files land all day. Which feature loads them continuously?",
+    "answers": [
+      "Result caching",
+      "Pruning",
+      "Row access policies",
+      "Snowpipe"
+    ],
+    "correct": 3,
+    "fact": "Snowpipe loads files as they arrive, instead of waiting for a big nightly batch, so dashboards stay fresher."
+  },
+  {
+    "id": "product_013",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Operational systems emit events all day. Which tool carries them?",
+    "answers": [
+      "Kafka, feeding Snowflake",
+      "Tableau, feeding Snowflake",
+      "The query optimiser",
+      "A virtual warehouse"
+    ],
+    "correct": 0,
+    "fact": "Kafka is a streaming platform for events from operational systems, and Snowflake has connectors to land them in tables."
+  },
+  {
+    "id": "product_014",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is data sharing without copying?",
+    "answers": [
+      "Emailing extracts to each partner",
+      "Uploading a copy to their cloud",
+      "Exporting yearly to a USB drive",
+      "Partners query your data in place"
+    ],
+    "correct": 3,
+    "fact": "A partner gets read access to your data where it sits, so there's no extract to go stale and you can revoke access."
+  },
+  {
+    "id": "product_015",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Finance and operations queries slow each other down. Snowflake's answer?",
+    "answers": [
+      "Move everything to one big warehouse",
+      "Delete the older tables",
+      "Give each team its own warehouse",
+      "Turn off the result cache"
+    ],
+    "correct": 2,
+    "fact": "Because compute is separate from storage, several warehouses can read the same data at once without competing."
+  },
+  {
+    "id": "product_016",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bill spikes after a big warehouse ran all weekend. Best fix?",
+    "answers": [
+      "Cut Time Travel retention to zero",
+      "Right-size it and set auto-suspend",
+      "Ask users to run fewer queries",
+      "Move up to a bigger warehouse size"
+    ],
+    "correct": 1,
+    "fact": "Oversized or always-on compute is the classic cost trap. Size for the workload, suspend when idle, and add usage monitoring so finance sees it early."
+  },
+  {
+    "id": "product_017",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Snowflake pricing is like OpenAI API pricing in which way?",
+    "answers": [
+      "Both bill by use, so watch usage",
+      "Both charge one fixed yearly fee",
+      "Both bill per user seat only",
+      "Both are free until launch"
+    ],
+    "correct": 0,
+    "fact": "Snowflake bills compute time and OpenAI's API bills tokens. In both, the real value shows in what runs after signing, so track consumption."
+  },
+  {
+    "id": "product_018",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks for 'Q3 revenue by region' from a table. Which AI approach?",
+    "answers": [
+      "Embeddings and a vector search",
+      "Text-to-SQL, such as Cortex Analyst",
+      "Fine-tuning on last year's reports",
+      "A longer system prompt"
+    ],
+    "correct": 1,
+    "fact": "Questions about numbers in tables need exact answers. The model writes SQL, Snowflake runs it, and the figures come from the data, not from memory."
+  },
+  {
+    "id": "product_019",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "To build an agent for a customer's CoWork, what do you build?",
+    "answers": [
+      "A new chat app from scratch",
+      "A fine-tuned model in our cloud",
+      "A Cortex Agent in their account",
+      "A browser plugin for each user"
+    ],
+    "correct": 2,
+    "fact": "CoWork (formerly Snowflake Intelligence) is the business-user chat app, powered by Cortex Agents. Build the agent in the customer's account, then use it in CoWork."
+  },
+  {
+    "id": "product_020",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Reports disagree with finance totals. Why isn't faster compute the fix?",
+    "answers": [
+      "Data quality is the customer's job",
+      "Warehouses cache wrong totals forever",
+      "Cloud services rewrites the numbers",
+      "Storage rounds figures by default"
+    ],
+    "correct": 0,
+    "fact": "Snowflake stores and queries what it's given. Duplicates, late feeds and mismatched definitions still need owners. The same goes for AI: poor data gives poor answers."
+  },
+  {
+    "id": "product_021",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why isn't a consumption deal 'done' at signature?",
+    "answers": [
+      "Value shows in usage months later",
+      "The vendor must re-approve each query",
+      "The contract can be signed twice",
+      "Storage resets after signing"
+    ],
+    "correct": 0,
+    "fact": "Signing is only the commitment. What decides growth and renewal is whether real workloads run, and the same is true of token-based AI spend."
+  },
+  {
+    "id": "product_022",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A customer wants an AI assistant over data already in Snowflake. Best design?",
+    "answers": [
+      "Export everything into the model first",
+      "Fetch governed data, then call the LLM",
+      "Fine-tune the LLM on each full table",
+      "Paste the whole schema into prompts"
+    ],
+    "correct": 1,
+    "fact": "Snowflake stays the governed data layer, with its permissions and masking. The AI app retrieves what the user may see and passes it to the model."
+  },
+  {
+    "id": "product_023",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "How can row access and masking policies help an AI assistant?",
+    "answers": [
+      "They make the model more accurate",
+      "They replace the need for prompts",
+      "It only sees data the user may see",
+      "They shorten the context window"
+    ],
+    "correct": 2,
+    "fact": "Policies are enforced where the data lives. When retrieval runs as the user, an employee asking the bot gets only rows and columns they could already query."
+  },
+  {
+    "id": "product_024",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Why embed documents inside a platform the customer already approved?",
+    "answers": [
+      "Embeddings become smaller there",
+      "It removes the need for chunks",
+      "No new vendor sees the corpus",
+      "Search results are always better"
+    ],
+    "correct": 2,
+    "fact": "A separate embedding vendor processes every document, adding another security review and residency question. Using an approved platform keeps that scope down."
+  },
+  {
+    "id": "product_025",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "What does Cortex Search add over a plain vector lookup?",
+    "answers": [
+      "A larger context window for the LLM",
+      "Automatic fine-tuning of the model",
+      "A free language model for every user",
+      "Vector and keyword search, reranked"
+    ],
+    "correct": 3,
+    "fact": "Hybrid search catches both meaning and exact terms like product codes, and the reranker puts the best passages first. It's a managed retrieval service for RAG."
+  },
+  {
+    "id": "product_026",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What are micro-partitions in Snowflake?",
+    "answers": [
+      "Servers you size yourself",
+      "Tables you must define by hand each time",
+      "Backup copies of your data",
+      "Small columnar chunks it manages"
+    ],
+    "correct": 3,
+    "fact": "Snowflake automatically divides table data into compressed, columnar micro-partitions and records metadata about each one."
+  },
+  {
+    "id": "product_027",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How does Snowflake decide which micro-partitions to skip?",
+    "answers": [
+      "Stored min and max values per column",
+      "Guesses from table names",
+      "A user-built index on each big column",
+      "Reads them all, then drops rows"
+    ],
+    "correct": 0,
+    "fact": "Metadata holds value ranges for each partition. A filter on a date can skip every partition whose range cannot match."
+  },
+  {
+    "id": "product_028",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What do Cortex AI functions let an analyst do?",
+    "answers": [
+      "Replace the BI tool with a chat app",
+      "Run LLM tasks on table data in SQL",
+      "Store embeddings outside Snowflake",
+      "Skip role-based access for AI jobs"
+    ],
+    "correct": 1,
+    "fact": "An analyst can summarise, classify or embed text with a SQL call, so data stays under Snowflake's governance. Model availability varies by region, so check it."
+  },
+  {
+    "id": "product_029",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does a warehouse's local cache hold?",
+    "answers": [
+      "Login tokens for recent users",
+      "Results of every past query",
+      "Recently read table data",
+      "Saved query plans"
+    ],
+    "correct": 2,
+    "fact": "It makes repeat scans faster while the warehouse runs. It clears on suspend, so over-eager suspending trades cache for savings."
+  },
+  {
+    "id": "product_030",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A warehouse resumes, runs 10 seconds, then suspends. What is billed?",
+    "answers": [
+      "Exactly 10 seconds of credit",
+      "A full hour at that size",
+      "Nothing, as it ran under a minute",
+      "The 60-second minimum"
+    ],
+    "correct": 3,
+    "fact": "Billing is per second, but each start or resume bills at least 60 seconds. Very short bursts cost more than they seem."
+  },
+  {
+    "id": "product_031",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does moving up one warehouse size do to credits per hour?",
+    "answers": [
+      "Doubles them",
+      "Adds ten percent",
+      "Leaves them unchanged",
+      "Halves them"
+    ],
+    "correct": 0,
+    "fact": "Each step up doubles hourly credits. A bigger size can finish a heavy query faster, so total cost is not always higher."
+  },
+  {
+    "id": "product_032",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A warehouse is suspended and a query arrives. With auto-resume on?",
+    "answers": [
+      "The query fails with an error",
+      "It waits for an admin to restart",
+      "It starts and runs the query",
+      "It answers from old results only"
+    ],
+    "correct": 2,
+    "fact": "Auto-resume plus auto-suspend means you pay only while queries run. Billing restarts when the warehouse wakes."
+  },
+  {
+    "id": "product_033",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Fifty analysts queue at 9am. What is the best fix?",
+    "answers": [
+      "One much larger single warehouse",
+      "A multi-cluster warehouse",
+      "A longer auto-suspend",
+      "Cloning the table"
+    ],
+    "correct": 1,
+    "fact": "Queuing is a concurrency problem. Multi-cluster warehouses add clusters at peak and remove them when it quietens."
+  },
+  {
+    "id": "product_034",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Dashboards queue at peak and one monthly report is slow. Best pairing?",
+    "answers": [
+      "Size for peak, clusters for the report",
+      "Clusters for both",
+      "Size for both",
+      "Clusters for peak, size for report"
+    ],
+    "correct": 3,
+    "fact": "More clusters help many queries at once. A bigger size helps a single heavy query. Diagnose which problem you have."
+  },
+  {
+    "id": "product_035",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What can a resource monitor do?",
+    "answers": [
+      "Alert or suspend at a credit limit",
+      "Speed up slow queries automatically",
+      "Mask sensitive columns",
+      "Rewrite poor SQL"
+    ],
+    "correct": 0,
+    "fact": "Resource monitors track credit use against a limit and can notify or suspend warehouses, a guard against runaway compute."
+  },
+  {
+    "id": "product_036",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "One bad query could run for hours. Which setting stops it?",
+    "answers": [
+      "Time Travel retention",
+      "The result cache setting",
+      "A statement timeout",
+      "The auto-resume setting"
+    ],
+    "correct": 2,
+    "fact": "A timeout ends any single statement that runs too long. Resource monitors cap total credits; timeouts cap one query."
+  },
+  {
+    "id": "product_037",
+    "category": "product",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does Time Travel allow?",
+    "answers": [
+      "Speeding up old queries",
+      "Querying or restoring earlier data",
+      "Scheduling jobs in advance",
+      "Copying data to another cloud region"
+    ],
+    "correct": 1,
+    "fact": "Within the retention period, you can see data as it was, or restore changed or dropped objects."
+  },
+  {
+    "id": "product_038",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "An analyst dropped a table an hour ago. What is the first option?",
+    "answers": [
+      "Undrop it using Time Travel",
+      "Ask the customer to reload it",
+      "Rebuild it from the dashboard",
+      "Open a ticket; it is gone"
+    ],
+    "correct": 0,
+    "fact": "Dropped tables can be restored within the retention period, which is one day by default. Longer retention depends on the edition."
+  },
+  {
+    "id": "product_039",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What is a zero-copy clone?",
+    "answers": [
+      "A read-only backup in a second region",
+      "A live link to the source table",
+      "A compressed archive of the table",
+      "A copy sharing storage until changed"
+    ],
+    "correct": 3,
+    "fact": "A clone points at the same stored data at first. Only later changes take extra storage, so clones are fast and cheap."
+  },
+  {
+    "id": "product_040",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A partner queries data you shared with their account. Whose compute runs it?",
+    "answers": [
+      "Yours, always",
+      "The partner's own warehouse",
+      "A free shared pool",
+      "Snowflake's own, at no charge"
+    ],
+    "correct": 1,
+    "fact": "Shared data is queried in place, not copied. Consumers use their own compute; provider-created reader accounts are the exception."
+  },
+  {
+    "id": "product_041",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How does Snowflake grant access?",
+    "answers": [
+      "Privileges granted straight to each user",
+      "Passwords set per table",
+      "Privileges to roles, roles to users",
+      "Roles assigned to tables only"
+    ],
+    "correct": 2,
+    "fact": "Role-based access means rights attach to roles and people receive roles. It keeps permissions easy to audit and change."
+  },
+  {
+    "id": "product_042",
+    "category": "product",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "An AI assistant queries Snowflake using one power-user role for everyone. Risk?",
+    "answers": [
+      "Users see data above their rights",
+      "Queries run slower",
+      "Credits are billed twice",
+      "Time Travel stops working on tables"
+    ],
+    "correct": 0,
+    "fact": "The assistant should run with the asker's rights or a tightly scoped role, so existing governance carries into the answers."
+  },
+  {
+    "id": "product_043",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Files arrive once a night. Is Snowpipe needed?",
+    "answers": [
+      "Yes, Snowpipe is required for files",
+      "No, nightly files cannot be loaded",
+      "No, a scheduled load works",
+      "Yes, it needs a larger warehouse"
+    ],
+    "correct": 2,
+    "fact": "Snowpipe suits files arriving continuously. A nightly batch can use a scheduled load, which is simpler."
+  },
+  {
+    "id": "product_044",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "How does a customer's own app run queries on Snowflake?",
+    "answers": [
+      "It reads the storage files directly",
+      "It sends SQL through a driver or API",
+      "It copies tables into the app first",
+      "It asks an admin to run each query"
+    ],
+    "correct": 1,
+    "fact": "Apps connect with Snowflake drivers or its SQL API, sign in as a user or service role, and send SQL. Snowflake plans and runs it, so the app needs no copy of the data."
+  },
+  {
+    "id": "product_045",
+    "category": "product",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Where can an LLM sit in a Snowflake data stack?",
+    "answers": [
+      "Inside every micro-partition",
+      "In place of the whole storage layer",
+      "Instead of access controls",
+      "On governed data via Cortex or API"
+    ],
+    "correct": 3,
+    "fact": "The model reads governed data through controlled paths. It adds language ability on top and does not replace the data platform."
+  }
+]

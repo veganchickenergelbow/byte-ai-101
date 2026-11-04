@@ -1,0 +1,14 @@
+[
+  { "id": "byte", "name": "Byte", "coat": "grey tabby", "favourite": "rug",
+    "bio": "A grey tabby who treats every sunbeam as a context window and every nap as a training run. Predicts the next word, the next snack and the next nap with equal confidence. Likes the exact middle of the rug.",
+    "taps": [
+      "I predict your next word will be: treats.",
+      "My context window is exactly one nap long.",
+      "I was trained on a large dataset of sunbeams.",
+      "Attention is all I need. Also snacks.",
+      "Did I hallucinate this cushion? Still a good cushion.",
+      "Temperature: warm. Purr level: 0.9.",
+      "Token of my affection: one (1) headbutt."
+    ],
+    "unlock": { "type": "start" }, "art": true }
+]

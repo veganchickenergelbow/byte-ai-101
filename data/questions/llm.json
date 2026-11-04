@@ -1,0 +1,905 @@
+[
+  {
+    "id": "llm_001",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What happens first when an LLM receives your prompt?",
+    "answers": [
+      "It searches the web for matching pages",
+      "It splits the text into tokens",
+      "It drafts the full answer in one go",
+      "It checks each word against a fact list"
+    ],
+    "correct": 1,
+    "fact": "Before any thinking, the text is chopped into tokens, small pieces of words, and each piece is given a number the model can work with."
+  },
+  {
+    "id": "llm_002",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "How is an LLM mainly trained?",
+    "answers": [
+      "By people writing rules for every topic",
+      "By memorising a table of stored answers",
+      "By copying the top web page per topic",
+      "By guessing the next word in huge texts"
+    ],
+    "correct": 3,
+    "fact": "It reads vast amounts of text, guesses the next word and is corrected each time it is wrong. Do that billions of times and useful skills appear along the way."
+  },
+  {
+    "id": "llm_003",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "How does an LLM write a long answer?",
+    "answers": [
+      "One token at a time, rereading so far",
+      "It drafts everything, then polishes once",
+      "Paragraph by paragraph from a plan",
+      "It pastes passages from its training"
+    ],
+    "correct": 0,
+    "fact": "At each step it rereads everything so far, including its own words, and picks the next token. That is why text streams out and longer answers take longer."
+  },
+  {
+    "id": "llm_004",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "How can an LLM tell a river bank from a money bank?",
+    "answers": [
+      "A person labels every word in advance",
+      "It checks a list of banned meanings",
+      "Nearby words shape what 'bank' means",
+      "It asks the user which one they meant"
+    ],
+    "correct": 2,
+    "fact": "Picture words holding a meeting. 'Bank' listens most to helpful words like 'river' or 'cash' and takes on that meaning. Nobody wrote the rule; it was learned."
+  },
+  {
+    "id": "llm_005",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does a model use many attention heads?",
+    "answers": [
+      "Each one stores a different language",
+      "Each one is reserved for a single user",
+      "Each tracks a different kind of link",
+      "Together they read the prompt faster"
+    ],
+    "correct": 2,
+    "fact": "One head gives one set of weights, so it cannot track grammar, topic and references at once. Several heads view the same sentence through several lenses."
+  },
+  {
+    "id": "llm_006",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What do reasoning models do differently?",
+    "answers": [
+      "They think in steps before answering",
+      "They search the web before answering",
+      "They only run on a customer's servers",
+      "They reuse stored answers to save time"
+    ],
+    "correct": 0,
+    "fact": "A reasoning model thinks in hidden steps first. That helps on harder problems like maths, coding and planning, at the price of extra waiting time."
+  },
+  {
+    "id": "llm_007",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "An LLM answers by finding and quoting a stored web page.",
+    "answer": false,
+    "fact": "It does not keep pages to quote. It generates each answer word by word from patterns it learned, which is why it can sound right and still be wrong."
+  },
+  {
+    "id": "llm_008",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "The model's weights change a little each time you chat with it.",
+    "answer": false,
+    "fact": "In everyday use the weights stay fixed. The model only reads what is in the prompt, and any 'memory' is just text added back in. Learning happens in training, not mid-chat."
+  },
+  {
+    "id": "llm_009",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does 'large' in large language model point to?",
+    "answers": [
+      "A large screen needed to use it",
+      "Answers that run to thousands of words",
+      "A big team of human reviewers",
+      "Huge training data and many weights"
+    ],
+    "correct": 3,
+    "fact": "Large means scale: a vast amount of text to learn from, and a great many learned numbers, called weights, that hold the patterns it picked up."
+  },
+  {
+    "id": "llm_010",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What is the transformer, in plain terms?",
+    "answers": [
+      "A tool that converts file formats",
+      "A design where words weigh each other",
+      "A database that holds embedding vectors",
+      "A filter that blocks unsafe replies"
+    ],
+    "correct": 1,
+    "fact": "It is the design behind modern LLMs. Its key idea, attention, lets every word look at the others and decide which ones matter for its own meaning."
+  },
+  {
+    "id": "llm_011",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In attention, what does a word's Query stand for?",
+    "answers": [
+      "The question the user typed in",
+      "What that word is looking for",
+      "What that word hands on to others",
+      "The final answer being built"
+    ],
+    "correct": 1,
+    "fact": "Each word makes three versions of itself. The Query is its 'looking for' post: a note saying what kind of word would help it understand its own role."
+  },
+  {
+    "id": "llm_012",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What do many stacked layers add, in plain terms?",
+    "answers": [
+      "Each layer stores a separate topic",
+      "Each layer handles one language",
+      "Each layer checks spelling and grammar",
+      "Each round builds on the previous one"
+    ],
+    "correct": 3,
+    "fact": "It is like reviewing a contract in rounds. Early layers pick up word pieces and grammar, middle ones meaning, and late ones what is likely to come next."
+  },
+  {
+    "id": "llm_013",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does turning the temperature up do?",
+    "answers": [
+      "Lets less likely words be picked more",
+      "Makes the model think for longer",
+      "Makes it read more of the prompt first",
+      "Makes its answers more factual"
+    ],
+    "correct": 0,
+    "fact": "At each step the model holds probabilities for every possible next token. Higher temperature spreads the picks around: more variety, and sometimes more surprises."
+  },
+  {
+    "id": "llm_014",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does each word look only at earlier words?",
+    "answers": [
+      "Later words are hidden for privacy",
+      "Looking ahead would lengthen answers",
+      "Later words haven't been written yet",
+      "The model forgets text once it is read"
+    ],
+    "correct": 2,
+    "fact": "It is like reading with a card covering everything to the right. The model writes one word at a time, so nothing to the right exists yet, and training follows the same rule."
+  },
+  {
+    "id": "llm_015",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "An open-weight model can be run without sending prompts to its vendor.",
+    "answer": true,
+    "fact": "Because the model files are yours to run, prompts can stay inside your own systems. You then take on the hardware, updating and safety work."
+  },
+  {
+    "id": "llm_016",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A vendor says its model has 1T parameters but only 40B 'active'. What does that mean?",
+    "answers": [
+      "Only part runs for each token",
+      "Only 40B of it was fully trained",
+      "The rest is kept for safety checks",
+      "It shrinks to 40B on long prompts"
+    ],
+    "correct": 0,
+    "fact": "This is Mixture of Experts: a router sends each token to a few experts, so the model stores a lot but computes with a slice. Cost and speed follow the active part."
+  },
+  {
+    "id": "llm_017",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "tf",
+    "question": "A company's tone of voice can be set in the prompt, with no retraining.",
+    "answer": true,
+    "fact": "Role, tone and format are usually set in the system prompt. Retraining is for bigger changes in behaviour, and is rarely the first step."
+  },
+  {
+    "id": "llm_018",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "When is a reasoning model most worth the extra time?",
+    "answers": [
+      "Hard multi-step analysis or maths",
+      "Sorting emails into a few set folders",
+      "Reformatting a long list of names",
+      "Fetching a stored FAQ answer"
+    ],
+    "correct": 0,
+    "fact": "Extra thinking pays off when a task needs several steps, like analysis or planning. For simple routing it just adds delay."
+  },
+  {
+    "id": "llm_019",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks, 'Does it really understand?' Best reply?",
+    "answers": [
+      "Yes, exactly as a person understands",
+      "No, it only matches exact phrases seen",
+      "Mostly yes, as it verifies each fact",
+      "Rich patterns, but it can be wrong"
+    ],
+    "correct": 3,
+    "fact": "Say it builds very rich statistical pictures of language, good enough to reason and write well, yet it can still be confidently wrong. That is why we ground it in real documents."
+  },
+  {
+    "id": "llm_020",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks how many layers GPT-6 has. Best reply?",
+    "answers": [
+      "It is on the pricing page, so quote it",
+      "Labs keep it private; test on your data",
+      "More layers always means better answers",
+      "It differs by user, so nobody can say"
+    ],
+    "correct": 1,
+    "fact": "Frontier labs compete on capability, price and context window, not on disclosed design. So judge a model by results on your own tasks, not by a layer count."
+  },
+  {
+    "id": "llm_021",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "In the meeting analogy, how does a word choose whom to listen to?",
+    "answers": [
+      "It listens to its nearest neighbour only",
+      "It matches its need to others' offers",
+      "It listens to the longest words",
+      "It listens to words the user picks"
+    ],
+    "correct": 1,
+    "fact": "Each word has a 'looking for' note and every other word an 'offer'. The better the match, the more it listens. Nobody wrote the rule; it was learned."
+  },
+  {
+    "id": "llm_022",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does doubling the prompt more than double the work?",
+    "answers": [
+      "The model reads a long prompt twice",
+      "Longer prompts need a bigger vocabulary",
+      "Output is automatically made longer",
+      "Each token scores against all before it"
+    ],
+    "correct": 3,
+    "fact": "Attention compares every token with every earlier one, so the work grows with the square of the length. Double the prompt and the attention work is roughly four times as much."
+  },
+  {
+    "id": "llm_023",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "At the very start, 'bank' has the same vector in 'river bank' and 'bank loan'.",
+    "answer": true,
+    "fact": "The first lookup table just swaps each token for its row of numbers. Only after the attention layers mix in the neighbouring words does 'bank' settle on one meaning."
+  },
+  {
+    "id": "llm_024",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks which document the model learned a fact from. Best reply?",
+    "answers": [
+      "It keeps a source note for each fact",
+      "It can list them accurately if asked",
+      "It can't say; retrieval adds sources",
+      "Only the vendor can look it up"
+    ],
+    "correct": 2,
+    "fact": "Training blends text into the weights, so there is no source list to check. If a customer needs citations, retrieve real documents and show them with the answer."
+  },
+  {
+    "id": "llm_025",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why doesn't a long answer slow to a crawl as it grows?",
+    "answers": [
+      "It reuses saved work on past tokens",
+      "It skips the early part of the prompt",
+      "It swaps to a smaller model midway",
+      "It forgets old words to stay quick"
+    ],
+    "correct": 0,
+    "fact": "Earlier tokens never change, so the model saves its working on them (the KV cache) and reuses it. That memory is one reason very long contexts cost more to serve."
+  },
+  {
+    "id": "llm_026",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A customer wants to read scanned invoices. Which model ability matters?",
+    "answers": [
+      "A much higher temperature setting",
+      "Multimodal image and PDF input",
+      "A bigger vector database for storage",
+      "A much longer system prompt of rules"
+    ],
+    "correct": 1,
+    "fact": "Multimodal models read images, PDFs and sometimes audio as well as text. Scan quality varies, so test on the customer's own invoices before promising accuracy."
+  },
+  {
+    "id": "llm_027",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What are a model's weights?",
+    "answers": [
+      "Stored copies of its training pages",
+      "The chat prompts it has seen so far",
+      "Numbers it learned in training",
+      "A list of words it must avoid"
+    ],
+    "correct": 2,
+    "fact": "Weights are numbers adjusted during training. The model is not a filing cabinet of documents, which is why it can't simply look up a page."
+  },
+  {
+    "id": "llm_028",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does 'inference' mean?",
+    "answers": [
+      "Training a model on fresh company data",
+      "Checking an answer against sources",
+      "Breaking the text into small tokens",
+      "Using a trained model to answer"
+    ],
+    "correct": 3,
+    "fact": "Training builds the model; inference is using it. 'Inference residency' is about where that running happens, which is separate from where data is stored."
+  },
+  {
+    "id": "llm_029",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What turns a raw next-word model into a helpful assistant?",
+    "answers": [
+      "Extra training with human feedback",
+      "A much larger context window",
+      "A link to a company vector database",
+      "A longer, stricter system prompt"
+    ],
+    "correct": 0,
+    "fact": "After learning from huge amounts of text, models get further training on good answers and human feedback. That is why a chat model replies helpfully rather than just continuing your sentence."
+  },
+  {
+    "id": "llm_030",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer asks why it handles English better than a rare local dialect. Best answer?",
+    "answers": [
+      "Dialects need a bigger temperature",
+      "Less of that dialect was in training",
+      "It refuses text from small groups",
+      "Rare words cannot be tokenised"
+    ],
+    "correct": 1,
+    "fact": "Models learn from the text they saw, so thinner coverage means weaker results. Test on the customer's real local-language samples before committing."
+  },
+  {
+    "id": "llm_031",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "What does 'open weights' mean?",
+    "answers": [
+      "A model free to use inside any app",
+      "A model whose training data is public",
+      "Model files released to run yourself",
+      "A model with no safety training"
+    ],
+    "correct": 2,
+    "fact": "Open-weight models, such as OpenAI's gpt-oss family, can be run on your own hardware. You gain control but take on the running, updating and safety work."
+  },
+  {
+    "id": "llm_032",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why does a chatbot seem to remember earlier turns?",
+    "answers": [
+      "Its weights update after each turn",
+      "It keeps a private diary per user",
+      "It looks up the user's browsing history",
+      "The app resends the earlier messages"
+    ],
+    "correct": 3,
+    "fact": "The model itself starts fresh each call. The app sends the conversation again every time, which is why long chats cost more and can lose early details."
+  },
+  {
+    "id": "llm_033",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A customer's product name costs more tokens than a common word. Why?",
+    "answers": [
+      "Rare names split into more pieces",
+      "Brand names are billed at a premium",
+      "The model must search the web for it",
+      "Capital letters double the price"
+    ],
+    "correct": 0,
+    "fact": "Common words are often one token; rare names are built from several pieces. It is a small cost effect, but worth testing on real product names."
+  },
+  {
+    "id": "llm_034",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why can asking a model to 'work step by step' help?",
+    "answers": [
+      "It switches on a hidden fact checker",
+      "It unlocks a larger context window",
+      "It makes it reread the prompt twice",
+      "Its written steps become context"
+    ],
+    "correct": 3,
+    "fact": "The model writes one token at a time and rereads its own words, so written-out steps give it more to build on. It helps reasoning, not facts it never learned."
+  },
+  {
+    "id": "llm_035",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A model is called '70B'. What does the 70B count?",
+    "answers": [
+      "Billions of words it trained on",
+      "Billions of numbers it learned",
+      "Billions of facts it has stored",
+      "Billions of chats it has handled"
+    ],
+    "correct": 1,
+    "fact": "70B means about 70 billion parameters: learned numbers, or weights. Bigger usually means more capable and dearer to run. It is not a count of facts or training words."
+  },
+  {
+    "id": "llm_036",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "A buyer asks: 'Is the model searching the internet each time it answers?' Best reply?",
+    "answers": [
+      "Yes, every answer is a live search",
+      "No: only if given a search tool",
+      "Yes, but only for factual questions",
+      "It looks answers up in a stored table"
+    ],
+    "correct": 1,
+    "fact": "Without a search tool, a model answers from patterns learned in training plus whatever is in the prompt. Web search is an add-on tool."
+  },
+  {
+    "id": "llm_037",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which of these is training, rather than using, a model?",
+    "answers": [
+      "Setting weights from huge text",
+      "Sending a prompt and reading a reply",
+      "Changing the temperature setting",
+      "Pasting a document into the chat"
+    ],
+    "correct": 0,
+    "fact": "Training sets the weights once, at great cost, before launch. Using the model (inference) leaves the weights fixed."
+  },
+  {
+    "id": "llm_038",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "A model says it is '95% confident'. That figure reliably measures its accuracy.",
+    "answer": false,
+    "fact": "Stated confidence is more generated text, not a calibrated measure. Check answers against sources or an eval instead."
+  },
+  {
+    "id": "llm_039",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Who usually writes the system prompt for a company chatbot?",
+    "answers": [
+      "The end user, in every chat",
+      "The model, as it launches",
+      "The team building the bot",
+      "The chip maker, at manufacture"
+    ],
+    "correct": 2,
+    "fact": "The builder writes it to set role, tone and rules, and the app sends it ahead of each user message."
+  },
+  {
+    "id": "llm_040",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does 'knowledge cutoff' mean?",
+    "answers": [
+      "The date the model is switched off",
+      "The date the training data stops",
+      "The limit on a single answer's length",
+      "The date the vendor stops selling it"
+    ],
+    "correct": 1,
+    "fact": "A model has no built-in knowledge of events after its cutoff. Newer facts must be supplied in the prompt or fetched by a tool."
+  },
+  {
+    "id": "llm_041",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "What does 'multimodal' mean for a model?",
+    "answers": [
+      "It handles more than text, like images",
+      "It speaks several languages at once",
+      "It serves many users at the same time",
+      "It blends several models into one reply"
+    ],
+    "correct": 0,
+    "fact": "A multimodal model accepts or produces other kinds of input, such as images, audio or PDFs, as well as text."
+  },
+  {
+    "id": "llm_042",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Why can a model write smoothly even when its answer is wrong?",
+    "answers": [
+      "It checks grammar once facts are found",
+      "It copies from a trusted database",
+      "It only writes smoothly when sure",
+      "It predicts likely, fluent text"
+    ],
+    "correct": 3,
+    "fact": "Fluency comes from predicting likely text. It does not signal accuracy, so smooth wording is never proof that a fact is right."
+  },
+  {
+    "id": "llm_043",
+    "category": "llm",
+    "difficulty": 1,
+    "type": "mc",
+    "question": "Which costs a lab far more: training a model, or one chat reply?",
+    "answers": [
+      "One chat reply, each time",
+      "They cost about the same",
+      "Training, by a huge margin",
+      "Neither: both are free to run"
+    ],
+    "correct": 2,
+    "fact": "Training needs vast compute, once. A single reply is tiny, though millions of replies add up, which is why inference cost matters."
+  },
+  {
+    "id": "llm_044",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A buyer's answer changed after they added one paragraph to the prompt. Best explanation?",
+    "answers": [
+      "The model forgot the older paragraphs",
+      "All the prompt's words shape output",
+      "The weights were retrained overnight",
+      "The system chose a different language"
+    ],
+    "correct": 1,
+    "fact": "The model reads the whole prompt each time, so added text changes what is likely next. Small prompt edits can shift answers."
+  },
+  {
+    "id": "llm_045",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A raw model call feels weaker than the ChatGPT app. A likely reason?",
+    "answers": [
+      "The app adds tools and instructions",
+      "The app learns from every chat live",
+      "API models are always older ones",
+      "API calls skip most of the prompt"
+    ],
+    "correct": 0,
+    "fact": "A chat app wraps the model with a system prompt, search, file tools and memory. A bare call gets none of that unless the builder adds it, so compare like with like."
+  },
+  {
+    "id": "llm_046",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Where should a firm's standing rules for a support bot usually go?",
+    "answers": [
+      "In the model's weights, by chatting",
+      "In each user's first message",
+      "In the training data it was built on",
+      "In the system prompt"
+    ],
+    "correct": 3,
+    "fact": "The system prompt is resent on every call, so rules there apply to all chats. Chatting with a model never retrains it."
+  },
+  {
+    "id": "llm_047",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A user coaxes a bot into revealing its system prompt. What follows?",
+    "answers": [
+      "The model's weights have leaked",
+      "The bot is broken and must be scrapped",
+      "Never put secrets in a system prompt",
+      "It proves the bot is unsafe to use"
+    ],
+    "correct": 2,
+    "fact": "System prompts are just text in the context and can sometimes be coaxed out. Keep keys and confidential data outside them."
+  },
+  {
+    "id": "llm_048",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot knows nothing of yesterday's news. Which fix helps most?",
+    "answers": [
+      "Ask it to try harder",
+      "Give it search or documents",
+      "Turn the temperature up",
+      "Wait for its training to finish"
+    ],
+    "correct": 1,
+    "fact": "The model's knowledge is fixed at its cutoff. Fresh facts have to be supplied in the prompt or retrieved by a tool."
+  },
+  {
+    "id": "llm_049",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A firm wants a bot to explain chart screenshots. What check matters before pitching?",
+    "answers": [
+      "Test accuracy on their own charts",
+      "Count the file size of each image",
+      "Confirm the knowledge cutoff date",
+      "Raise the temperature setting"
+    ],
+    "correct": 0,
+    "fact": "Image reading can be strong on clean charts and weaker on dense or unusual ones. A test on the customer's real images shows the truth."
+  },
+  {
+    "id": "llm_050",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Which task needs high reasoning effort least?",
+    "answers": [
+      "Checking a multi-step tax calculation",
+      "Planning a staged data migration",
+      "Finding a flaw in a chain of clauses",
+      "Rewording a sentence more politely"
+    ],
+    "correct": 3,
+    "fact": "Extra reasoning pays off on multi-step problems. Simple rewriting is quick work, so high effort just adds delay and cost."
+  },
+  {
+    "id": "llm_051",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "Why can a model miscount the letters in a word?",
+    "answers": [
+      "Its alphabet list is incomplete",
+      "Temperature scrambles the spelling",
+      "It sees tokens, not single letters",
+      "Letters are billed separately"
+    ],
+    "correct": 2,
+    "fact": "A model reads chunks of text rather than individual letters, so spelling and counting tasks can slip. For exact counts, have it call a code tool."
+  },
+  {
+    "id": "llm_052",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A legal notice must use the same wording every time. Best approach?",
+    "answers": [
+      "Set temperature to zero and trust it",
+      "Use a fixed template for that text",
+      "Ask the model to promise consistency",
+      "Use the largest model available"
+    ],
+    "correct": 1,
+    "fact": "Even low temperature does not guarantee identical text across runs or model versions. Wording that must never change belongs in a template."
+  },
+  {
+    "id": "llm_053",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot invents a policy number that looks real. Which limitation is this?",
+    "answers": [
+      "Hallucination",
+      "Knowledge cutoff",
+      "A context window that is too small",
+      "Slow inference"
+    ],
+    "correct": 0,
+    "fact": "When the model lacks the fact, it can still produce text shaped like the answer. Grounding and checks manage this; nothing removes it."
+  },
+  {
+    "id": "llm_054",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A long answer stops mid-sentence. What is the likely cause?",
+    "answers": [
+      "The temperature was too high",
+      "The output length cap was reached",
+      "The knowledge cutoff arrived",
+      "The model lost the system prompt"
+    ],
+    "correct": 1,
+    "fact": "Replies have a maximum length, set by the builder or the model. At the cap the text just stops, even mid-sentence. Raise the cap or ask for a shorter answer."
+  },
+  {
+    "id": "llm_055",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A buyer asks why the model writes essays well but is shaky on exact lookups. Best answer?",
+    "answers": [
+      "Essays are stored; lookups are not",
+      "Lookups need a hotter temperature",
+      "It models likely text, not a database",
+      "Essays use more layers"
+    ],
+    "correct": 2,
+    "fact": "The model generates likely wording. A database returns exact stored records, so exact lookups are better handed to a tool."
+  },
+  {
+    "id": "llm_056",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "mc",
+    "question": "A bot is polite but gets refund rules wrong. Best first fix?",
+    "answers": [
+      "Make the tone friendlier",
+      "Add the real policy, then test",
+      "Turn the temperature up",
+      "Switch to a much bigger model first"
+    ],
+    "correct": 1,
+    "fact": "Politeness is not the problem: the facts are. Ground the bot in the real policy, then test it on typical refund questions."
+  },
+  {
+    "id": "llm_057",
+    "category": "llm",
+    "difficulty": 2,
+    "type": "tf",
+    "question": "A bigger context window means the model uses every part of it equally well.",
+    "answer": false,
+    "fact": "Models can attend unevenly across long inputs, and details can get lost. A bigger window raises the limit, not the guarantee."
+  },
+  {
+    "id": "llm_058",
+    "category": "llm",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A model aces public exam questions but flops on a customer's task. Best reading?",
+    "answers": [
+      "The model must have cheated",
+      "Exams measure only the weights",
+      "Their task is too new for any model",
+      "Benchmarks may not match their task"
+    ],
+    "correct": 3,
+    "fact": "Public benchmarks test general skills. The only fair test of fit is a set of the customer's own examples, scored by them."
+  },
+  {
+    "id": "llm_059",
+    "category": "llm",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Would more reasoning effort fix wrong facts about last week's events?",
+    "answers": [
+      "Yes: thinking recalls newer facts",
+      "Yes, but only with a hotter temperature",
+      "No: the missing facts must be supplied",
+      "No: reasoning only works on images"
+    ],
+    "correct": 2,
+    "fact": "Thinking longer cannot create knowledge the model never had. Retrieval or search brings in the facts, then reasoning can use them."
+  },
+  {
+    "id": "llm_060",
+    "category": "llm",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "Two vendors' models answer one prompt differently. What is the fairest comparison?",
+    "answers": [
+      "Pick the one with the longer answer",
+      "Run both on the buyer's own test set",
+      "Pick the bigger model name",
+      "Ask each which one is better"
+    ],
+    "correct": 1,
+    "fact": "One prompt is a single sample. A scored set of the buyer's real cases shows which model fits their work."
+  },
+  {
+    "id": "llm_061",
+    "category": "llm",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A customer wants the model to 'always follow' the system prompt. Honest reply?",
+    "answers": [
+      "It usually does, not always: test it",
+      "Yes, system prompts are hard-coded rules",
+      "Yes, if you put it first in the prompt",
+      "Mostly, so no testing is needed"
+    ],
+    "correct": 0,
+    "fact": "System prompts guide behaviour strongly but are not hard rules. Tests, and checks outside the model, cover the gaps."
+  },
+  {
+    "id": "llm_062",
+    "category": "llm",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A firm wants speed and deep analysis in one bot. Sensible design?",
+    "answers": [
+      "Use high effort for everything",
+      "Use the lowest effort for everything",
+      "Let each user pick the temperature",
+      "Send easy asks fast, hard ones deep"
+    ],
+    "correct": 3,
+    "fact": "Easy requests do not need deep thinking. Sending only hard ones to higher effort keeps replies quick and the bill down."
+  },
+  {
+    "id": "llm_063",
+    "category": "llm",
+    "difficulty": 3,
+    "type": "mc",
+    "question": "A model reads handwritten forms. What is the sensible rollout step?",
+    "answers": [
+      "Trust it, since images are always exact",
+      "Raise the temperature setting",
+      "A person checks the extracted fields",
+      "Shorten the system prompt"
+    ],
+    "correct": 2,
+    "fact": "Handwriting varies, and a wrong digit can look fine. Human review of key fields, plus tests on real forms, makes the pilot safe."
+  }
+]
